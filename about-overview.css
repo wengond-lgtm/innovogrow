@@ -1,0 +1,607 @@
+.site-nav a.active {
+  color: var(--green);
+}
+
+.about-hero {
+  height: 330px;
+}
+
+.about-hero::before {
+  background: linear-gradient(90deg, #020503 0%, #020503 39%, rgba(2, 5, 3, 0.82) 49%, rgba(2, 5, 3, 0.18) 68%, rgba(2, 5, 3, 0.02) 100%);
+}
+
+.about-hero .hero-media {
+  left: 404px;
+  height: 330px;
+  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.04), rgba(2, 5, 3, 0.08)), url("assets/reference/page-crops/about-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero .hero-copy {
+  width: 404px;
+  padding-top: 28px;
+}
+
+.about-hero .hero-copy h1 {
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-size: 37px;
+  line-height: 1.04;
+}
+
+.about-hero-lead {
+  width: 324px;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+.about-hero-body {
+  width: 348px;
+  margin-bottom: 0;
+  color: #eef1ed;
+  font-size: 10px;
+  line-height: 1.58;
+}
+
+.about-hero-features {
+  width: 534px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  bottom: 24px;
+}
+
+.about-hero-features .hero-feature {
+  align-items: center;
+}
+
+.about-hero-features .hero-feature strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+}
+
+.about-hero-features .hero-feature span:last-child {
+  display: block;
+  color: #d7ddd8;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.story-band,
+.journey-band,
+.values-band,
+.team-band,
+.support-band,
+.about-cta-band {
+  padding: 10px 0 12px;
+}
+
+.proof-band,
+.craft-band {
+  padding: 12px 0;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 318px 1fr 236px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.story-copy h2,
+.journey-intro h2,
+.values-header h2,
+.proof-intro h2,
+.team-header h2,
+.craft-intro h2,
+.support-copy h2,
+.about-cta-panel h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.08;
+}
+
+.story-copy p:not(.eyebrow),
+.story-side-card p,
+.journey-item span,
+.value-card p,
+.proof-metric span,
+.team-side p,
+.craft-intro p,
+.craft-card p,
+.support-copy p,
+.support-list span,
+.about-cta-panel p {
+  font-size: 8px;
+  line-height: 1.58;
+}
+
+.story-copy p:not(.eyebrow) {
+  margin: 0 0 12px;
+  color: #d2d8d3;
+}
+
+.story-copy .btn {
+  margin-top: 10px;
+  min-width: 160px;
+  font-size: 9px;
+}
+
+.story-media {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.story-media img {
+  width: 100%;
+  height: 216px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.story-side {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-side-card,
+.team-side,
+.contact-info-card {
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, #0b100d 0%, #080c09 100%);
+}
+
+.story-side-card + .story-side-card {
+  border-top: 0;
+}
+
+.story-side-card h3,
+.team-side h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.story-side-card p,
+.team-side p {
+  margin: 0;
+  color: #d5dbd6;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 176px repeat(6, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.journey-item {
+  min-height: 88px;
+  padding-top: 34px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.journey-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.journey-item span {
+  display: block;
+  color: #d4dad5;
+}
+
+.values-header,
+.team-header,
+.craft-intro,
+.support-copy {
+  margin-bottom: 12px;
+}
+
+.values-layout {
+  display: grid;
+  grid-template-columns: 1fr 266px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.value-card {
+  position: relative;
+  min-height: 140px;
+  padding: 50px 12px 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.value-card:first-child {
+  border-left: 0;
+}
+
+.value-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(123, 225, 46, 0.78);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(123, 225, 46, 0.8) 0 2px, transparent 2px),
+    transparent;
+}
+
+.value-card strong,
+.proof-metric strong,
+.craft-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.value-card p {
+  margin: 0;
+  color: #d0d7d1;
+}
+
+.values-showcase {
+  min-height: 140px;
+  background-image: linear-gradient(180deg, rgba(4, 7, 5, 0.06), rgba(4, 7, 5, 0.06)), url("assets/reference/page-crops/about-values-product.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1.14fr 1.62fr 236px;
+  gap: 12px;
+  align-items: start;
+}
+
+.proof-intro h2,
+.craft-intro h2 {
+  color: #111711;
+}
+
+.proof-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.proof-metric {
+  position: relative;
+  min-height: 120px;
+  padding: 48px 10px 0 0;
+  border-right: 1px solid #d7ddd7;
+}
+
+.proof-metric:last-child {
+  border-right: 0;
+}
+
+.proof-metric::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(123, 225, 46, 0.5);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(123, 225, 46, 0.8) 0 2px, transparent 2px),
+    transparent;
+}
+
+.proof-metric strong,
+.proof-metric span,
+.craft-intro p,
+.craft-card p {
+  color: #1d251f;
+}
+
+.proof-side {
+  display: grid;
+  grid-template-columns: 1fr 116px;
+  gap: 8px;
+}
+
+.proof-side img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.proof-stats {
+  display: grid;
+  gap: 8px;
+}
+
+.proof-stats article {
+  padding: 16px 12px;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #22292d;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.proof-stats strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.proof-stats span {
+  display: block;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 252px;
+  gap: 12px;
+}
+
+.team-header {
+  grid-column: 1 / -1;
+}
+
+.team-cards {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.team-side {
+  grid-column: 2;
+}
+
+.team-card {
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #121715 0%, #0c110f 100%);
+}
+
+.team-avatar {
+  display: block;
+  width: 100%;
+  height: 166px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background-color: #1d2520;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  box-shadow: inset 0 -28px 42px rgba(3, 6, 4, 0.2);
+}
+
+.team-avatar--jason {
+  background-image: url("assets/reference/page-crops/about-team-jason.jpg");
+}
+
+.team-avatar--megan {
+  background-image: url("assets/reference/page-crops/about-team-megan.jpg");
+}
+
+.team-avatar--daniel {
+  background-image: url("assets/reference/page-crops/about-team-daniel.jpg");
+}
+
+.team-avatar--patrick {
+  background-image: url("assets/reference/page-crops/about-team-patrick.jpg");
+}
+
+.team-card strong,
+.team-card p {
+  color: #ffffff;
+}
+
+.team-card p {
+  margin: 4px 0 0;
+  font-size: 8px;
+}
+
+.team-side .btn {
+  margin-top: 12px;
+  min-width: 146px;
+  font-size: 9px;
+}
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: 302px repeat(3, 1fr);
+  gap: 10px;
+}
+
+.craft-intro .btn {
+  margin-top: 12px;
+  min-width: 176px;
+  font-size: 9px;
+}
+
+.craft-card {
+  padding-bottom: 4px;
+}
+
+.craft-media {
+  width: 100%;
+  height: 118px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #dce3db;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.craft-media--design {
+  background-image: url("assets/reference/page-crops/about-craft-design.jpg");
+}
+
+.craft-media--manufacturing {
+  background-image: url("assets/reference/page-crops/about-craft-manufacturing.jpg");
+}
+
+.craft-media--qa {
+  background-image: url("assets/reference/page-crops/about-craft-qa.jpg");
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: 222px 1fr 248px;
+  gap: 12px;
+  align-items: center;
+}
+
+.support-map {
+  height: 176px;
+  border-radius: 4px;
+  background-image: linear-gradient(180deg, rgba(5, 8, 6, 0.06), rgba(5, 8, 6, 0.06)), url("assets/reference/page-crops/about-world-map.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.support-list {
+  display: grid;
+  gap: 14px;
+}
+
+.support-list article {
+  position: relative;
+  padding-left: 42px;
+}
+
+.support-list article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(123, 225, 46, 0.75);
+  border-radius: 50%;
+}
+
+.support-list article strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.support-list article span {
+  display: block;
+  color: #d4dad5;
+}
+
+.about-cta-panel {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 26px 16px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(4, 8, 5, 0.74), rgba(4, 8, 5, 0.74)),
+    url("assets/reference/hero-grow.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.about-cta-panel p {
+  margin: 0;
+  color: #d4dad5;
+}
+
+.about-cta-panel .btn {
+  min-width: 176px;
+  font-size: 9px;
+}
+
+.about-footer .footer-inner {
+  grid-template-columns: 206px 106px 112px 94px 92px 1fr;
+}
+
+@media (max-width: 800px) {
+  .about-hero,
+  .about-hero .hero-inner {
+    height: auto;
+    min-height: 0;
+  }
+
+  .about-hero .hero-copy,
+  .about-hero .hero-copy h1,
+  .about-hero-lead,
+  .about-hero-body {
+    width: auto;
+  }
+
+  .about-hero-features,
+  .story-grid,
+  .journey-grid,
+  .values-layout,
+  .values-grid,
+  .proof-grid,
+  .proof-metrics,
+  .proof-side,
+  .team-grid,
+  .team-cards,
+  .craft-grid,
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-side {
+    border-left: 0;
+  }
+
+  .story-side-card,
+  .journey-item,
+  .value-card,
+  .proof-metric {
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0;
+  }
+
+  .values-showcase {
+    min-height: 120px;
+    background-position: center;
+  }
+
+  .team-header,
+  .team-cards,
+  .team-side {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,22 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgIndoor" x1="320" y1="0" x2="320" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2C2F2A"/>
+      <stop offset="1" stop-color="#0D100D"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bgIndoor)"/>
+  <rect x="78" y="80" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <rect x="248" y="80" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <rect x="418" y="80" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <rect x="78" y="192" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <rect x="248" y="192" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <rect x="418" y="192" width="154" height="18" rx="9" fill="#D8DDD8"/>
+  <path d="M155 98V320" stroke="#636C64" stroke-width="10"/>
+  <path d="M325 98V320" stroke="#636C64" stroke-width="10"/>
+  <path d="M495 98V320" stroke="#636C64" stroke-width="10"/>
+  <circle cx="155" cy="286" r="58" fill="#446E33"/>
+  <circle cx="325" cy="286" r="58" fill="#54853C"/>
+  <circle cx="495" cy="286" r="58" fill="#446E33"/>
+  <rect y="330" width="640" height="90" fill="black" fill-opacity="0.28"/>
+</svg>

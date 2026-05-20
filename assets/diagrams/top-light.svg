@@ -1,0 +1,41 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="beamTop" x1="320" y1="62" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE889" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFE889" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="fadeTop" x1="320" y1="280" x2="320" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#88B051" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#56712D" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="24" width="560" height="372" rx="28" fill="#FAF8F1"/>
+  <rect x="236" y="32" width="168" height="42" rx="21" fill="#2B2F31"/>
+  <rect x="270" y="53" width="100" height="12" rx="6" fill="#D6DAD8"/>
+  <path d="M320 74 465 315H175L320 74Z" fill="url(#beamTop)"/>
+  <path d="M170 320C209 285 267 264 320 264C373 264 431 285 470 320V356H170V320Z" fill="url(#fadeTop)"/>
+  <g fill="#73953F">
+    <circle cx="194" cy="302" r="28"/>
+    <circle cx="248" cy="282" r="34"/>
+    <circle cx="302" cy="274" r="36"/>
+    <circle cx="348" cy="274" r="36"/>
+    <circle cx="398" cy="286" r="33"/>
+    <circle cx="446" cy="306" r="26"/>
+  </g>
+  <g stroke="#607D34" stroke-width="5" stroke-linecap="round">
+    <path d="M196 347V303"/>
+    <path d="M246 347V284"/>
+    <path d="M302 347V276"/>
+    <path d="M348 347V276"/>
+    <path d="M398 347V288"/>
+    <path d="M446 347V308"/>
+  </g>
+  <path d="M516 150H578" stroke="#78A83D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M516 300H578" stroke="#B6C3B2" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="505" cy="150" r="7" fill="#78A83D"/>
+  <circle cx="505" cy="300" r="7" fill="#B6C3B2"/>
+  <text x="590" y="145" fill="#0F1511" font-size="24" font-family="Arial, sans-serif" font-weight="700" text-anchor="end">Strong light</text>
+  <text x="590" y="174" fill="#495449" font-size="20" font-family="Arial, sans-serif" text-anchor="end">at the top</text>
+  <text x="590" y="295" fill="#0F1511" font-size="24" font-family="Arial, sans-serif" font-weight="700" text-anchor="end">Weak light</text>
+  <text x="590" y="324" fill="#495449" font-size="20" font-family="Arial, sans-serif" text-anchor="end">at the bottom</text>
+</svg>

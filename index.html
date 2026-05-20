@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnovoGrow | Smarter Light. Better Growth.</title>
+  <meta name="description" content="Commercial LED grow lighting solutions for commercial growers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="global-ui.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-scale">
+    <div class="ig-container header-inner">
+      <a class="logo" href="#top" aria-label="InnovoGrow home">
+        <img src="innovo%20grow%20logo.svg" alt="InnovoGrow">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="header-plan" href="contact.html">
+        <span class="calendar-icon"></span>
+        Request Lighting Plan
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <div class="page-scale">
+  <main id="top">
+    <section class="hero dark-band">
+      <div class="hero-media" aria-hidden="true"></div>
+
+      <div class="ig-container hero-inner">
+        <div class="hero-copy">
+          <h1>Light Where Your Canopy Needs It Most</h1>
+          <p>
+            Commercial LED grow lighting solutions engineered for under-canopy performance,
+            simplified top lighting, and scalable indoor cultivation.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="products.html#uc-series">Explore UC Series</a>
+            <a class="btn btn-outline" href="contact.html">Request a Lighting Plan</a>
+          </div>
+        </div>
+
+        <div class="hero-features" id="hero-features"></div>
+      </div>
+    </section>
+
+    <section class="challenge light-band">
+      <div class="ig-container challenge-inner">
+        <div class="challenge-copy">
+          <p class="eyebrow">The Challenge</p>
+          <h2>Top Lighting Alone Leaves Potential Behind</h2>
+          <p>
+            Dense canopies often block light from reaching lower leaves, flowers, and fruit zones.
+            InnovoGrow under-canopy and top-lighting systems help growers distribute photons more
+            effectively throughout the crop structure.
+          </p>
+        </div>
+
+        <img class="challenge-diagram" src="assets/reference/challenge-diagram.png" alt="Top lighting compared with top plus under canopy lighting.">
+      </div>
+    </section>
+
+    <section class="products dark-band" id="products">
+      <div class="ig-container">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Our Solutions</p>
+            <h2>Products Built for Commercial Growers</h2>
+          </div>
+          <span class="section-rule"></span>
+          <a class="plain-link" href="products.html">View All Products</a>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="strategies light-band" id="solutions">
+      <div class="ig-container strategy-inner">
+        <div class="strategy-heading">
+          <p class="eyebrow">Complete Lighting Strategies</p>
+          <h2>A Complete Solution for Every Grow</h2>
+        </div>
+        <div class="strategy-grid" id="strategy-grid"></div>
+      </div>
+    </section>
+
+    <section class="applications dark-band" id="about">
+      <div class="ig-container applications-inner">
+        <div class="performance-panel">
+          <p class="eyebrow">Why Growers Choose InnovoGrow</p>
+          <h2>Engineered for Performance. Built for Growers.</h2>
+          <div class="metric-grid" id="metric-grid"></div>
+        </div>
+
+        <div class="application-panel" id="resources">
+          <p class="eyebrow">Designed for Multiple Applications</p>
+          <div class="application-grid" id="application-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact light-band" id="contact">
+      <div class="ig-container contact-inner">
+        <div class="contact-copy">
+          <p class="eyebrow">Get Started</p>
+          <h2>Need a Lighting Layout for Your Facility?</h2>
+          <p>
+            Tell us about your grow. Our lighting experts will help you design the right solution
+            for higher yields, better quality, and long-term efficiency.
+          </p>
+          <div class="contact-benefits">
+            <span>Personalized Lighting Plan</span>
+            <span>PPFD &amp; Layout Recommendation</span>
+            <span>Product &amp; ROI Guidance</span>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-grid">
+            <label>Full Name<input type="text" name="fullName" placeholder="Your name"></label>
+            <label>Company<input type="text" name="company" placeholder="Company name"></label>
+            <label>Email<input type="email" name="email" placeholder="you@company.com"></label>
+            <label>Phone / WhatsApp<input type="text" name="phone" placeholder="+1 (555) 123-4567"></label>
+            <label>Country / State<input type="text" name="region" placeholder="Select your country"></label>
+            <label>Crop Type<select name="cropType"><option>Select crop type</option><option>Flowering crops</option><option>Tomatoes</option><option>Leafy greens</option></select></label>
+            <label>Grow Area Size<input type="text" name="area" placeholder="e.g. 1000 sq ft / 300 m2"></label>
+            <label>Current Lighting System<input type="text" name="lighting" placeholder="e.g. HPS, LED, Mixed"></label>
+            <label>Interested Products<select name="products"><option>Select products</option><option>UC Series</option><option>TL 300-D1</option><option>Gen IV</option></select></label>
+            <label class="message-field">Message / Additional Information<textarea name="message" placeholder="Tell us more about your grow, goals, or challenges..."></textarea></label>
+            <label class="upload-field">Upload Layout / Drawing (optional)<input type="file" name="layout"><small>PDF, PNG, JPG up to 10MB</small></label>
+          </div>
+        </form>
+
+        <aside class="contact-card">
+          <span class="contact-card-icon"></span>
+          <p>Our team typically responds within 1 business day.</p>
+          <a class="btn btn-primary" href="contact.html">Request Lighting Plan</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer dark-band">
+    <div class="ig-container footer-inner">
+      <div class="footer-brand">
+        <img src="innovo%20grow%20logo.svg" alt="InnovoGrow">
+        <p>InnovoGrow provides high-performance LED grow lighting solutions for commercial cultivation environments.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Products</h3>
+        <a href="products.html#uc-series">UC Series Under Canopy</a>
+        <a href="products.html#tl-300-d1">TL 300-D1 Top Light</a>
+        <a href="products.html#gen-iv">Gen IV Linear Indoor LED</a>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <a href="solutions.html#under-canopy-lighting">Under Canopy Lighting</a>
+        <a href="solutions.html#top-lighting">Top Lighting</a>
+        <a href="solutions.html#indoor-cultivation">Indoor Cultivation</a>
+        <a href="solutions.html#greenhouse-lighting">Greenhouse Lighting</a>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <a href="about.html">About InnovoGrow</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Become a Distributor</a>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Stay updated with the latest products and cultivation insights.</p>
+        <form>
+          <input type="email" placeholder="Your email" aria-label="Your email">
+          <button type="button">-></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="ig-container footer-bottom">
+      <p>&copy; <span id="year"></span> InnovoGrow. All rights reserved.</p>
+      <div>
+        <a href="#top">Privacy Policy</a>
+        <a href="#top">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
