@@ -377,12 +377,25 @@
   background: linear-gradient(180deg, #101712 0%, #0b100d 100%);
 }
 
+.hub-copy,
+.hub-subscribe {
+  min-width: 0;
+}
+
 .hub-copy h2,
 .hub-copy p,
 .hub-subscribe h3,
 .hub-subscribe p,
 .hub-subscribe small {
-  color: #ffffff;
+  color: #ffffff !important;
+}
+
+.hub-band .hub-copy h2,
+.hub-band .hub-copy p,
+.hub-band .hub-subscribe h3,
+.hub-band .hub-subscribe p,
+.hub-band .hub-subscribe small {
+  color: #ffffff !important;
 }
 
 .hub-copy .btn {
@@ -400,13 +413,15 @@
 
 .hub-form {
   display: grid;
-  grid-template-columns: 1fr 130px;
+  grid-template-columns: minmax(0, 1fr) 118px;
   gap: 10px;
   margin: 12px 0 8px;
+  align-items: stretch;
 }
 
 .hub-form input,
 .hub-form button {
+  width: 100%;
   min-height: 42px;
   border-radius: 6px;
   font: inherit;
@@ -424,6 +439,7 @@
   color: #071007;
   font-size: 10px;
   font-weight: 800;
+  padding: 0 14px;
   background: var(--green);
 }
 

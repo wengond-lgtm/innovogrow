@@ -800,14 +800,21 @@ strong {
 }
 
 .contact-benefits span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   min-height: 30px;
-  padding-left: 25px;
   color: #151d17;
   font-size: 7px;
   font-weight: 800;
   line-height: 1.25;
-  background:
-    radial-gradient(circle at 10px 10px, transparent 0 7px, var(--green-dark) 8px, transparent 9px);
+}
+
+.contact-benefits img {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  object-fit: contain;
 }
 
 .contact-form {
@@ -874,25 +881,48 @@ strong {
   padding: 26px 16px 18px;
   border-radius: 4px;
   color: #ffffff;
-  background: linear-gradient(180deg, #141b16, #0b0f0c);
+  background: linear-gradient(180deg, #0c120f, #050806);
 }
 
 .contact-card-icon {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
   margin-bottom: 16px;
+  border: 0;
+  border-radius: 0;
   color: #ffffff;
+}
+
+.contact-card-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .contact-card p {
   margin: 0 0 20px;
+  color: #ffffff !important;
   font-size: 8px;
   font-weight: 800;
   line-height: 1.45;
 }
 
 .contact-card .btn {
-  width: 158px;
+  display: inline-flex;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   height: 35px;
+  padding: 0 14px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.contact-card .btn.btn-primary {
+  color: #071006;
 }
 
 .site-footer {
