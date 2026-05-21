@@ -32,7 +32,7 @@ const products = [
     model: "UC160 / UC120",
     link: "View UC Series",
     href: "products.html#uc-series",
-    image: "assets/reference/product-uc.png"
+    image: "assets/site-images/products-fixture-uc-series.png"
   },
   {
     badge: "Featured",
@@ -46,7 +46,7 @@ const products = [
     model: "TL 300-D1",
     link: "View TL 300-D1",
     href: "products.html#tl-300-d1",
-    image: "assets/reference/product-tl.png"
+    image: "assets/site-images/products-fixture-tl-300-d1.png"
   },
   {
     title: "Gen IV Linear Indoor LED",
@@ -59,7 +59,7 @@ const products = [
     model: "Gen IV",
     link: "View Gen IV",
     href: "products.html#gen-iv",
-    image: "assets/reference/product-gen.png"
+    image: "assets/site-images/products-fixture-gen-iv.png"
   }
 ];
 
@@ -97,10 +97,10 @@ const metrics = [
 ];
 
 const applications = [
-  ["High-Density Flowering Crops", "assets/reference/app-flowering.png"],
-  ["Greenhouse Cultivation", "assets/reference/app-greenhouse.png"],
-  ["Vertical Farming", "assets/reference/app-vertical.png"],
-  ["Indoor Commercial Grow Rooms", "assets/reference/app-indoor.png"]
+  ["High-Density Flowering Crops", "assets/site-images/solutions-usecase-high-density-flowering-crops.jpg"],
+  ["Greenhouse Cultivation", "assets/site-images/solutions-usecase-greenhouse-cultivation.jpg"],
+  ["Vertical Farming", "assets/site-images/solutions-usecase-vertical-farming.jpg"],
+  ["Indoor Commercial Grow Rooms", "assets/site-images/solutions-usecase-indoor-grow-rooms.jpg"]
 ];
 
 function renderHeroFeatures() {

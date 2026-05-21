@@ -256,7 +256,7 @@ strong {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #030604 0%, #030604 39%, rgba(3, 6, 4, 0.9) 47%, rgba(3, 6, 4, 0.2) 64%, rgba(3, 6, 4, 0) 100%);
+  background: linear-gradient(90deg, rgba(3, 6, 4, 0.94) 0%, rgba(3, 6, 4, 0.92) 31%, rgba(3, 6, 4, 0.66) 45%, rgba(3, 6, 4, 0.16) 64%, rgba(3, 6, 4, 0) 100%);
   z-index: 1;
 }
 
@@ -264,7 +264,7 @@ strong {
   position: absolute;
   top: 0;
   right: 0;
-  left: calc(50% - 80px);
+  left: 0;
   height: 342px;
   background-image: url("assets/site-images/home-hero-background.jpg");
   background-size: cover;
@@ -278,7 +278,7 @@ strong {
   right: 0;
   bottom: 0;
   height: 82px;
-  background: linear-gradient(90deg, rgba(3, 6, 4, 0.72), rgba(3, 6, 4, 0.18) 42%, rgba(3, 6, 4, 0));
+  background: linear-gradient(90deg, rgba(3, 6, 4, 0.54), rgba(3, 6, 4, 0.1) 42%, rgba(3, 6, 4, 0));
 }
 
 .hero-inner {
