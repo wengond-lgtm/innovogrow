@@ -573,3 +573,64 @@
   }
 }
 
+@media (max-width: 800px) {
+  .contact-page-grid {
+    gap: 18px;
+  }
+
+  .contact-form-card,
+  .contact-info-card,
+  .process-strip,
+  .map-panel {
+    padding: 18px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 26px;
+  }
+
+  .contact-form-grid input,
+  .contact-form-grid select,
+  .contact-form-grid textarea {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .upload-row {
+    gap: 14px;
+  }
+
+  .form-cta-row .btn {
+    width: 100%;
+  }
+
+  .process-strip {
+    gap: 18px;
+  }
+
+  .process-strip-steps {
+    gap: 14px;
+  }
+
+  .contact-faq-grid {
+    gap: 20px;
+  }
+
+  .contact-faq-intro h2 {
+    max-width: none;
+  }
+
+  .contact-faq-list .faq-item button {
+    font-size: 14px;
+  }
+
+  .map-visual {
+    min-height: 220px;
+  }
+
+  .map-pin {
+    position: static;
+    margin: 10px 10px 0;
+  }
+}
+

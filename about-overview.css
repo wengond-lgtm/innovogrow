@@ -643,3 +643,78 @@
   }
 }
 
+@media (max-width: 800px) {
+  .story-grid,
+  .proof-grid,
+  .support-grid {
+    gap: 18px;
+  }
+
+  .story-media img,
+  .proof-side img,
+  .craft-card img {
+    height: 190px;
+    min-height: 0;
+  }
+
+  .journey-grid {
+    gap: 10px;
+  }
+
+  .value-card {
+    min-height: 0;
+    padding: 16px 0;
+  }
+
+  .proof-intro h2 {
+    white-space: normal;
+  }
+
+  .proof-metric {
+    min-height: 0;
+    padding: 14px 0;
+    border-top: 1px solid #d7ddd7;
+  }
+
+  .proof-metric:first-child {
+    border-top: 0;
+  }
+
+  .proof-metric strong {
+    font-size: 14px;
+  }
+
+  .proof-metric span {
+    max-width: none;
+    font-size: 13px;
+  }
+
+  .proof-side {
+    min-height: 0;
+  }
+
+  .proof-stats {
+    min-height: 0;
+  }
+
+  .team-avatar {
+    height: 220px;
+  }
+
+  .support-map {
+    height: 190px;
+  }
+
+  .support-list {
+    gap: 18px;
+  }
+
+  .support-list article {
+    padding-left: 38px;
+  }
+
+  .support-list__icon {
+    left: 0;
+  }
+}
+

@@ -445,3 +445,50 @@
   }
 }
 
+@media (max-width: 800px) {
+  .catalog-top {
+    min-height: 0;
+  }
+
+  .catalog-copy h2 {
+    width: auto;
+    font-size: 28px;
+  }
+
+  .catalog-copy p {
+    width: auto;
+    font-size: 14px;
+  }
+
+  .catalog-media {
+    min-height: 180px;
+  }
+
+  .catalog-apps {
+    gap: 8px;
+  }
+
+  .catalog-table-wrap {
+    margin-right: -14px;
+    margin-left: -14px;
+    padding: 0 14px 8px;
+  }
+
+  .catalog-table {
+    min-width: 760px;
+  }
+
+  .catalog-benefits {
+    gap: 16px;
+  }
+
+  .catalog-benefit {
+    min-height: 0;
+  }
+
+  .product-cta-panel {
+    gap: 16px;
+    text-align: left;
+  }
+}
+

@@ -1183,3 +1183,116 @@ strong {
   }
 }
 
+@media (max-width: 800px) {
+  .product-card,
+  .product-card--wide,
+  .product-card:nth-child(2),
+  .product-card:nth-child(3) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  .product-copy,
+  .product-card--wide .product-copy,
+  .product-card:nth-child(2) .product-copy,
+  .product-card:nth-child(3) .product-copy {
+    padding: 22px 18px 8px;
+  }
+
+  .product-card h3 {
+    font-size: 22px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
+
+  .product-card li {
+    font-size: 12px;
+  }
+
+  .product-card .model,
+  .product-card a {
+    font-size: 13px;
+  }
+
+  .product-media,
+  .product-card--wide .product-media,
+  .product-card:nth-child(2) .product-media,
+  .product-card:nth-child(3) .product-media {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 180px;
+    padding: 0 16px 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .product-card img,
+  .product-card--wide img,
+  .product-card:nth-child(2) img,
+  .product-card:nth-child(3) img {
+    width: 100%;
+    max-width: 320px;
+    max-height: 160px;
+    height: auto;
+    transform: none;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .performance-panel h2 {
+    width: auto;
+    margin-bottom: 18px;
+    font-size: 24px;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .metric-item strong {
+    font-size: 11px;
+  }
+
+  .application-card {
+    height: 196px;
+  }
+
+  .application-card strong {
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .contact-card {
+    min-height: 0;
+  }
+
+  .contact-card .btn {
+    height: auto;
+    min-height: 44px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-features,
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img,
+  .product-card--wide img,
+  .product-card:nth-child(2) img,
+  .product-card:nth-child(3) img {
+    max-width: 280px;
+  }
+}
+

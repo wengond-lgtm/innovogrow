@@ -476,3 +476,46 @@
   }
 }
 
+@media (max-width: 800px) {
+  .resources-feature-grid {
+    gap: 16px;
+  }
+
+  .library-header {
+    gap: 18px;
+  }
+
+  .resource-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .resource-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .resource-card {
+    min-height: 0;
+  }
+
+  .resource-card img,
+  .case-card img,
+  .hub-image {
+    height: 190px;
+  }
+
+  .hub-panel {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .hub-form {
+    gap: 10px;
+  }
+
+  .hub-form button {
+    min-height: 44px;
+  }
+}
+

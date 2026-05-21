@@ -456,3 +456,245 @@ textarea:focus {
     white-space: normal;
   }
 }
+
+@media (max-width: 800px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .page-scale {
+    padding-top: 58px;
+  }
+
+  .logo img {
+    width: 132px;
+    height: auto;
+  }
+
+  .site-header.is-open .site-nav {
+    left: 14px;
+    right: 14px;
+    gap: 2px;
+    padding: 8px;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+  }
+
+  .site-nav a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .hero,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) {
+    height: auto;
+    min-height: 0;
+    padding: 42px 0 34px;
+  }
+
+  .hero-inner,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-inner {
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero-media,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-media {
+    inset: 0;
+    height: auto;
+    min-height: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero::before,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero)::before {
+    background: linear-gradient(90deg, rgba(2, 5, 3, 0.86), rgba(2, 5, 3, 0.74));
+  }
+
+  .hero-copy,
+  .hero-copy p,
+  .hero-copy h1,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy h1,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy p {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .hero-copy,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy {
+    padding-top: 0;
+  }
+
+  .hero-copy h1,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy h1 {
+    font-size: 34px;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  .hero-copy p,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .btn {
+    width: 100%;
+    min-height: 44px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .hero-features,
+  .products-hero-features,
+  .solutions-hero-features,
+  .about-hero-features,
+  .contact-hero-features,
+  .resources-feature-grid {
+    position: static;
+    width: auto;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hero-feature,
+  .products-hero-features .hero-feature,
+  .about-hero-features .hero-feature,
+  .contact-hero-features .hero-feature {
+    align-items: center;
+  }
+
+  .hero-feature strong,
+  .products-hero-features strong,
+  .solutions-hero-features strong,
+  .about-hero-features .hero-feature strong,
+  .contact-hero-features .hero-feature strong {
+    font-size: 12px;
+  }
+
+  .hero-feature span:last-child,
+  .products-hero-features span:last-child,
+  .solutions-hero-features span:last-child,
+  .about-hero-features .hero-feature span:last-child,
+  .contact-hero-features .hero-feature span:last-child {
+    font-size: 11px;
+  }
+
+  .section-title-row,
+  .library-header,
+  .team-header {
+    gap: 12px;
+  }
+
+  .section-title-row h2,
+  .library-copy h2,
+  .team-header h2,
+  .contact-faq-intro h2 {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .section-rule {
+    display: none;
+  }
+
+  .product-grid,
+  .strategy-grid,
+  .application-grid,
+  .resource-card-grid,
+  .case-grid,
+  .faq-grid,
+  .values-grid,
+  .proof-metrics,
+  .team-cards,
+  .craft-grid,
+  .support-grid,
+  .process-grid,
+  .package-grid,
+  .use-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    padding: 34px 0 22px;
+  }
+
+  .footer-inner,
+  .products-footer .footer-inner,
+  .solutions-footer .footer-inner,
+  .resources-footer .footer-inner,
+  .about-footer .footer-inner,
+  .contact-footer .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-brand img {
+    width: 148px;
+  }
+
+  .footer-brand p,
+  .footer-newsletter p,
+  .footer-col a {
+    font-size: 12px;
+  }
+
+  .footer-col h3,
+  .footer-newsletter h3 {
+    font-size: 11px;
+  }
+
+  .footer-newsletter form {
+    display: grid;
+    grid-template-columns: 1fr 46px;
+    width: 100%;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .ig-container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .hero,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) {
+    padding: 34px 0 30px;
+  }
+
+  .hero-copy h1,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy h1 {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  .hero-copy p,
+  :is(.products-hero, .solutions-hero, .resources-hero, .about-hero, .contact-hero) .hero-copy p {
+    font-size: 13px;
+  }
+
+  .round-icon {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+}

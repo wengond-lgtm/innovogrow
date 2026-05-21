@@ -972,3 +972,69 @@
   }
 }
 
+@media (max-width: 800px) {
+  .solutions-nav-band {
+    padding: 24px 0;
+  }
+
+  .solution-link-grid {
+    gap: 12px;
+  }
+
+  .solution-link-card {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .system-grid {
+    gap: 18px;
+  }
+
+  .system-card {
+    min-height: 0;
+  }
+
+  .system-card img {
+    height: 110px;
+  }
+
+  .compare-panel {
+    padding: 18px;
+  }
+
+  .compare-visuals--single {
+    min-height: 0;
+  }
+
+  .compare-composite-image {
+    height: auto;
+    min-height: 180px;
+    object-fit: cover;
+  }
+
+  .use-case-card img,
+  .case-card img {
+    height: 190px;
+  }
+
+  .package-card {
+    min-height: 0;
+  }
+
+  .package-card h3 {
+    font-size: 24px;
+  }
+
+  .process-card {
+    min-height: 0;
+  }
+
+  .solutions-cta-panel {
+    gap: 0;
+  }
+
+  .solutions-cta-panel img {
+    height: 160px;
+  }
+}
+
