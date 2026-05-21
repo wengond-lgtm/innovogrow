@@ -1,4 +1,4 @@
-.site-nav a.active {
+﻿.site-nav a.active {
   color: var(--green);
 }
 
@@ -15,7 +15,7 @@
   height: 342px;
   background-image:
     linear-gradient(180deg, rgba(3, 6, 4, 0.08), rgba(3, 6, 4, 0.16)),
-    url("assets/reference/hero-grow.png");
+    url("assets/site-images/shared-grow-scene.png");
   background-position: right center;
 }
 
@@ -443,3 +443,4 @@
     width: 100%;
   }
 }
+

@@ -1,0 +1,63 @@
+All current site images are centralized in this folder.
+
+Home
+- home-hero-background.jpg
+- home-challenge-diagram.png
+- home-icon-personalized-lighting-plan.svg
+- home-icon-ppfd-layout-recommendation.svg
+- home-icon-product-roi-guidance.svg
+- home-icon-team.svg
+- brand-innovogrow-logo.svg
+
+Products
+- shared-grow-scene.png
+- products-fixture-uc-series.png
+- products-fixture-tl-300-d1.png
+- products-fixture-gen-iv.png
+- brand-innovogrow-logo.svg
+
+Solutions
+- solutions-hero-background.jpg
+- solutions-comparison-panel.png
+- solutions-usecase-high-density-flowering-crops.jpg
+- solutions-usecase-greenhouse-cultivation.jpg
+- solutions-usecase-vertical-farming.jpg
+- solutions-usecase-indoor-grow-rooms.jpg
+- solutions-cta-team-photo.jpg
+- products-fixture-uc-series.png
+- products-fixture-tl-300-d1.png
+- products-fixture-gen-iv.png
+- brand-innovogrow-logo.svg
+
+Resources
+- resources-hero-background.jpg
+- resources-card-uc-spec-sheet.jpg
+- resources-card-tl-spec-sheet.jpg
+- resources-card-gen-spec-sheet.jpg
+- resources-case-vertical-farming.png
+- resources-case-greenhouse-tomatoes.png
+- resources-case-cannabis-cultivation.png
+- resources-case-indoor-grow-rooms.png
+- shared-grow-scene.png
+- brand-innovogrow-logo.svg
+
+About
+- about-hero-background.jpg
+- about-story-photo.jpg
+- about-proof-photo.jpg
+- about-values-showcase.jpg
+- about-team-jason.jpg
+- about-team-megan.jpg
+- about-team-daniel.jpg
+- about-team-patrick.jpg
+- about-craft-design.jpg
+- about-craft-manufacturing.jpg
+- about-craft-qa.jpg
+- about-world-map.jpg
+- shared-grow-scene.png
+- brand-innovogrow-logo.svg
+
+Contact
+- contact-hero-background.jpg
+- contact-map-background.jpg
+- brand-innovogrow-logo.svg

@@ -1,4 +1,4 @@
-.site-nav a.active {
+﻿.site-nav a.active {
   color: var(--green);
 }
 
@@ -13,7 +13,7 @@
 .contact-hero .hero-media {
   left: 404px;
   height: 326px;
-  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.04), rgba(2, 5, 3, 0.08)), url("assets/reference/page-crops/contact-hero.jpg");
+  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.04), rgba(2, 5, 3, 0.08)), url("assets/site-images/contact-hero-background.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -440,7 +440,7 @@
 .map-visual {
   position: relative;
   min-height: 184px;
-  background-image: linear-gradient(180deg, rgba(8, 11, 9, 0.1), rgba(8, 11, 9, 0.1)), url("assets/reference/page-crops/contact-map.jpg");
+  background-image: linear-gradient(180deg, rgba(8, 11, 9, 0.1), rgba(8, 11, 9, 0.1)), url("assets/site-images/contact-map-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -526,3 +526,4 @@
     display: none;
   }
 }
+

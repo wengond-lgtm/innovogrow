@@ -1,4 +1,4 @@
-.site-nav a.active {
+﻿.site-nav a.active {
   color: var(--green);
   position: relative;
 }
@@ -26,7 +26,7 @@
   height: 342px;
   background-image:
     linear-gradient(180deg, rgba(3, 6, 4, 0.02), rgba(3, 6, 4, 0.1)),
-    url("assets/reference/page-crops/solutions-hero.jpg");
+    url("assets/site-images/solutions-hero-background.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -970,3 +970,4 @@
     padding: 14px;
   }
 }
+

@@ -1,4 +1,4 @@
-.site-nav a.active {
+﻿.site-nav a.active {
   color: var(--green);
 }
 
@@ -13,7 +13,7 @@
 .about-hero .hero-media {
   left: 404px;
   height: 330px;
-  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.04), rgba(2, 5, 3, 0.08)), url("assets/reference/page-crops/about-hero.jpg");
+  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.04), rgba(2, 5, 3, 0.08)), url("assets/site-images/about-hero-background.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -267,7 +267,7 @@
 
 .values-showcase {
   min-height: 140px;
-  background-image: linear-gradient(180deg, rgba(4, 7, 5, 0.06), rgba(4, 7, 5, 0.06)), url("assets/reference/page-crops/about-values-product.jpg");
+  background-image: linear-gradient(180deg, rgba(4, 7, 5, 0.06), rgba(4, 7, 5, 0.06)), url("assets/site-images/about-values-showcase.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -434,19 +434,19 @@
 }
 
 .team-avatar--jason {
-  background-image: url("assets/reference/page-crops/about-team-jason.jpg");
+  background-image: url("assets/site-images/about-team-jason.jpg");
 }
 
 .team-avatar--megan {
-  background-image: url("assets/reference/page-crops/about-team-megan.jpg");
+  background-image: url("assets/site-images/about-team-megan.jpg");
 }
 
 .team-avatar--daniel {
-  background-image: url("assets/reference/page-crops/about-team-daniel.jpg");
+  background-image: url("assets/site-images/about-team-daniel.jpg");
 }
 
 .team-avatar--patrick {
-  background-image: url("assets/reference/page-crops/about-team-patrick.jpg");
+  background-image: url("assets/site-images/about-team-patrick.jpg");
 }
 
 .team-card strong,
@@ -493,15 +493,15 @@
 }
 
 .craft-media--design {
-  background-image: url("assets/reference/page-crops/about-craft-design.jpg");
+  background-image: url("assets/site-images/about-craft-design.jpg");
 }
 
 .craft-media--manufacturing {
-  background-image: url("assets/reference/page-crops/about-craft-manufacturing.jpg");
+  background-image: url("assets/site-images/about-craft-manufacturing.jpg");
 }
 
 .craft-media--qa {
-  background-image: url("assets/reference/page-crops/about-craft-qa.jpg");
+  background-image: url("assets/site-images/about-craft-qa.jpg");
 }
 
 .support-grid {
@@ -514,7 +514,7 @@
 .support-map {
   height: 176px;
   border-radius: 4px;
-  background-image: linear-gradient(180deg, rgba(5, 8, 6, 0.06), rgba(5, 8, 6, 0.06)), url("assets/reference/page-crops/about-world-map.jpg");
+  background-image: linear-gradient(180deg, rgba(5, 8, 6, 0.06), rgba(5, 8, 6, 0.06)), url("assets/site-images/about-world-map.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -563,7 +563,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(180deg, rgba(4, 8, 5, 0.74), rgba(4, 8, 5, 0.74)),
-    url("assets/reference/hero-grow.png");
+    url("assets/site-images/shared-grow-scene.png");
   background-position: center;
   background-size: cover;
 }
@@ -635,3 +635,4 @@
     grid-column: auto;
   }
 }
+

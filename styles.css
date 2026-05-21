@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --black: #030604;
   --black-2: #070a08;
   --panel: #101612;
@@ -266,7 +266,7 @@ strong {
   right: 0;
   left: calc(50% - 80px);
   height: 342px;
-  background-image: url("assets/reference/page-crops/home-hero.jpg");
+  background-image: url("assets/site-images/home-hero-background.jpg");
   background-size: cover;
   background-position: center right;
 }
@@ -1182,3 +1182,4 @@ strong {
     grid-column: 1;
   }
 }
+
