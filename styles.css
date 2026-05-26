@@ -355,19 +355,20 @@ strong {
 }
 
 .challenge {
-  height: 244px;
+  height: 344px;
 }
 
 .challenge-inner {
   position: relative;
-  height: 244px;
+  height: 344px;
 }
 
 .challenge-copy {
   position: absolute;
-  top: 42px;
+  top: 50%;
   left: 0;
   width: 318px;
+  transform: translateY(-50%);
 }
 
 .challenge-copy h2 {
@@ -385,11 +386,12 @@ strong {
 
 .challenge-diagram {
   position: absolute;
-  top: 26px;
+  top: 50%;
   right: 0;
   width: 592px;
   height: 184px;
   object-fit: contain;
+  transform: translateY(-50%);
 }
 
 .products {
@@ -433,37 +435,36 @@ strong {
 
 .product-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.7fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 
 .product-card {
   position: relative;
   display: grid;
+  grid-template-rows: minmax(0, 1fr) 112px;
   min-width: 0;
-  height: 268px;
+  height: 308px;
   overflow: hidden;
   border: 1px solid var(--panel-border);
   border-radius: 4px;
   background:
-    radial-gradient(circle at 78% 62%, rgba(123, 225, 46, 0.08), transparent 34%),
-    linear-gradient(180deg, #101712 0%, #0a0f0c 100%);
+    radial-gradient(circle at 74% 22%, rgba(151, 199, 112, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 244, 235, 0.98) 100%);
 }
 
 .product-copy {
   position: relative;
-  z-index: 2;
-  width: auto;
-  padding: 18px 0 18px 18px;
-}
-
-.product-card--wide .product-copy {
-  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 18px 6px;
 }
 
 .badge {
   display: inline-flex;
-  margin-bottom: 8px;
+  align-self: flex-start;
+  margin-bottom: 10px;
   padding: 3px 7px;
   border-radius: 2px;
   color: #0b1409;
@@ -474,34 +475,47 @@ strong {
   text-transform: uppercase;
 }
 
+.badge--classic {
+  color: var(--green-dark);
+  border: 1px solid rgba(95, 168, 60, 0.32);
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .product-card h3 {
+  width: 100%;
+  min-height: 28px;
   margin: 0 0 8px;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.15;
+  color: #223224;
+  font-size: 11px;
+  line-height: 1.05;
+  white-space: nowrap;
 }
 
 .product-card p {
-  margin: 0 0 12px;
-  color: #ffffff;
+  width: 100%;
+  min-height: 36px;
+  margin: 0 0 10px;
+  color: #324233;
   font-size: 9px;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .product-card ul {
   display: grid;
-  gap: 5px;
+  gap: 4px;
+  width: 100%;
+  min-height: 50px;
   padding: 0;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   list-style: none;
 }
 
 .product-card li {
   position: relative;
   padding-left: 10px;
-  color: #ffffff;
+  color: #324233;
   font-size: 7px;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
 .product-card li::before {
@@ -516,97 +530,54 @@ strong {
 }
 
 .product-card .model {
-  margin-bottom: 12px;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 8px;
   font-size: 8px;
 }
 
 .product-card a {
+  display: inline-flex;
+  align-self: flex-start;
   color: var(--green);
   font-size: 9px;
   font-weight: 800;
 }
 
 .product-media {
-  position: relative;
-  min-width: 0;
-  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 12px 12px;
 }
 
 .product-card img {
   display: block;
   width: 100%;
   height: 100%;
+  max-height: 98px;
   object-fit: contain;
-  object-position: center;
+  object-position: center bottom;
 }
 
-.product-card--wide {
-  grid-template-columns: 208px 1fr;
+.product-card--toplight .product-media {
+  padding-bottom: 8px;
 }
 
-.product-card--wide .product-media {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 24px 18px 10px 0;
+.product-card--toplight img {
+  max-height: 104px;
 }
 
-.product-card--wide img {
-  max-width: 100%;
-  max-height: 180px;
-  object-position: right bottom;
+.product-card--undercanopy img {
+  max-height: 96px;
 }
 
-.product-card:nth-child(2) {
-  grid-template-columns: 172px 1fr;
+.product-card--geniv img {
+  max-height: 76px;
 }
 
-.product-card:nth-child(2) .product-copy {
-  padding-right: 8px;
-}
-
-.product-card:nth-child(2) .product-media {
-  position: absolute;
-  right: -6px;
-  bottom: 8px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 56%;
-  height: 126px;
-  padding: 0;
-  pointer-events: none;
-}
-
-.product-card:nth-child(2) img {
-  width: 117%;
-  height: auto;
-  max-width: none;
-  max-height: none;
-  object-position: right center;
-  transform: translateX(-12px);
-}
-
-.product-card:nth-child(3) {
-  grid-template-rows: auto 1fr;
-}
-
-.product-card:nth-child(3) .product-copy {
-  padding-right: 18px;
-}
-
-.product-card:nth-child(3) .product-media {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 0 8px 12px;
-}
-
-.product-card:nth-child(3) img {
-  max-height: 196px;
-  object-position: right bottom;
-  transform: translateX(-30px);
+.product-card--veg330 img {
+  max-height: 68px;
 }
 
 .strategies {
@@ -724,7 +695,7 @@ strong {
 }
 
 .metric-item strong {
-  color: #ffffff;
+  color: var(--text);
   font-size: 6px;
   line-height: 1.25;
 }
@@ -1013,6 +984,263 @@ strong {
   gap: 18px;
 }
 
+@media (max-width: 1366px) {
+  .challenge,
+  .challenge-inner,
+  .strategies,
+  .strategy-inner,
+  .applications,
+  .contact {
+    height: auto;
+  }
+
+  .challenge {
+    padding: 28px 0;
+  }
+
+  .challenge-inner {
+    display: grid;
+    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+    gap: 32px;
+    align-items: center;
+    position: static;
+  }
+
+  .challenge-copy,
+  .challenge-diagram {
+    position: static;
+    width: auto;
+  }
+
+  .challenge-copy {
+    max-width: 380px;
+  }
+
+  .challenge-copy h2 {
+    font-size: 24px;
+  }
+
+  .challenge-diagram {
+    justify-self: center;
+    width: min(100%, 680px);
+    height: auto;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .product-card {
+    height: auto;
+    min-height: 376px;
+    grid-template-rows: minmax(0, 1fr) 148px;
+  }
+
+  .product-copy {
+    padding: 18px 18px 10px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    min-height: 0;
+    font-size: 12px;
+  }
+
+  .product-card li {
+    font-size: 10px;
+  }
+
+  .product-media {
+    padding: 0 18px 18px;
+  }
+
+  .product-card img {
+    max-height: 132px;
+  }
+
+  .product-card--toplight img {
+    max-height: 136px;
+  }
+
+  .product-card--undercanopy img {
+    max-height: 128px;
+  }
+
+  .product-card--geniv img {
+    max-height: 112px;
+  }
+
+  .product-card--veg330 img {
+    max-height: 104px;
+  }
+
+  .strategies,
+  .applications,
+  .contact {
+    padding: 30px 0;
+  }
+
+  .strategy-inner {
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .strategy-heading {
+    padding-top: 10px;
+  }
+
+  .strategy-heading h2,
+  .performance-panel h2 {
+    width: auto;
+  }
+
+  .strategy-card {
+    padding: 20px 16px 0 20px;
+  }
+
+  .applications-inner {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .performance-panel h2 {
+    margin-bottom: 18px;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .application-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .application-card {
+    height: 160px;
+  }
+
+  .contact-inner {
+    grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .contact-copy h2 {
+    font-size: 18px;
+  }
+
+  .contact-form {
+    padding-left: 16px;
+  }
+
+  .contact-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .challenge-inner,
+  .strategy-inner,
+  .applications-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-diagram {
+    justify-self: center;
+    width: min(100%, 620px);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card {
+    min-height: 360px;
+  }
+
+  .product-copy {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .strategy-heading {
+    padding-top: 0;
+  }
+
+  .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-card:first-child {
+    border-left: 0;
+  }
+
+  .strategy-card {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .applications-inner {
+    gap: 20px;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-copy {
+    max-width: 520px;
+  }
+
+  .contact-form {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .contact-benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-actions {
+    display: grid;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .challenge-copy h2 {
+    font-size: 24px;
+  }
+
+  .challenge-copy p:not(.eyebrow) {
+    font-size: 12px;
+  }
+
+  .product-grid,
+  .metric-grid,
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    min-height: 0;
+  }
+
+  .contact-benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 800px) {
   :root {
     --page-scale: 1;
@@ -1048,6 +1276,13 @@ strong {
 
   .menu-toggle {
     display: block;
+    border-color: rgba(32, 48, 35, 0.82);
+    background: rgba(32, 48, 35, 0.92);
+    box-shadow: 0 8px 18px rgba(32, 48, 35, 0.12);
+  }
+
+  .menu-toggle span {
+    background: #f6f4ed;
   }
 
   .site-nav,
@@ -1084,7 +1319,8 @@ strong {
   }
 
   .hero {
-    padding: 32px 0 24px;
+    padding: 32px 0 44px;
+    overflow: visible;
   }
 
   .hero::before {
@@ -1102,6 +1338,11 @@ strong {
     width: auto;
   }
 
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
   .hero-copy {
     padding-top: 0;
   }
@@ -1115,10 +1356,11 @@ strong {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-top: 24px;
+    padding-bottom: 8px;
   }
 
   .challenge {
-    padding: 30px 0;
+    padding: 80px 0 30px;
   }
 
   .challenge-copy,
@@ -1129,7 +1371,7 @@ strong {
 
   .challenge-diagram {
     height: auto;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .products,
@@ -1185,28 +1427,41 @@ strong {
 
 @media (max-width: 800px) {
   .product-card,
-  .product-card--wide,
-  .product-card:nth-child(2),
-  .product-card:nth-child(3) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+  .product-card--toplight,
+  .product-card--undercanopy,
+  .product-card--geniv,
+  .product-card--veg330 {
+    grid-template-rows: minmax(0, 1fr) 146px;
     height: auto;
     min-height: 0;
   }
 
   .product-copy,
-  .product-card--wide .product-copy,
-  .product-card:nth-child(2) .product-copy,
-  .product-card:nth-child(3) .product-copy {
-    padding: 22px 18px 8px;
+  .product-card--toplight .product-copy,
+  .product-card--undercanopy .product-copy,
+  .product-card--geniv .product-copy,
+  .product-card--veg330 .product-copy {
+    max-width: 100%;
+    padding: 20px 16px 6px;
   }
 
   .product-card h3 {
+    width: 100%;
+    min-height: 0;
     font-size: 22px;
+    white-space: normal;
   }
 
   .product-card p {
+    width: 100%;
+    min-height: 0;
     font-size: 14px;
+  }
+
+  .product-card ul,
+  .product-card .model {
+    width: 100%;
+    min-height: 0;
   }
 
   .product-card li {
@@ -1218,32 +1473,16 @@ strong {
     font-size: 13px;
   }
 
-  .product-media,
-  .product-card--wide .product-media,
-  .product-card:nth-child(2) .product-media,
-  .product-card:nth-child(3) .product-media {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    height: 180px;
-    padding: 0 16px 18px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+  .product-media {
+    padding: 0 14px 14px;
   }
 
   .product-card img,
-  .product-card--wide img,
-  .product-card:nth-child(2) img,
-  .product-card:nth-child(3) img {
-    width: 100%;
-    max-width: 320px;
-    max-height: 160px;
-    height: auto;
-    transform: none;
-    object-fit: contain;
-    object-position: right bottom;
+  .product-card--toplight img,
+  .product-card--undercanopy img,
+  .product-card--geniv img,
+  .product-card--veg330 img {
+    max-height: 128px;
   }
 
   .performance-panel h2 {
@@ -1287,12 +1526,4 @@ strong {
   .metric-grid {
     grid-template-columns: 1fr;
   }
-
-  .product-card img,
-  .product-card--wide img,
-  .product-card:nth-child(2) img,
-  .product-card:nth-child(3) img {
-    max-width: 280px;
-  }
 }
-

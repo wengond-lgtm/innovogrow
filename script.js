@@ -11,77 +11,95 @@ const icons = {
 };
 
 const heroFeatures = [
-  ["leaf", "Better Light Distribution", "Improve canopy uniformity"],
-  ["chart", "Higher Yields", "Stronger lower growth"],
-  ["bolt", "Reduced Complexity", "Simplified installation"],
+  ["bolt", "Simplified Top Lighting", "Cleaner layout with fewer drivers"],
+  ["chart", "Higher Yields", "Stronger canopy-wide growth"],
+  ["leaf", "Better Light Distribution", "Improve whole-room uniformity"],
   ["shield", "Built for Commercial", "Reliable. Scalable. Durable."]
 ];
 
 // Change image paths here when replacing or adding product photos later.
 const products = [
   {
-    className: "product-card--wide",
+    className: "product-card--toplight",
     badge: "Featured",
-    title: "UC Series Under Canopy LED",
-    description: "Unlock the potential of your lower canopy.",
-    bullets: [
-      "Improve lower bud & flower development",
-      "Low profile, easy to install",
-      "Designed for high-density grows"
-    ],
-    model: "UC160 / UC120",
-    link: "View UC Series",
-    href: "products.html#uc-series",
-    image: "assets/site-images/products-fixture-uc-series.png"
-  },
-  {
-    badge: "Featured",
-    title: "TL 300-D1 Top Light One Driver Solution",
+    title: "IG 300-D1 Top Light",
     description: "Simplify your top-lighting layout with one driver.",
     bullets: [
       "One-driver architecture",
       "Clean installation",
       "Scalable for large facilities"
     ],
-    model: "TL 300-D1",
-    link: "View TL 300-D1",
+    model: "IG 300-D1",
+    link: "View IG 300-D1",
     href: "products.html#tl-300-d1",
-    image: "assets/site-images/products-fixture-tl-300-d1.png"
+    image: "assets/site-images/home-card-toplight.png"
   },
   {
-    title: "Gen IV Linear Indoor LED",
+    className: "product-card--geniv",
+    badge: "Classic",
+    title: "IG 800 Linear Indoor LED",
     description: "Flexible linear lighting for indoor cultivation.",
     bullets: [
       "Versatile applications",
       "Ideal for racks & propagation",
       "Supplemental side lighting"
     ],
-    model: "Gen IV",
-    link: "View Gen IV",
+    model: "IG 800",
+    link: "View IG 800",
     href: "products.html#gen-iv",
     image: "assets/site-images/products-fixture-gen-iv.png"
+  },
+  {
+    className: "product-card--veg330",
+    badge: "Classic",
+    title: "IG 330 Linear Indoor LED",
+    description: "Dedicated linear lighting for veg rooms and uniform early-stage growth.",
+    bullets: [
+      "Built for vegetative environments",
+      "Uniform linear coverage",
+      "Clean indoor facility integration"
+    ],
+    model: "IG 330",
+    link: "View IG 330",
+    href: "products.html#veg-330",
+    image: "assets/site-images/products-fixture-veg-330.png"
+  },
+  {
+    className: "product-card--undercanopy",
+    badge: "Featured",
+    title: "IG 150 Under Canopy LED",
+    description: "Targeted under-canopy support that strengthens lower-zone development.",
+    bullets: [
+      "Supports lower canopy performance",
+      "Low profile, easy to install",
+      "Pairs with primary top-light layouts"
+    ],
+    model: "IG 150",
+    link: "View IG 150",
+    href: "products.html#uc-series",
+    image: "assets/site-images/products-fixture-uc-series.png"
   }
 ];
 
 const strategies = [
   {
-    icon: "leaf",
-    title: "Under-Canopy Upgrade",
-    model: "UC160 / UC120",
-    text: "Perfect for existing top-light grow rooms needing better lower canopy development.",
-    href: "solutions.html#under-canopy-lighting"
-  },
-  {
     icon: "layers",
     title: "Top-Light Simplification",
-    model: "TL 300-D1",
+    model: "IG 300-D1",
     text: "Ideal for new builds or upgrades that require a cleaner, simpler top-lighting solution.",
     href: "solutions.html#top-lighting"
   },
   {
+    icon: "leaf",
+    title: "Under-Canopy Support",
+    model: "IG 150",
+    text: "Add targeted lower-canopy support to top-light rooms that need stronger whole-plant uniformity.",
+    href: "solutions.html#under-canopy-lighting"
+  },
+  {
     icon: "grid",
     title: "Full Indoor Layout",
-    model: "TL 300-D1 + UC Series + Gen IV",
+    model: "IG 300-D1 + IG 800 + IG 330 + IG 150",
     text: "A complete lighting system for uniform, scalable, and high-performance facilities.",
     href: "solutions.html#full-facility-layouts"
   }
@@ -119,12 +137,10 @@ function renderProducts() {
   document.querySelector("#product-grid").innerHTML = products.map((product) => `
     <article class="product-card ${product.className || ""}">
       <div class="product-copy">
-        ${product.badge ? `<span class="badge">${product.badge}</span>` : ""}
+        ${product.badge ? `<span class="badge ${product.badge === "Classic" ? "badge--classic" : ""}">${product.badge}</span>` : ""}
         <h3>${product.title}</h3>
         <p>${product.description}</p>
         <ul>${product.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
-        <p class="model">Model: <strong>${product.model}</strong></p>
-        <a href="${product.href}">${product.link}</a>
       </div>
       <div class="product-media">
         <img src="${product.image}" alt="${product.title}">
