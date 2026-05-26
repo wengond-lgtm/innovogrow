@@ -152,7 +152,7 @@ function renderProducts() {
         <ul>${product.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
       <div class="product-media">
-        <img src="${product.image}" alt="${product.title}">
+        <img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">
       </div>
     </article>
   `).join("");
@@ -182,7 +182,7 @@ function renderMetrics() {
 function renderApplications() {
   document.querySelector("#application-grid").innerHTML = applications.map(([title, image]) => `
     <article class="application-card">
-      <img src="${image}" alt="${title}">
+      <img src="${image}" alt="${title}" loading="lazy" decoding="async">
       <strong>${title}</strong>
     </article>
   `).join("");
