@@ -1,3 +1,12 @@
+function syncViewportScale() {
+  const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+  const scale = viewportWidth <= 800 ? 1 : Math.min(1.875, viewportWidth / 1024);
+  document.documentElement.style.setProperty("--page-scale", scale.toFixed(4));
+}
+
+syncViewportScale();
+window.addEventListener("resize", syncViewportScale, { passive: true });
+
 function setupSubpageMenu() {
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".menu-toggle");

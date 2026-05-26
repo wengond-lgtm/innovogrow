@@ -10,6 +10,15 @@ const icons = {
   check: '<svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg>'
 };
 
+function syncViewportScale() {
+  const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+  const scale = viewportWidth <= 800 ? 1 : Math.min(1.875, viewportWidth / 1024);
+  document.documentElement.style.setProperty("--page-scale", scale.toFixed(4));
+}
+
+syncViewportScale();
+window.addEventListener("resize", syncViewportScale, { passive: true });
+
 const heroFeatures = [
   ["bolt", "Simplified Top Lighting", "Cleaner layout with fewer drivers"],
   ["chart", "Higher Yields", "Stronger canopy-wide growth"],

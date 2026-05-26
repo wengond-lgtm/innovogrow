@@ -14,36 +14,6 @@
   --page-scale: 1.875;
 }
 
-@media (max-width: 1820px) {
-  :root {
-    --page-scale: 1.72;
-  }
-}
-
-@media (max-width: 1660px) {
-  :root {
-    --page-scale: 1.56;
-  }
-}
-
-@media (max-width: 1500px) {
-  :root {
-    --page-scale: 1.42;
-  }
-}
-
-@media (max-width: 1366px) {
-  :root {
-    --page-scale: 1.28;
-  }
-}
-
-@media (max-width: 1200px) {
-  :root {
-    --page-scale: 1.14;
-  }
-}
-
 *,
 *::before,
 *::after {
