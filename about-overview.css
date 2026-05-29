@@ -14,9 +14,33 @@
   left: 0;
   right: 0;
   height: 330px;
-  background-image: url("assets/site-images/about-hero-background.jpg");
+  background-image: url("assets/site-images/about-hero-background-768w.jpg");
+  background-image: image-set(
+    url("assets/site-images/about-hero-background-768w.webp") type("image/webp"),
+    url("assets/site-images/about-hero-background-768w.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 900px) {
+  .about-hero .hero-media {
+    background-image: url("assets/site-images/about-hero-background-1280w.jpg");
+    background-image: image-set(
+      url("assets/site-images/about-hero-background-1280w.webp") type("image/webp"),
+      url("assets/site-images/about-hero-background-1280w.jpg") type("image/jpeg")
+    );
+  }
+}
+
+@media (min-width: 1500px) {
+  .about-hero .hero-media {
+    background-image: url("assets/site-images/about-hero-background-1920w.jpg");
+    background-image: image-set(
+      url("assets/site-images/about-hero-background-1920w.webp") type("image/webp"),
+      url("assets/site-images/about-hero-background-1920w.jpg") type("image/jpeg")
+    );
+  }
 }
 
 .about-hero .hero-media::after {
@@ -569,9 +593,43 @@
   border-bottom: 1px solid rgba(102, 125, 83, 0.16);
   background:
     linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
-    url("assets/site-images/shared-grow-scene.png");
+    url("assets/site-images/shared-grow-scene-640w.jpg");
+  background:
+    linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
+    image-set(
+      url("assets/site-images/shared-grow-scene-640w.webp") type("image/webp"),
+      url("assets/site-images/shared-grow-scene-640w.jpg") type("image/jpeg")
+    );
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 900px) {
+  .about-cta-panel {
+    background:
+      linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
+      url("assets/site-images/shared-grow-scene-960w.jpg");
+    background:
+      linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
+      image-set(
+        url("assets/site-images/shared-grow-scene-960w.webp") type("image/webp"),
+        url("assets/site-images/shared-grow-scene-960w.jpg") type("image/jpeg")
+      );
+  }
+}
+
+@media (min-width: 1500px) {
+  .about-cta-panel {
+    background:
+      linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
+      url("assets/site-images/shared-grow-scene-1400w.jpg");
+    background:
+      linear-gradient(180deg, rgba(251, 248, 239, 0.82), rgba(247, 243, 231, 0.82)),
+      image-set(
+        url("assets/site-images/shared-grow-scene-1400w.webp") type("image/webp"),
+        url("assets/site-images/shared-grow-scene-1400w.jpg") type("image/jpeg")
+      );
+  }
 }
 
 .about-cta-panel h2 {

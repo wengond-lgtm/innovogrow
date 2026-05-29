@@ -16,8 +16,42 @@
   height: 342px;
   background-image:
     linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
-    url("assets/site-images/shared-grow-scene.png");
+    url("assets/site-images/shared-grow-scene-640w.jpg");
+  background-image:
+    linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
+    image-set(
+      url("assets/site-images/shared-grow-scene-640w.webp") type("image/webp"),
+      url("assets/site-images/shared-grow-scene-640w.jpg") type("image/jpeg")
+    );
   background-position: right center;
+}
+
+@media (min-width: 900px) {
+  .products-hero .hero-media {
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
+      url("assets/site-images/shared-grow-scene-960w.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
+      image-set(
+        url("assets/site-images/shared-grow-scene-960w.webp") type("image/webp"),
+        url("assets/site-images/shared-grow-scene-960w.jpg") type("image/jpeg")
+      );
+  }
+}
+
+@media (min-width: 1500px) {
+  .products-hero .hero-media {
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
+      url("assets/site-images/shared-grow-scene-1400w.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 4, 0.03), rgba(3, 6, 4, 0.08)),
+      image-set(
+        url("assets/site-images/shared-grow-scene-1400w.webp") type("image/webp"),
+        url("assets/site-images/shared-grow-scene-1400w.jpg") type("image/jpeg")
+      );
+  }
 }
 
 .products-hero .hero-inner {

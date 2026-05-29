@@ -266,7 +266,11 @@ strong {
   right: 0;
   left: 0;
   height: 342px;
-  background-image: url("assets/site-images/home-hero-background.jpg");
+  background-image: url("assets/site-images/home-hero-background-768w.jpg");
+  background-image: image-set(
+    url("assets/site-images/home-hero-background-768w.webp") type("image/webp"),
+    url("assets/site-images/home-hero-background-768w.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center right;
 }
@@ -279,6 +283,26 @@ strong {
   bottom: 0;
   height: 82px;
   background: linear-gradient(90deg, rgba(3, 6, 4, 0.54), rgba(3, 6, 4, 0.1) 42%, rgba(3, 6, 4, 0));
+}
+
+@media (min-width: 900px) {
+  .hero-media {
+    background-image: url("assets/site-images/home-hero-background-1280w.jpg");
+    background-image: image-set(
+      url("assets/site-images/home-hero-background-1280w.webp") type("image/webp"),
+      url("assets/site-images/home-hero-background-1280w.jpg") type("image/jpeg")
+    );
+  }
+}
+
+@media (min-width: 1500px) {
+  .hero-media {
+    background-image: url("assets/site-images/home-hero-background-1920w.jpg");
+    background-image: image-set(
+      url("assets/site-images/home-hero-background-1920w.webp") type("image/webp"),
+      url("assets/site-images/home-hero-background-1920w.jpg") type("image/jpeg")
+    );
+  }
 }
 
 .hero-inner {

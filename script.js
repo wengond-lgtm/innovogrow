@@ -123,12 +123,34 @@ const metrics = [
   ["check", "Certifications & Quality Assured"]
 ];
 
+const photoCardSizes = "(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)";
+
 const applications = [
-  ["High-Density Flowering Crops", "assets/site-images/solutions-usecase-high-density-flowering-crops.jpg"],
-  ["Greenhouse Cultivation", "assets/site-images/solutions-usecase-greenhouse-cultivation.jpg"],
-  ["Vertical Farming", "assets/site-images/solutions-usecase-vertical-farming.jpg"],
-  ["Indoor Commercial Grow Rooms", "assets/site-images/solutions-usecase-indoor-grow-rooms.jpg"]
+  ["High-Density Flowering Crops", "assets/site-images/solutions-usecase-high-density-flowering-crops"],
+  ["Greenhouse Cultivation", "assets/site-images/solutions-usecase-greenhouse-cultivation"],
+  ["Vertical Farming", "assets/site-images/solutions-usecase-vertical-farming"],
+  ["Indoor Commercial Grow Rooms", "assets/site-images/solutions-usecase-indoor-grow-rooms"]
 ];
+
+function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200]) {
+  const webpSet = widths.map((width) => `${basePath}-${width}w.webp ${width}w`).join(", ");
+  const jpgSet = widths.map((width) => `${basePath}-${width}w.jpg ${width}w`).join(", ");
+  const fallbackWidth = widths[Math.min(1, widths.length - 1)];
+
+  return `
+    <picture>
+      <source type="image/webp" srcset="${webpSet}" sizes="${sizes}">
+      <img
+        src="${basePath}-${fallbackWidth}w.jpg"
+        srcset="${jpgSet}"
+        sizes="${sizes}"
+        alt="${alt}"
+        loading="lazy"
+        decoding="async"
+      >
+    </picture>
+  `;
+}
 
 function renderHeroFeatures() {
   document.querySelector("#hero-features").innerHTML = heroFeatures.map(([icon, title, text]) => `
@@ -180,9 +202,9 @@ function renderMetrics() {
 }
 
 function renderApplications() {
-  document.querySelector("#application-grid").innerHTML = applications.map(([title, image]) => `
+  document.querySelector("#application-grid").innerHTML = applications.map(([title, imageBase]) => `
     <article class="application-card">
-      <img src="${image}" alt="${title}" loading="lazy" decoding="async">
+      ${buildResponsivePicture(imageBase, title, photoCardSizes)}
       <strong>${title}</strong>
     </article>
   `).join("");

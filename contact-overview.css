@@ -14,9 +14,45 @@
   left: 0;
   right: 0;
   height: 326px;
-  background-image: linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)), url("assets/site-images/contact-hero-background.jpg");
+  background-image:
+    linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+    url("assets/site-images/contact-hero-background-768w.jpg");
+  background-image:
+    linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+    image-set(
+      url("assets/site-images/contact-hero-background-768w.webp") type("image/webp"),
+      url("assets/site-images/contact-hero-background-768w.jpg") type("image/jpeg")
+    );
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 900px) {
+  .contact-hero .hero-media {
+    background-image:
+      linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+      url("assets/site-images/contact-hero-background-1280w.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+      image-set(
+        url("assets/site-images/contact-hero-background-1280w.webp") type("image/webp"),
+        url("assets/site-images/contact-hero-background-1280w.jpg") type("image/jpeg")
+      );
+  }
+}
+
+@media (min-width: 1500px) {
+  .contact-hero .hero-media {
+    background-image:
+      linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+      url("assets/site-images/contact-hero-background-1920w.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(2, 5, 3, 0.02), rgba(2, 5, 3, 0.05)),
+      image-set(
+        url("assets/site-images/contact-hero-background-1920w.webp") type("image/webp"),
+        url("assets/site-images/contact-hero-background-1920w.jpg") type("image/jpeg")
+      );
+  }
 }
 
 .contact-hero .hero-copy {

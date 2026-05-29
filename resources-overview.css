@@ -14,9 +14,33 @@
   left: 0;
   right: 0;
   height: 316px;
-  background-image: url("assets/site-images/resources-hero-background.jpg");
+  background-image: url("assets/site-images/resources-hero-background-768w.jpg");
+  background-image: image-set(
+    url("assets/site-images/resources-hero-background-768w.webp") type("image/webp"),
+    url("assets/site-images/resources-hero-background-768w.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 900px) {
+  .resources-hero .hero-media {
+    background-image: url("assets/site-images/resources-hero-background-1280w.jpg");
+    background-image: image-set(
+      url("assets/site-images/resources-hero-background-1280w.webp") type("image/webp"),
+      url("assets/site-images/resources-hero-background-1280w.jpg") type("image/jpeg")
+    );
+  }
+}
+
+@media (min-width: 1500px) {
+  .resources-hero .hero-media {
+    background-image: url("assets/site-images/resources-hero-background-1920w.jpg");
+    background-image: image-set(
+      url("assets/site-images/resources-hero-background-1920w.webp") type("image/webp"),
+      url("assets/site-images/resources-hero-background-1920w.jpg") type("image/jpeg")
+    );
+  }
 }
 
 .resources-hero .hero-media::after {

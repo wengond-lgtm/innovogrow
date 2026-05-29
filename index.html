@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>InnovoGrow | Smarter Light. Better Growth.</title>
   <meta name="description" content="Commercial LED grow lighting solutions for commercial growers.">
-  <link rel="preload" as="image" href="assets/site-images/home-hero-background.jpg">
+  <link rel="preload" as="image" href="assets/site-images/home-hero-background-768w.webp" media="(max-width: 899px)">
+  <link rel="preload" as="image" href="assets/site-images/home-hero-background-1280w.webp" media="(min-width: 900px) and (max-width: 1499px)">
+  <link rel="preload" as="image" href="assets/site-images/home-hero-background-1920w.webp" media="(min-width: 1500px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -77,7 +79,30 @@
           </p>
         </div>
 
-        <img class="challenge-diagram" src="assets/site-images/home-challenge-diagram.jpg" alt="Top lighting compared with top plus under canopy lighting." loading="lazy" decoding="async">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              assets/site-images/home-challenge-diagram-640w.webp 640w,
+              assets/site-images/home-challenge-diagram-960w.webp 960w,
+              assets/site-images/home-challenge-diagram-1440w.webp 1440w
+            "
+            sizes="(max-width: 1100px) calc(100vw - 36px), 680px"
+          >
+          <img
+            class="challenge-diagram"
+            src="assets/site-images/home-challenge-diagram-960w.jpg"
+            srcset="
+              assets/site-images/home-challenge-diagram-640w.jpg 640w,
+              assets/site-images/home-challenge-diagram-960w.jpg 960w,
+              assets/site-images/home-challenge-diagram-1440w.jpg 1440w
+            "
+            sizes="(max-width: 1100px) calc(100vw - 36px), 680px"
+            alt="Top lighting compared with top plus under canopy lighting."
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </div>
     </section>
 
