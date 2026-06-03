@@ -19,118 +19,138 @@ function syncViewportScale() {
 syncViewportScale();
 window.addEventListener("resize", syncViewportScale, { passive: true });
 
-const heroFeatures = [
-  ["bolt", "Simplified Top Lighting", "Cleaner layout with fewer drivers"],
-  ["chart", "Higher Yields", "Stronger canopy-wide growth"],
-  ["leaf", "Better Light Distribution", "Improve whole-room uniformity"],
-  ["shield", "Built for Commercial", "Reliable. Scalable. Durable."]
-];
-
-// Change image paths here when replacing or adding product photos later.
-const products = [
-  {
-    className: "product-card--toplight",
-    badge: "Featured",
-    title: "IG 300-D1 Top Light",
-    description: "Simplify your top-lighting layout with one driver.",
-    bullets: [
-      "One-driver architecture",
-      "Clean installation",
-      "Scalable for large facilities"
-    ],
-    model: "IG 300-D1",
-    link: "View IG 300-D1",
-    href: "products.html#tl-300-d1",
-    image: "assets/site-images/home-card-toplight.png"
+const defaultHomeContent = {
+  hero: {
+    title: "Simplify Commercial Top Lighting at Scale",
+    description: "Commercial LED grow lighting solutions built around simplified top-light layouts, with IG 800 and IG 330 linear indoor options, plus IG 150 under-canopy support where your facility needs them.",
+    primaryCta: {
+      label: "Explore Top Light",
+      href: "products.html#tl-300-d1"
+    },
+    secondaryCta: {
+      label: "Request a Lighting Plan",
+      href: "contact.html"
+    },
+    features: [
+      { icon: "bolt", title: "Simplified Top Lighting", text: "Cleaner layout with fewer drivers" },
+      { icon: "chart", title: "Higher Yields", text: "Stronger canopy-wide growth" },
+      { icon: "leaf", title: "Better Light Distribution", text: "Improve whole-room uniformity" },
+      { icon: "shield", title: "Built for Commercial", text: "Reliable. Scalable. Durable." }
+    ]
   },
-  {
-    className: "product-card--geniv",
-    badge: "Classic",
-    title: "IG 800 Linear Indoor LED",
-    description: "Flexible linear lighting for indoor cultivation.",
-    bullets: [
-      "Versatile applications",
-      "Ideal for racks & propagation",
-      "Supplemental side lighting"
-    ],
-    model: "IG 800",
-    link: "View IG 800",
-    href: "products.html#gen-iv",
-    image: "assets/site-images/products-fixture-gen-iv.png"
+  challenge: {
+    eyebrow: "The Challenge",
+    title: "A Full-Dimensional Approach to Crop Architecture",
+    description: "To maximize yield and quality in modern commercial facilities, single-source lighting is no longer sufficient. InnovoGrow provides a complete, multi-layered lighting ecosystem designed to deliver precise photobiological support from every angle, adapting seamlessly to any spatial constraint and growth stage."
   },
-  {
-    className: "product-card--veg330",
-    badge: "Classic",
-    title: "IG 330 Linear Indoor LED",
-    description: "Dedicated linear lighting for veg rooms and uniform early-stage growth.",
-    bullets: [
-      "Built for vegetative environments",
-      "Uniform linear coverage",
-      "Clean indoor facility integration"
-    ],
-    model: "IG 330",
-    link: "View IG 330",
-    href: "products.html#veg-330",
-    image: "assets/site-images/products-fixture-veg-330.png"
+  productsSection: {
+    eyebrow: "Our Solutions",
+    title: "Products Built for Commercial Growers",
+    linkLabel: "View All Products",
+    linkHref: "products.html"
   },
-  {
-    className: "product-card--undercanopy",
-    badge: "Featured",
-    title: "IG 150 Under Canopy LED",
-    description: "Targeted under-canopy support that strengthens lower-zone development.",
-    bullets: [
-      "Supports lower canopy performance",
-      "Low profile, easy to install",
-      "Pairs with primary top-light layouts"
+  products: [
+    {
+      className: "product-card--toplight",
+      badge: "Featured",
+      title: "IG 300-D1 Top Light",
+      description: "Simplify your top-lighting layout with one driver.",
+      bullets: ["One-driver architecture", "Clean installation", "Scalable for large facilities"],
+      href: "products.html#tl-300-d1",
+      image: "assets/site-images/home-card-toplight.png"
+    },
+    {
+      className: "product-card--geniv",
+      badge: "Classic",
+      title: "IG 800 Linear Indoor LED",
+      description: "Flexible linear lighting for indoor cultivation.",
+      bullets: ["Versatile applications", "Ideal for racks & propagation", "Supplemental side lighting"],
+      href: "products.html#gen-iv",
+      image: "assets/site-images/products-fixture-gen-iv.png"
+    },
+    {
+      className: "product-card--veg330",
+      badge: "Classic",
+      title: "IG 330 Linear Indoor LED",
+      description: "Dedicated linear lighting for veg rooms and uniform early-stage growth.",
+      bullets: ["Built for vegetative environments", "Uniform linear coverage", "Clean indoor facility integration"],
+      href: "products.html#veg-330",
+      image: "assets/site-images/products-fixture-veg-330.png"
+    },
+    {
+      className: "product-card--undercanopy",
+      badge: "Featured",
+      title: "IG 150 Under Canopy LED",
+      description: "Targeted under-canopy support that strengthens lower-zone development.",
+      bullets: ["Supports lower canopy performance", "Low profile, easy to install", "Pairs with primary top-light layouts"],
+      href: "products.html#uc-series",
+      image: "assets/site-images/products-fixture-uc-series.png"
+    }
+  ],
+  strategiesSection: {
+    eyebrow: "Complete Lighting Strategies",
+    title: "A Complete Solution for Every Grow"
+  },
+  strategies: [
+    {
+      icon: "layers",
+      title: "Top-Light Simplification",
+      model: "IG 300-D1",
+      text: "Ideal for new builds or upgrades that require a cleaner, simpler top-lighting solution.",
+      href: "solutions.html#top-lighting"
+    },
+    {
+      icon: "leaf",
+      title: "Under-Canopy Support",
+      model: "IG 150",
+      text: "Add targeted lower-canopy support to top-light rooms that need stronger whole-plant uniformity.",
+      href: "solutions.html#under-canopy-lighting"
+    },
+    {
+      icon: "grid",
+      title: "Full Indoor Layout",
+      model: "IG 300-D1 + IG 800 + IG 330 + IG 150",
+      text: "A complete lighting system for uniform, scalable, and high-performance facilities.",
+      href: "solutions.html#full-facility-layouts"
+    }
+  ],
+  performanceSection: {
+    eyebrow: "Why Growers Choose InnovoGrow",
+    title: "Engineered for Performance. Built for Growers."
+  },
+  metrics: [
+    { icon: "spark", title: "Optimized Light Distribution" },
+    { icon: "wrench", title: "Low-Profile & Installation-Friendly" },
+    { icon: "grid", title: "Scalable Product Architecture" },
+    { icon: "bolt", title: "High Efficiency & Reliability" },
+    { icon: "leaf", title: "Wide Application Versatility" },
+    { icon: "check", title: "Certifications & Quality Assured" }
+  ],
+  applicationsSection: {
+    eyebrow: "Designed for Multiple Applications"
+  },
+  applications: [
+    { title: "High-Density Flowering Crops", imageBase: "assets/site-images/solutions-usecase-high-density-flowering-crops" },
+    { title: "Greenhouse Cultivation", imageBase: "assets/site-images/solutions-usecase-greenhouse-cultivation" },
+    { title: "Vertical Farming", imageBase: "assets/site-images/solutions-usecase-vertical-farming" },
+    { title: "Indoor Commercial Grow Rooms", imageBase: "assets/site-images/solutions-usecase-indoor-grow-rooms" }
+  ],
+  contactSection: {
+    eyebrow: "Get Started",
+    title: "Need a Lighting Layout for Your Facility?",
+    description: "Tell us about your grow. Our lighting experts will help you design the right solution for higher yields, better quality, and long-term efficiency.",
+    benefits: [
+      { icon: "assets/site-images/home-icon-personalized-lighting-plan.svg", text: "Personalized Lighting Plan" },
+      { icon: "assets/site-images/home-icon-ppfd-layout-recommendation.svg", text: "PPFD & Layout Recommendation" },
+      { icon: "assets/site-images/home-icon-product-roi-guidance.svg", text: "Product & ROI Guidance" }
     ],
-    model: "IG 150",
-    link: "View IG 150",
-    href: "products.html#uc-series",
-    image: "assets/site-images/products-fixture-uc-series.png"
+    cardText: "Our team typically responds within 1 business day.",
+    cardButtonLabel: "Request Lighting Plan",
+    cardButtonHref: "contact.html"
   }
-];
-
-const strategies = [
-  {
-    icon: "layers",
-    title: "Top-Light Simplification",
-    model: "IG 300-D1",
-    text: "Ideal for new builds or upgrades that require a cleaner, simpler top-lighting solution.",
-    href: "solutions.html#top-lighting"
-  },
-  {
-    icon: "leaf",
-    title: "Under-Canopy Support",
-    model: "IG 150",
-    text: "Add targeted lower-canopy support to top-light rooms that need stronger whole-plant uniformity.",
-    href: "solutions.html#under-canopy-lighting"
-  },
-  {
-    icon: "grid",
-    title: "Full Indoor Layout",
-    model: "IG 300-D1 + IG 800 + IG 330 + IG 150",
-    text: "A complete lighting system for uniform, scalable, and high-performance facilities.",
-    href: "solutions.html#full-facility-layouts"
-  }
-];
-
-const metrics = [
-  ["spark", "Optimized Light Distribution"],
-  ["wrench", "Low-Profile & Installation-Friendly"],
-  ["grid", "Scalable Product Architecture"],
-  ["bolt", "High Efficiency & Reliability"],
-  ["leaf", "Wide Application Versatility"],
-  ["check", "Certifications & Quality Assured"]
-];
+};
 
 const photoCardSizes = "(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)";
-
-const applications = [
-  ["High-Density Flowering Crops", "assets/site-images/solutions-usecase-high-density-flowering-crops"],
-  ["Greenhouse Cultivation", "assets/site-images/solutions-usecase-greenhouse-cultivation"],
-  ["Vertical Farming", "assets/site-images/solutions-usecase-vertical-farming"],
-  ["Indoor Commercial Grow Rooms", "assets/site-images/solutions-usecase-indoor-grow-rooms"]
-];
 
 function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200]) {
   const webpSet = widths.map((width) => `${basePath}-${width}w.webp ${width}w`).join(", ");
@@ -152,20 +172,38 @@ function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200])
   `;
 }
 
-function renderHeroFeatures() {
-  document.querySelector("#hero-features").innerHTML = heroFeatures.map(([icon, title, text]) => `
+function renderHero(content) {
+  document.querySelector("#hero-title").textContent = content.hero.title;
+  document.querySelector("#hero-description").textContent = content.hero.description;
+  document.querySelector("#hero-primary-cta").textContent = content.hero.primaryCta.label;
+  document.querySelector("#hero-primary-cta").href = content.hero.primaryCta.href;
+  document.querySelector("#hero-secondary-cta").textContent = content.hero.secondaryCta.label;
+  document.querySelector("#hero-secondary-cta").href = content.hero.secondaryCta.href;
+
+  document.querySelector("#hero-features").innerHTML = content.hero.features.map((feature) => `
     <div class="hero-feature">
-      <span class="round-icon">${icons[icon]}</span>
+      <span class="round-icon">${icons[feature.icon]}</span>
       <div>
-        <strong>${title}</strong>
-        <span>${text}</span>
+        <strong>${feature.title}</strong>
+        <span>${feature.text}</span>
       </div>
     </div>
   `).join("");
 }
 
-function renderProducts() {
-  document.querySelector("#product-grid").innerHTML = products.map((product) => `
+function renderChallenge(content) {
+  document.querySelector("#challenge-eyebrow").textContent = content.challenge.eyebrow;
+  document.querySelector("#challenge-title").textContent = content.challenge.title;
+  document.querySelector("#challenge-description").textContent = content.challenge.description;
+}
+
+function renderProducts(content) {
+  document.querySelector("#products-section-eyebrow").textContent = content.productsSection.eyebrow;
+  document.querySelector("#products-section-title").textContent = content.productsSection.title;
+  document.querySelector("#products-section-link").textContent = content.productsSection.linkLabel;
+  document.querySelector("#products-section-link").href = content.productsSection.linkHref;
+
+  document.querySelector("#product-grid").innerHTML = content.products.map((product) => `
     <article class="product-card ${product.className || ""}">
       <div class="product-copy">
         ${product.badge ? `<span class="badge ${product.badge === "Classic" ? "badge--classic" : ""}">${product.badge}</span>` : ""}
@@ -180,8 +218,11 @@ function renderProducts() {
   `).join("");
 }
 
-function renderStrategies() {
-  document.querySelector("#strategy-grid").innerHTML = strategies.map((strategy) => `
+function renderStrategies(content) {
+  document.querySelector("#strategies-section-eyebrow").textContent = content.strategiesSection.eyebrow;
+  document.querySelector("#strategies-section-title").textContent = content.strategiesSection.title;
+
+  document.querySelector("#strategy-grid").innerHTML = content.strategies.map((strategy) => `
     <article class="strategy-card">
       <span class="round-icon">${icons[strategy.icon]}</span>
       <h3>${strategy.title}</h3>
@@ -192,22 +233,39 @@ function renderStrategies() {
   `).join("");
 }
 
-function renderMetrics() {
-  document.querySelector("#metric-grid").innerHTML = metrics.map(([icon, title]) => `
+function renderMetrics(content) {
+  document.querySelector("#performance-section-eyebrow").textContent = content.performanceSection.eyebrow;
+  document.querySelector("#performance-section-title").textContent = content.performanceSection.title;
+
+  document.querySelector("#metric-grid").innerHTML = content.metrics.map((metric) => `
     <div class="metric-item">
-      <span class="round-icon">${icons[icon]}</span>
-      <strong>${title}</strong>
+      <span class="round-icon">${icons[metric.icon]}</span>
+      <strong>${metric.title}</strong>
     </div>
   `).join("");
 }
 
-function renderApplications() {
-  document.querySelector("#application-grid").innerHTML = applications.map(([title, imageBase]) => `
+function renderApplications(content) {
+  document.querySelector("#applications-section-eyebrow").textContent = content.applicationsSection.eyebrow;
+
+  document.querySelector("#application-grid").innerHTML = content.applications.map((application) => `
     <article class="application-card">
-      ${buildResponsivePicture(imageBase, title, photoCardSizes)}
-      <strong>${title}</strong>
+      ${buildResponsivePicture(application.imageBase, application.title, photoCardSizes)}
+      <strong>${application.title}</strong>
     </article>
   `).join("");
+}
+
+function renderContact(content) {
+  document.querySelector("#contact-section-eyebrow").textContent = content.contactSection.eyebrow;
+  document.querySelector("#contact-section-title").textContent = content.contactSection.title;
+  document.querySelector("#contact-section-description").textContent = content.contactSection.description;
+  document.querySelector("#contact-benefits").innerHTML = content.contactSection.benefits.map((benefit) => `
+    <span><img src="${benefit.icon}" alt="" aria-hidden="true" decoding="async">${benefit.text}</span>
+  `).join("");
+  document.querySelector("#contact-card-text").textContent = content.contactSection.cardText;
+  document.querySelector("#contact-card-button").textContent = content.contactSection.cardButtonLabel;
+  document.querySelector("#contact-card-button").href = content.contactSection.cardButtonHref;
 }
 
 function setupMenu() {
@@ -226,12 +284,28 @@ function setupForm() {
   });
 }
 
-function init() {
-  renderHeroFeatures();
-  renderProducts();
-  renderStrategies();
-  renderMetrics();
-  renderApplications();
+async function loadHomeContent() {
+  try {
+    const response = await fetch("content/home.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Unexpected response: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.warn("Falling back to default home content.", error);
+    return defaultHomeContent;
+  }
+}
+
+async function init() {
+  const content = await loadHomeContent();
+  renderHero(content);
+  renderChallenge(content);
+  renderProducts(content);
+  renderStrategies(content);
+  renderMetrics(content);
+  renderApplications(content);
+  renderContact(content);
   setupMenu();
   setupForm();
   document.querySelector("#year").textContent = new Date().getFullYear();

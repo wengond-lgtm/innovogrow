@@ -1,0 +1,15 @@
+collections_config:
+  pages:
+    path: .
+    glob:
+      - "*.html"
+    icon: article
+    disable_add: true
+    disable_duplicate: true
+  content:
+    path: content
+    glob:
+      - "*.json"
+    icon: notes
+    disable_add: true
+    disable_duplicate: true
