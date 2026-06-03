@@ -52,12 +52,12 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow" id="contact-hero-eyebrow">Contact InnovoGrow</p>
-            <h1 id="contact-hero-title">Talk to Our Lighting Team</h1>
-            <p id="contact-hero-description">We're here to help you design the right lighting solution for higher yields, better efficiency, and long-term growth.</p>
+            <p class="eyebrow" id="contact-hero-eyebrow" data-editable="text" data-prop="@file[/content/contact.json].hero.eyebrow">Contact InnovoGrow</p>
+            <h1 id="contact-hero-title" data-editable="text" data-prop="@file[/content/contact.json].hero.title" data-type="block">Talk to Our Lighting Team</h1>
+            <p id="contact-hero-description" data-editable="text" data-prop="@file[/content/contact.json].hero.description" data-type="text">We're here to help you design the right lighting solution for higher yields, better efficiency, and long-term growth.</p>
           </div>
 
-          <div class="hero-features contact-hero-features" id="contact-hero-features">
+          <div class="hero-features contact-hero-features" id="contact-hero-features" data-editable="array" data-prop="@file[/content/contact.json].hero.features">
             <div class="hero-feature">
               <span class="round-icon">01</span>
               <div>
@@ -86,8 +86,8 @@
       <section class="dark-band contact-main-band">
         <div class="ig-container contact-page-grid">
           <form class="contact-page-form">
-            <h2 id="contact-form-title">Let's Build Your Lighting Advantage</h2>
-            <p id="contact-form-description">Share a few details about your operation and our team will create a customized lighting plan for you.</p>
+            <h2 id="contact-form-title" data-editable="text" data-prop="@file[/content/contact.json].form.title" data-type="block">Let's Build Your Lighting Advantage</h2>
+            <p id="contact-form-description" data-editable="text" data-prop="@file[/content/contact.json].form.description" data-type="text">Share a few details about your operation and our team will create a customized lighting plan for you.</p>
 
             <div class="contact-form-grid">
               <label>Full Name *<input type="text" name="full_name" placeholder="Your name"></label>
@@ -123,7 +123,7 @@
             </div>
           </form>
 
-          <aside class="contact-side" id="contact-side-cards">
+          <aside class="contact-side" id="contact-side-cards" data-editable="array" data-prop="@file[/content/contact.json].sideCards">
             <article class="contact-info-card">
               <h3>Talk to Our Lighting Team</h3>
               <strong>+1 (888) 254-1457</strong>
@@ -163,17 +163,17 @@
         <div class="ig-container process-strip">
           <article class="process-strip-intro">
             <span class="process-intro-icon" aria-hidden="true"></span>
-            <h2 id="contact-process-title">Request a Custom Lighting Plan</h2>
-            <p id="contact-process-description">Our team will analyze your facility and crops to design a lighting solution that maximizes yield and efficiency.</p>
+            <h2 id="contact-process-title" data-editable="text" data-prop="@file[/content/contact.json].process.title" data-type="block">Request a Custom Lighting Plan</h2>
+            <p id="contact-process-description" data-editable="text" data-prop="@file[/content/contact.json].process.description" data-type="text">Our team will analyze your facility and crops to design a lighting solution that maximizes yield and efficiency.</p>
           </article>
-          <div class="process-strip-steps" id="contact-process-steps">
+          <div class="process-strip-steps" id="contact-process-steps" data-editable="array" data-prop="@file[/content/contact.json].process.steps">
             <article><strong>1</strong><span>Share Your Details</span><p>Tell us about your facility and goals.</p></article>
             <article><strong>2</strong><span>We Design Your Plan</span><p>Our experts create a tailored lighting layout.</p></article>
             <article><strong>3</strong><span>Grow with Confidence</span><p>Get higher yields, lower costs, and proven results.</p></article>
           </div>
           <div class="process-strip-action">
-            <a class="btn btn-primary" id="contact-process-button" href="#top">Get My Lighting Plan</a>
-            <span id="contact-process-note">No obligation. 100% free.</span>
+            <a class="btn btn-primary" id="contact-process-button" href="#top" data-editable="text" data-prop="@file[/content/contact.json].process.buttonLabel">Get My Lighting Plan</a>
+            <span id="contact-process-note" data-editable="text" data-prop="@file[/content/contact.json].process.note" data-type="text">No obligation. 100% free.</span>
           </div>
         </div>
       </section>
@@ -181,11 +181,11 @@
       <section class="dark-band contact-faq-band">
         <div class="ig-container contact-faq-grid">
           <article class="contact-faq-intro">
-            <p class="eyebrow" id="contact-faq-eyebrow">FAQ</p>
-            <h2 id="contact-faq-title">Next Steps &amp; Common Questions</h2>
-            <a class="plain-link" id="contact-faq-link" href="resources.html#faq">View All Resources</a>
+            <p class="eyebrow" id="contact-faq-eyebrow" data-editable="text" data-prop="@file[/content/contact.json].faq.eyebrow">FAQ</p>
+            <h2 id="contact-faq-title" data-editable="text" data-prop="@file[/content/contact.json].faq.title" data-type="block">Next Steps &amp; Common Questions</h2>
+            <a class="plain-link" id="contact-faq-link" href="resources.html#faq" data-editable="text" data-prop="@file[/content/contact.json].faq.linkLabel">View All Resources</a>
           </article>
-          <div class="contact-faq-list" id="contact-faq-list">
+          <div class="contact-faq-list" id="contact-faq-list" data-editable="array" data-prop="@file[/content/contact.json].faq.items">
             <article class="faq-item" data-faq-item>
               <button type="button" data-faq-trigger>How soon will I receive a response?</button>
               <div class="faq-answer" data-faq-panel><p>Most inquiries receive a response within one business day.</p></div>
@@ -209,12 +209,12 @@
       <section class="dark-band map-band">
         <div class="ig-container map-panel">
           <article class="map-copy">
-            <h2 id="contact-map-title">We're Located in the Heart of U.S. Ag Innovation</h2>
-            <p id="contact-map-description">Proudly headquartered in Chicago with distribution operations in Arizona, serving growers across North America and beyond.</p>
+            <h2 id="contact-map-title" data-editable="text" data-prop="@file[/content/contact.json].map.title" data-type="block">We're Located in the Heart of U.S. Ag Innovation</h2>
+            <p id="contact-map-description" data-editable="text" data-prop="@file[/content/contact.json].map.description" data-type="text">Proudly headquartered in Chicago with distribution operations in Arizona, serving growers across North America and beyond.</p>
           </article>
           <div class="map-visual">
-            <div class="map-pin map-pin--west" id="contact-map-pin-west">Distribution Center<br>Tempe, Arizona</div>
-            <div class="map-pin map-pin--midwest" id="contact-map-pin-midwest">InnovoGrow HQ<br>Chicago, Illinois</div>
+            <div class="map-pin map-pin--west" id="contact-map-pin-west" data-editable="text" data-prop="@file[/content/contact.json].map.westLabel" data-type="text">Distribution Center<br>Tempe, Arizona</div>
+            <div class="map-pin map-pin--midwest" id="contact-map-pin-midwest" data-editable="text" data-prop="@file[/content/contact.json].map.midwestLabel" data-type="text">InnovoGrow HQ<br>Chicago, Illinois</div>
           </div>
         </div>
       </section>

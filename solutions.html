@@ -52,12 +52,12 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow" id="solutions-hero-eyebrow">Solutions</p>
-            <h1 id="solutions-hero-title">Lighting Solutions for Commercial Cultivation</h1>
-            <p id="solutions-hero-description">
+            <p class="eyebrow" id="solutions-hero-eyebrow" data-editable="text" data-prop="@file[/content/solutions.json].hero.eyebrow">Solutions</p>
+            <h1 id="solutions-hero-title" data-editable="text" data-prop="@file[/content/solutions.json].hero.title" data-type="block">Lighting Solutions for Commercial Cultivation</h1>
+            <p id="solutions-hero-description" data-editable="text" data-prop="@file[/content/solutions.json].hero.description" data-type="text">
               System-level strategies that maximize yield, improve efficiency, and future-proof your grow.
             </p>
-            <div class="hero-features solutions-hero-features" id="solutions-hero-features">
+            <div class="hero-features solutions-hero-features" id="solutions-hero-features" data-editable="array" data-prop="@file[/content/solutions.json].hero.features">
               <div class="hero-feature">
                 <span class="round-icon">01</span>
                 <div>
@@ -88,8 +88,8 @@
               </div>
             </div>
             <div class="hero-actions">
-              <a class="btn btn-primary" id="solutions-hero-primary-cta" href="#application-solutions">Explore Solutions</a>
-              <a class="btn btn-outline" id="solutions-hero-secondary-cta" href="contact.html">Request a Lighting Plan</a>
+              <a class="btn btn-primary" id="solutions-hero-primary-cta" href="#application-solutions" data-editable="text" data-prop="@file[/content/solutions.json].hero.primaryCta.label">Explore Solutions</a>
+              <a class="btn btn-outline" id="solutions-hero-secondary-cta" href="contact.html" data-editable="text" data-prop="@file[/content/solutions.json].hero.secondaryCta.label">Request a Lighting Plan</a>
             </div>
           </div>
         </div>
@@ -282,14 +282,14 @@
         <div class="ig-container">
           <div class="section-title-row">
             <div>
-              <h2 id="solutions-use-cases-title">Solutions Built for Every Grow</h2>
-              <p class="solutions-subtitle" id="solutions-use-cases-description">See how our lighting strategies perform in real-world applications.</p>
+              <h2 id="solutions-use-cases-title" data-editable="text" data-prop="@file[/content/solutions.json].useCases.title" data-type="block">Solutions Built for Every Grow</h2>
+              <p class="solutions-subtitle" id="solutions-use-cases-description" data-editable="text" data-prop="@file[/content/solutions.json].useCases.description" data-type="text">See how our lighting strategies perform in real-world applications.</p>
             </div>
             <span class="section-rule"></span>
-            <a class="plain-link" id="solutions-use-cases-link" href="#solution-packages">View All Use Cases</a>
+            <a class="plain-link" id="solutions-use-cases-link" href="#solution-packages" data-editable="text" data-prop="@file[/content/solutions.json].useCases.linkLabel">View All Use Cases</a>
           </div>
 
-          <div class="use-case-grid" id="solutions-use-case-grid">
+          <div class="use-case-grid" id="solutions-use-case-grid" data-editable="array" data-prop="@file[/content/solutions.json].useCases.cards">
             <article class="use-case-card">
               <picture>
                 <source type="image/webp" srcset="assets/site-images/solutions-usecase-high-density-flowering-crops-480w.webp 480w, assets/site-images/solutions-usecase-high-density-flowering-crops-768w.webp 768w, assets/site-images/solutions-usecase-high-density-flowering-crops-1200w.webp 1200w" sizes="(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)">
@@ -344,11 +344,11 @@
       <section class="dark-band package-band" id="solution-packages">
         <div class="ig-container">
           <div class="package-heading">
-            <h2 id="solutions-packages-title">Complete Solutions. Proven Results.</h2>
-            <p id="solutions-packages-description">Recommended lighting strategies for common grow scenarios.</p>
+            <h2 id="solutions-packages-title" data-editable="text" data-prop="@file[/content/solutions.json].packages.title" data-type="block">Complete Solutions. Proven Results.</h2>
+            <p id="solutions-packages-description" data-editable="text" data-prop="@file[/content/solutions.json].packages.description" data-type="text">Recommended lighting strategies for common grow scenarios.</p>
           </div>
 
-          <div class="package-grid" id="solutions-package-grid">
+          <div class="package-grid" id="solutions-package-grid" data-editable="array" data-prop="@file[/content/solutions.json].packages.cards">
             <article class="package-card">
               <p class="eyebrow">Under-Canopy Upgrade</p>
               <h3>Boost Lower Growth &amp; Uniformity</h3>
@@ -412,11 +412,11 @@
       <section class="dark-band process-band" id="process">
         <div class="ig-container">
           <div class="package-heading process-heading">
-            <h2 id="solutions-process-title">Our Process. Your Success.</h2>
-            <p id="solutions-process-description">A top-light-first planning process, with support layers added only where the room needs them.</p>
+            <h2 id="solutions-process-title" data-editable="text" data-prop="@file[/content/solutions.json].process.title" data-type="block">Our Process. Your Success.</h2>
+            <p id="solutions-process-description" data-editable="text" data-prop="@file[/content/solutions.json].process.description" data-type="text">A top-light-first planning process, with support layers added only where the room needs them.</p>
           </div>
 
-          <div class="process-grid" id="solutions-process-grid">
+          <div class="process-grid" id="solutions-process-grid" data-editable="array" data-prop="@file[/content/solutions.json].process.steps">
             <article class="process-card">
               <span class="process-icon">01</span>
               <strong>Consultation</strong>
@@ -451,12 +451,12 @@
               </picture>
             </div>
             <div class="solutions-cta-copy">
-              <h2 id="solutions-cta-title">Ready to Build a Smarter Grow?</h2>
-              <p id="solutions-cta-description">Request a custom lighting plan built around your primary top-light layout, with support fixtures where they add value.</p>
+              <h2 id="solutions-cta-title" data-editable="text" data-prop="@file[/content/solutions.json].cta.title" data-type="block">Ready to Build a Smarter Grow?</h2>
+              <p id="solutions-cta-description" data-editable="text" data-prop="@file[/content/solutions.json].cta.description" data-type="text">Request a custom lighting plan built around your primary top-light layout, with support fixtures where they add value.</p>
             </div>
             <div class="solutions-cta-action">
-              <a class="btn btn-primary" id="solutions-cta-button" href="contact.html">Request Your Lighting Plan</a>
-              <span id="solutions-cta-status">Typically delivered within 1-2 business days.</span>
+              <a class="btn btn-primary" id="solutions-cta-button" href="contact.html" data-editable="text" data-prop="@file[/content/solutions.json].cta.buttonLabel">Request Your Lighting Plan</a>
+              <span id="solutions-cta-status" data-editable="text" data-prop="@file[/content/solutions.json].cta.status" data-type="text">Typically delivered within 1-2 business days.</span>
             </div>
           </div>
         </div>

@@ -52,16 +52,16 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow" id="products-hero-eyebrow">Products</p>
-            <h1 id="products-hero-title">Products Built for Commercial Growers</h1>
-            <p id="products-hero-description">
+            <p class="eyebrow" id="products-hero-eyebrow" data-editable="text" data-prop="@file[/content/products.json].hero.eyebrow">Products</p>
+            <h1 id="products-hero-title" data-editable="text" data-prop="@file[/content/products.json].hero.title" data-type="block">Products Built for Commercial Growers</h1>
+            <p id="products-hero-description" data-editable="text" data-prop="@file[/content/products.json].hero.description" data-type="text">
               InnovoGrow delivers high-performance LED lighting solutions designed for commercial
               cultivation, led by top-light performance and supported by linear indoor and under-canopy
               options that help maximize yield, quality, and operational efficiency.
             </p>
           </div>
 
-          <div class="hero-features products-hero-features" id="products-hero-features">
+          <div class="hero-features products-hero-features" id="products-hero-features" data-editable="array" data-prop="@file[/content/products.json].hero.features">
             <div class="hero-feature">
               <span class="round-icon">YLD</span>
               <div>
@@ -89,7 +89,7 @@
 
       <section class="products dark-band products-page-shell">
         <div class="ig-container products-page-inner">
-          <div class="catalog-stack" id="products-catalog-stack">
+          <div class="catalog-stack" id="products-catalog-stack" data-editable="array" data-prop="@file[/content/products.json].products">
             <article class="catalog-card" id="tl-300-d1">
               <div class="catalog-top">
                 <div class="catalog-copy">
@@ -469,11 +469,11 @@
             <div class="product-cta-copy">
               <span class="product-cta-icon"></span>
               <div>
-                <h2 id="products-cta-title">Not sure which product is right for your facility?</h2>
-                <p id="products-cta-description">Our lighting experts will design a custom solution tailored to your crop, layout, and goals.</p>
+            <h2 id="products-cta-title" data-editable="text" data-prop="@file[/content/products.json].cta.title" data-type="block">Not sure which product is right for your facility?</h2>
+            <p id="products-cta-description" data-editable="text" data-prop="@file[/content/products.json].cta.description" data-type="text">Our lighting experts will design a custom solution tailored to your crop, layout, and goals.</p>
               </div>
             </div>
-            <a class="btn btn-primary" id="products-cta-button" href="contact.html">Request a Lighting Plan</a>
+            <a class="btn btn-primary" id="products-cta-button" href="contact.html" data-editable="text" data-prop="@file[/content/products.json].cta.buttonLabel">Request a Lighting Plan</a>
           </div>
         </div>
       </section>

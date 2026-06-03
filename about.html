@@ -52,16 +52,16 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow" id="about-hero-eyebrow">About InnovoGrow</p>
-            <h1 id="about-hero-title">About InnovoGrow</h1>
-            <p class="about-hero-lead" id="about-hero-lead">Engineering smarter light distribution for commercial growers.</p>
-            <p class="about-hero-body" id="about-hero-description">
+            <p class="eyebrow" id="about-hero-eyebrow" data-editable="text" data-prop="@file[/content/about.json].hero.eyebrow">About InnovoGrow</p>
+            <h1 id="about-hero-title" data-editable="text" data-prop="@file[/content/about.json].hero.title" data-type="block">About InnovoGrow</h1>
+            <p class="about-hero-lead" id="about-hero-lead" data-editable="text" data-prop="@file[/content/about.json].hero.lead" data-type="text">Engineering smarter light distribution for commercial growers.</p>
+            <p class="about-hero-body" id="about-hero-description" data-editable="text" data-prop="@file[/content/about.json].hero.description" data-type="text">
               We design and deliver high-performance LED grow lighting solutions that drive
               consistent results, lower operating costs, and help cultivators grow better at every scale.
             </p>
           </div>
 
-          <div class="hero-features about-hero-features" id="about-hero-features">
+          <div class="hero-features about-hero-features" id="about-hero-features" data-editable="array" data-prop="@file[/content/about.json].hero.features">
             <div class="hero-feature">
               <span class="round-icon">01</span>
               <div>
@@ -90,18 +90,18 @@
       <section class="dark-band story-band">
         <div class="ig-container story-grid">
           <article class="story-copy">
-            <p class="eyebrow" id="about-story-eyebrow">Our Story</p>
-            <h2 id="about-story-title">Born in the Grow Room. Built for What Matters.</h2>
-            <p id="about-story-paragraph-1">
+            <p class="eyebrow" id="about-story-eyebrow" data-editable="text" data-prop="@file[/content/about.json].story.eyebrow">Our Story</p>
+            <h2 id="about-story-title" data-editable="text" data-prop="@file[/content/about.json].story.title" data-type="block">Born in the Grow Room. Built for What Matters.</h2>
+            <p id="about-story-paragraph-1" data-editable="text" data-prop="@file[/content/about.json].story.paragraphs.0" data-type="text">
               InnovoGrow was founded by growers and engineers who saw a better way to do lighting.
               We set out to solve the real challenges commercial cultivators face - heat, inefficiency,
               uneven coverage, and rising costs - by rethinking light distribution at the source.
             </p>
-            <p id="about-story-paragraph-2">
+            <p id="about-story-paragraph-2" data-editable="text" data-prop="@file[/content/about.json].story.paragraphs.1" data-type="text">
               Today, our solutions are trusted by cultivators across North America and beyond, from
               boutique facilities to large-scale commercial operations.
             </p>
-            <a class="btn btn-primary" id="about-story-button" href="contact.html">Talk With Our Team</a>
+            <a class="btn btn-primary" id="about-story-button" href="contact.html" data-editable="text" data-prop="@file[/content/about.json].story.buttonLabel">Talk With Our Team</a>
           </article>
 
           <div class="story-media">
@@ -111,7 +111,7 @@
             </picture>
           </div>
 
-          <div class="story-side" id="about-story-side">
+          <div class="story-side" id="about-story-side" data-editable="array" data-prop="@file[/content/about.json].story.sideCards">
             <article class="story-side-card">
               <h3>Mission</h3>
               <p>Deliver innovative LED lighting solutions that maximize yield, efficiency, and profitability for commercial growers.</p>
@@ -144,11 +144,11 @@
       <section class="dark-band values-band">
         <div class="ig-container">
           <div class="values-header">
-            <p class="eyebrow" id="about-values-eyebrow">Our Core Values</p>
-            <h2 id="about-values-title">What We Stand For</h2>
+            <p class="eyebrow" id="about-values-eyebrow" data-editable="text" data-prop="@file[/content/about.json].values.eyebrow">Our Core Values</p>
+            <h2 id="about-values-title" data-editable="text" data-prop="@file[/content/about.json].values.title" data-type="block">What We Stand For</h2>
           </div>
           <div class="values-layout">
-            <div class="values-grid" id="about-values-grid">
+            <div class="values-grid" id="about-values-grid" data-editable="array" data-prop="@file[/content/about.json].values.items">
               <article class="value-card">
                 <img class="value-card__icon" src="assets/site-images/about-icon-grower-first.svg" alt="Grower First icon">
                 <strong>Grower First</strong>
@@ -183,10 +183,10 @@
       <section class="light-band proof-band">
         <div class="ig-container proof-grid">
           <article class="proof-intro">
-            <p class="eyebrow" id="about-proof-eyebrow">Why Growers Choose InnovoGrow</p>
-            <h2 id="about-proof-title">Smarter Light. Better Results.</h2>
+            <p class="eyebrow" id="about-proof-eyebrow" data-editable="text" data-prop="@file[/content/about.json].proof.eyebrow">Why Growers Choose InnovoGrow</p>
+            <h2 id="about-proof-title" data-editable="text" data-prop="@file[/content/about.json].proof.title" data-type="block">Smarter Light. Better Results.</h2>
           </article>
-          <div class="proof-metrics" id="about-proof-metrics">
+          <div class="proof-metrics" id="about-proof-metrics" data-editable="array" data-prop="@file[/content/about.json].proof.metrics">
             <article class="proof-metric">
               <img class="proof-metric__icon" src="assets/site-images/about-icon-higher-yields.svg" alt="Higher Yields icon">
               <strong>Higher Yields</strong>
@@ -218,7 +218,7 @@
               <source type="image/webp" srcset="assets/site-images/about-proof-photo-400w.webp 400w, assets/site-images/about-proof-photo-600w.webp 600w" sizes="(max-width: 1100px) calc(100vw - 36px), 300px">
               <img src="assets/site-images/about-proof-photo-600w.jpg" srcset="assets/site-images/about-proof-photo-400w.jpg 400w, assets/site-images/about-proof-photo-600w.jpg 600w" sizes="(max-width: 1100px) calc(100vw - 36px), 300px" alt="Commercial indoor grow room" loading="lazy" decoding="async">
             </picture>
-            <div class="proof-stats" id="about-proof-stats">
+            <div class="proof-stats" id="about-proof-stats" data-editable="array" data-prop="@file[/content/about.json].proof.stats">
               <article><strong>20+</strong><span>States and provinces served</span></article>
               <article><strong>All Sizes</strong><span>Helping facilities scale with confidence</span></article>
             </div>
@@ -229,19 +229,19 @@
       <section class="dark-band team-band">
         <div class="ig-container team-grid">
           <div class="team-header">
-            <p class="eyebrow" id="about-team-eyebrow">Leadership Team</p>
-            <h2 id="about-team-title">Experienced. Passionate. Grower-Focused.</h2>
+            <p class="eyebrow" id="about-team-eyebrow" data-editable="text" data-prop="@file[/content/about.json].team.eyebrow">Leadership Team</p>
+            <h2 id="about-team-title" data-editable="text" data-prop="@file[/content/about.json].team.title" data-type="block">Experienced. Passionate. Grower-Focused.</h2>
           </div>
-          <div class="team-cards" id="about-team-cards">
+          <div class="team-cards" id="about-team-cards" data-editable="array" data-prop="@file[/content/about.json].team.members">
             <article class="team-card"><span class="team-avatar team-avatar--jason"></span><strong>Jason H.</strong><p>Chief Executive Officer</p></article>
             <article class="team-card"><span class="team-avatar team-avatar--megan"></span><strong>Megan T.</strong><p>Chief Operating Officer</p></article>
             <article class="team-card"><span class="team-avatar team-avatar--daniel"></span><strong>Daniel R.</strong><p>Chief Engineering Officer</p></article>
             <article class="team-card"><span class="team-avatar team-avatar--patrick"></span><strong>Patrick S.</strong><p>VP of Sales</p></article>
           </div>
           <aside class="team-side">
-            <h3 id="about-team-side-title">A Team That's Been in Your Shoes</h3>
-            <p id="about-team-side-description">Our leadership team combines deep horticulture experience with engineering excellence to deliver lighting solutions that make a measurable difference in your operation.</p>
-            <a class="btn btn-primary" id="about-team-side-button" href="contact.html">Meet the Team</a>
+            <h3 id="about-team-side-title" data-editable="text" data-prop="@file[/content/about.json].team.sideTitle" data-type="block">A Team That's Been in Your Shoes</h3>
+            <p id="about-team-side-description" data-editable="text" data-prop="@file[/content/about.json].team.sideDescription" data-type="text">Our leadership team combines deep horticulture experience with engineering excellence to deliver lighting solutions that make a measurable difference in your operation.</p>
+            <a class="btn btn-primary" id="about-team-side-button" href="contact.html" data-editable="text" data-prop="@file[/content/about.json].team.sideButtonLabel">Meet the Team</a>
           </aside>
         </div>
       </section>
@@ -249,12 +249,12 @@
       <section class="light-band craft-band">
         <div class="ig-container craft-grid">
           <article class="craft-intro">
-            <p class="eyebrow" id="about-craft-eyebrow">Engineered to Perform</p>
-            <h2 id="about-craft-title">Designed. Built. Tested. For Commercial Excellence.</h2>
-            <p id="about-craft-description">From concept to canopy, every InnovoGrow product is designed with precision and built to perform in the toughest environments.</p>
-            <a class="btn btn-primary" id="about-craft-button" href="products.html">Learn About Our Products</a>
+            <p class="eyebrow" id="about-craft-eyebrow" data-editable="text" data-prop="@file[/content/about.json].craft.eyebrow">Engineered to Perform</p>
+            <h2 id="about-craft-title" data-editable="text" data-prop="@file[/content/about.json].craft.title" data-type="block">Designed. Built. Tested. For Commercial Excellence.</h2>
+            <p id="about-craft-description" data-editable="text" data-prop="@file[/content/about.json].craft.description" data-type="text">From concept to canopy, every InnovoGrow product is designed with precision and built to perform in the toughest environments.</p>
+            <a class="btn btn-primary" id="about-craft-button" href="products.html" data-editable="text" data-prop="@file[/content/about.json].craft.buttonLabel">Learn About Our Products</a>
           </article>
-          <div id="about-craft-cards" class="craft-card-group">
+          <div id="about-craft-cards" class="craft-card-group" data-editable="array" data-prop="@file[/content/about.json].craft.cards">
           <article class="craft-card">
             <div class="craft-media craft-media--design" aria-hidden="true"></div>
             <strong>Engineering &amp; Design</strong>
@@ -277,12 +277,12 @@
       <section class="dark-band support-band">
         <div class="ig-container support-grid">
           <article class="support-copy">
-            <p class="eyebrow" id="about-support-eyebrow">Global Support</p>
-            <h2 id="about-support-title">Partners. Support. Anywhere You Grow.</h2>
-            <p id="about-support-description">We partner with trusted distributors, reps, and service providers to deliver reliable support close to home, wherever your operation is located.</p>
+            <p class="eyebrow" id="about-support-eyebrow" data-editable="text" data-prop="@file[/content/about.json].support.eyebrow">Global Support</p>
+            <h2 id="about-support-title" data-editable="text" data-prop="@file[/content/about.json].support.title" data-type="block">Partners. Support. Anywhere You Grow.</h2>
+            <p id="about-support-description" data-editable="text" data-prop="@file[/content/about.json].support.description" data-type="text">We partner with trusted distributors, reps, and service providers to deliver reliable support close to home, wherever your operation is located.</p>
           </article>
           <div class="support-map" aria-hidden="true"></div>
-          <div class="support-list" id="about-support-list">
+          <div class="support-list" id="about-support-list" data-editable="array" data-prop="@file[/content/about.json].support.items">
             <article>
               <img class="support-list__icon" src="assets/site-images/about-icon-responsive-support.svg" alt="Responsive Support icon">
               <strong>Responsive Support</strong>
@@ -309,9 +309,9 @@
 
       <section class="dark-band about-cta-band">
         <div class="ig-container about-cta-panel">
-          <h2 id="about-cta-title">Let's Build a Better Grow - Together</h2>
-          <p id="about-cta-description">Have questions about our solutions or your facility? Our team is here to help.</p>
-          <a class="btn btn-primary" id="about-cta-button" href="contact.html">Talk With Our Team</a>
+          <h2 id="about-cta-title" data-editable="text" data-prop="@file[/content/about.json].cta.title" data-type="block">Let's Build a Better Grow - Together</h2>
+          <p id="about-cta-description" data-editable="text" data-prop="@file[/content/about.json].cta.description" data-type="text">Have questions about our solutions or your facility? Our team is here to help.</p>
+          <a class="btn btn-primary" id="about-cta-button" href="contact.html" data-editable="text" data-prop="@file[/content/about.json].cta.buttonLabel">Talk With Our Team</a>
         </div>
       </section>
     </main>
