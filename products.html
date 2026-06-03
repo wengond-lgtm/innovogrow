@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="products-overview.css">
   <link rel="stylesheet" href="global-ui.css">
 </head>
-<body>
+<body data-page="products">
   <header class="site-header">
     <div class="header-scale">
       <div class="ig-container header-inner">
@@ -52,16 +52,16 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Products</p>
-            <h1>Products Built for Commercial Growers</h1>
-            <p>
+            <p class="eyebrow" id="products-hero-eyebrow">Products</p>
+            <h1 id="products-hero-title">Products Built for Commercial Growers</h1>
+            <p id="products-hero-description">
               InnovoGrow delivers high-performance LED lighting solutions designed for commercial
               cultivation, led by top-light performance and supported by linear indoor and under-canopy
               options that help maximize yield, quality, and operational efficiency.
             </p>
           </div>
 
-          <div class="hero-features products-hero-features">
+          <div class="hero-features products-hero-features" id="products-hero-features">
             <div class="hero-feature">
               <span class="round-icon">YLD</span>
               <div>
@@ -89,7 +89,7 @@
 
       <section class="products dark-band products-page-shell">
         <div class="ig-container products-page-inner">
-          <div class="catalog-stack">
+          <div class="catalog-stack" id="products-catalog-stack">
             <article class="catalog-card" id="tl-300-d1">
               <div class="catalog-top">
                 <div class="catalog-copy">
@@ -469,11 +469,11 @@
             <div class="product-cta-copy">
               <span class="product-cta-icon"></span>
               <div>
-                <h2>Not sure which product is right for your facility?</h2>
-                <p>Our lighting experts will design a custom solution tailored to your crop, layout, and goals.</p>
+                <h2 id="products-cta-title">Not sure which product is right for your facility?</h2>
+                <p id="products-cta-description">Our lighting experts will design a custom solution tailored to your crop, layout, and goals.</p>
               </div>
             </div>
-            <a class="btn btn-primary" href="contact.html">Request a Lighting Plan</a>
+            <a class="btn btn-primary" id="products-cta-button" href="contact.html">Request a Lighting Plan</a>
           </div>
         </div>
       </section>

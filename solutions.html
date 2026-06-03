@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="solutions-overview.css">
   <link rel="stylesheet" href="global-ui.css">
 </head>
-<body>
+<body data-page="solutions">
   <header class="site-header">
     <div class="header-scale">
       <div class="ig-container header-inner">
@@ -52,12 +52,12 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Solutions</p>
-            <h1>Lighting Solutions for Commercial Cultivation</h1>
-            <p>
+            <p class="eyebrow" id="solutions-hero-eyebrow">Solutions</p>
+            <h1 id="solutions-hero-title">Lighting Solutions for Commercial Cultivation</h1>
+            <p id="solutions-hero-description">
               System-level strategies that maximize yield, improve efficiency, and future-proof your grow.
             </p>
-            <div class="hero-features solutions-hero-features">
+            <div class="hero-features solutions-hero-features" id="solutions-hero-features">
               <div class="hero-feature">
                 <span class="round-icon">01</span>
                 <div>
@@ -88,8 +88,8 @@
               </div>
             </div>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#application-solutions">Explore Solutions</a>
-              <a class="btn btn-outline" href="contact.html">Request a Lighting Plan</a>
+              <a class="btn btn-primary" id="solutions-hero-primary-cta" href="#application-solutions">Explore Solutions</a>
+              <a class="btn btn-outline" id="solutions-hero-secondary-cta" href="contact.html">Request a Lighting Plan</a>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
 
       <section class="dark-band solutions-nav-band" id="application-solutions">
         <div class="ig-container">
-          <div class="solution-link-grid">
+          <div class="solution-link-grid" id="solutions-link-grid">
             <article class="solution-link-intro">
               <h2>Explore Solutions by Application</h2>
               <p>Every grow is different. Find the right lighting strategy for your facility.</p>
@@ -137,7 +137,7 @@
       </section>
 
       <section class="dark-band system-band">
-        <div class="ig-container system-grid">
+        <div class="ig-container system-grid" id="solutions-system-grid">
           <article class="system-intro">
             <p class="eyebrow">The InnovoGrow System</p>
             <h2>Engineered to Work Better Together</h2>
@@ -192,7 +192,7 @@
 
       <section class="dark-band compare-band">
         <div class="ig-container">
-          <div class="compare-panel">
+          <div class="compare-panel" id="solutions-compare-panel">
             <div class="compare-challenges">
               <p class="eyebrow">From Challenge to Solution</p>
               <h2>Common Challenges</h2>
@@ -282,14 +282,14 @@
         <div class="ig-container">
           <div class="section-title-row">
             <div>
-              <h2>Solutions Built for Every Grow</h2>
-              <p class="solutions-subtitle">See how our lighting strategies perform in real-world applications.</p>
+              <h2 id="solutions-use-cases-title">Solutions Built for Every Grow</h2>
+              <p class="solutions-subtitle" id="solutions-use-cases-description">See how our lighting strategies perform in real-world applications.</p>
             </div>
             <span class="section-rule"></span>
-            <a class="plain-link" href="#solution-packages">View All Use Cases</a>
+            <a class="plain-link" id="solutions-use-cases-link" href="#solution-packages">View All Use Cases</a>
           </div>
 
-          <div class="use-case-grid">
+          <div class="use-case-grid" id="solutions-use-case-grid">
             <article class="use-case-card">
               <picture>
                 <source type="image/webp" srcset="assets/site-images/solutions-usecase-high-density-flowering-crops-480w.webp 480w, assets/site-images/solutions-usecase-high-density-flowering-crops-768w.webp 768w, assets/site-images/solutions-usecase-high-density-flowering-crops-1200w.webp 1200w" sizes="(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)">
@@ -344,11 +344,11 @@
       <section class="dark-band package-band" id="solution-packages">
         <div class="ig-container">
           <div class="package-heading">
-            <h2>Complete Solutions. Proven Results.</h2>
-            <p>Recommended lighting strategies for common grow scenarios.</p>
+            <h2 id="solutions-packages-title">Complete Solutions. Proven Results.</h2>
+            <p id="solutions-packages-description">Recommended lighting strategies for common grow scenarios.</p>
           </div>
 
-          <div class="package-grid">
+          <div class="package-grid" id="solutions-package-grid">
             <article class="package-card">
               <p class="eyebrow">Under-Canopy Upgrade</p>
               <h3>Boost Lower Growth &amp; Uniformity</h3>
@@ -412,11 +412,11 @@
       <section class="dark-band process-band" id="process">
         <div class="ig-container">
           <div class="package-heading process-heading">
-            <h2>Our Process. Your Success.</h2>
-            <p>A top-light-first planning process, with support layers added only where the room needs them.</p>
+            <h2 id="solutions-process-title">Our Process. Your Success.</h2>
+            <p id="solutions-process-description">A top-light-first planning process, with support layers added only where the room needs them.</p>
           </div>
 
-          <div class="process-grid">
+          <div class="process-grid" id="solutions-process-grid">
             <article class="process-card">
               <span class="process-icon">01</span>
               <strong>Consultation</strong>
@@ -451,12 +451,12 @@
               </picture>
             </div>
             <div class="solutions-cta-copy">
-              <h2>Ready to Build a Smarter Grow?</h2>
-              <p>Request a custom lighting plan built around your primary top-light layout, with support fixtures where they add value.</p>
+              <h2 id="solutions-cta-title">Ready to Build a Smarter Grow?</h2>
+              <p id="solutions-cta-description">Request a custom lighting plan built around your primary top-light layout, with support fixtures where they add value.</p>
             </div>
             <div class="solutions-cta-action">
-              <a class="btn btn-primary" href="contact.html">Request Your Lighting Plan</a>
-              <span>Typically delivered within 1-2 business days.</span>
+              <a class="btn btn-primary" id="solutions-cta-button" href="contact.html">Request Your Lighting Plan</a>
+              <span id="solutions-cta-status">Typically delivered within 1-2 business days.</span>
             </div>
           </div>
         </div>

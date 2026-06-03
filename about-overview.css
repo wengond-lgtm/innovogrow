@@ -852,3 +852,6 @@
   }
 }
 
+.craft-card-group {
+  display: contents;
+}

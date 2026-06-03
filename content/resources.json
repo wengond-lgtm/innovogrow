@@ -1,0 +1,170 @@
+{
+  "hero": {
+    "eyebrow": "Resources",
+    "title": "Resources for Growers, Engineers, and Buyers",
+    "description": "Expert guidance, technical documentation, and real-world insights to help you plan, install, and optimize with confidence.",
+    "primaryCta": {
+      "label": "Browse All Resources",
+      "href": "#resource-library"
+    },
+    "secondaryCta": {
+      "label": "Request a Lighting Plan",
+      "href": "contact.html"
+    }
+  },
+  "features": [
+    {
+      "title": "Expert-Built Content",
+      "text": "Created by lighting specialists"
+    },
+    {
+      "title": "Technical & Practical",
+      "text": "Specs, how-tos, and best practices"
+    },
+    {
+      "title": "Proven in the Field",
+      "text": "Real results from commercial growers"
+    },
+    {
+      "title": "Always Up to Date",
+      "text": "Latest product and industry insights"
+    }
+  ],
+  "library": {
+    "eyebrow": "Resource Library",
+    "title": "Download. Learn. Plan.",
+    "description": "Technical specs, installation guidance, planning tools, and more - everything you need to build better grow environments.",
+    "tabs": [
+      "All Resources",
+      "Spec Sheets",
+      "Installation Guides",
+      "Case Studies",
+      "FAQ",
+      "Grower Insights"
+    ],
+    "buttonLabel": "Browse All Resources",
+    "buttonHref": "#resource-library",
+    "cards": [
+      {
+        "badge": "PDF",
+        "image": "assets/site-images/resources-card-tl-spec-sheet.jpg",
+        "title": "IG 300-D1 Spec Sheet",
+        "description": "IG 300-D1 Top Light specifications, performance data, and photometrics.",
+        "href": "products.html#tl-300-d1",
+        "linkLabel": "Download PDF"
+      },
+      {
+        "badge": "PDF",
+        "image": "assets/site-images/resources-card-gen-spec-sheet.jpg",
+        "title": "IG 800 Spec Sheet",
+        "description": "IG 800 Linear Indoor LED technical specifications and performance details.",
+        "href": "products.html#gen-iv",
+        "linkLabel": "Download PDF"
+      },
+      {
+        "badge": "PDF",
+        "image": "assets/site-images/resources-card-uc-spec-sheet.jpg",
+        "title": "IG 150 Spec Sheet",
+        "description": "Full technical specifications for the InnovoGrow IG 150 under-canopy support fixture.",
+        "href": "products.html#uc-series",
+        "linkLabel": "Download PDF"
+      },
+      {
+        "badge": "PDF",
+        "image": "assets/site-images/resources-card-ig-300-d1-quick-guide.jpg",
+        "title": "IG 300-D1 Quick Guide",
+        "description": "Best practices for under-canopy lighting to improve yield, uniformity, and quality.",
+        "href": "solutions.html#under-canopy-lighting",
+        "linkLabel": "Download PDF"
+      },
+      {
+        "badge": "PDF",
+        "graphic": true,
+        "title": "Commercial Facility Planning Checklist",
+        "description": "Step-by-step checklist to plan your commercial grow facility with confidence.",
+        "href": "contact.html",
+        "linkLabel": "Download PDF"
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "Real Results",
+    "title": "Case Studies from Commercial Growers",
+    "linkLabel": "View All Case Studies",
+    "linkHref": "#case-studies",
+    "cards": [
+      {
+        "kicker": "Vertical Farming",
+        "title": "Higher Yields in a Multi-Tier Leafy Greens Facility",
+        "description": "How a vertical farm increased yield by 28% with InnovoGrow lighting.",
+        "href": "solutions.html#indoor-cultivation",
+        "imageBase": "assets/site-images/resources-case-vertical-farming"
+      },
+      {
+        "kicker": "Greenhouse Cultivation",
+        "title": "Improved Fruit Quality in Greenhouse Tomatoes",
+        "description": "Better light uniformity led to higher Brix and more consistent harvests.",
+        "href": "solutions.html#greenhouse-lighting",
+        "imageBase": "assets/site-images/resources-case-greenhouse-tomatoes"
+      },
+      {
+        "kicker": "Crop Cultivation",
+        "title": "Premium Crop Production at Scale",
+        "description": "Optimizing crop quality and consistency with IG 800 lighting.",
+        "href": "products.html#gen-iv",
+        "imageBase": "assets/site-images/resources-case-cannabis-cultivation"
+      },
+      {
+        "kicker": "Indoor Grow Rooms",
+        "title": "Lower Energy Costs, Stronger Results",
+        "description": "How optimized lighting design reduced energy use by 18%.",
+        "href": "solutions.html#full-facility-layouts",
+        "imageBase": "assets/site-images/resources-case-indoor-grow-rooms"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently Asked Questions",
+    "description": "Quick answers to the most common questions about our products and solutions.",
+    "linkLabel": "View All FAQs",
+    "linkHref": "#faq",
+    "items": [
+      {
+        "question": "What is the difference between the IG 150 and IG 300-D1?",
+        "answer": "IG 150 is designed as under-canopy support for lower-zone coverage, while IG 300-D1 is built for primary top-light coverage and simplified room layouts.",
+        "open": true
+      },
+      {
+        "question": "Can I use InnovoGrow lights in humid environments?",
+        "answer": "Yes. Our commercial fixtures are designed for demanding cultivation spaces and built with durability in mind."
+      },
+      {
+        "question": "How do I choose the right light for my crop?",
+        "answer": "We recommend starting with your facility type, canopy density, target output, and workflow. Our team can help map the right solution."
+      },
+      {
+        "question": "What mounting options are available?",
+        "answer": "Mounting depends on the product family and application, from overhead suspended layouts to rack and under-canopy installations."
+      },
+      {
+        "question": "What is the warranty on InnovoGrow lights?",
+        "answer": "Warranty coverage varies by product line and project requirements. Contact us for the latest documentation and support details."
+      },
+      {
+        "question": "Do you provide lighting layout support?",
+        "answer": "Yes. We can help with facility planning, fixture selection, layout strategy, and lighting recommendations."
+      }
+    ]
+  },
+  "hub": {
+    "eyebrow": "Stay Informed",
+    "title": "InnovoGrow Knowledge Hub",
+    "description": "Insights, grower tips, and industry updates to help you stay ahead and grow smarter.",
+    "buttonLabel": "Visit the Knowledge Hub",
+    "buttonHref": "resources.html",
+    "subscribeTitle": "Get the Latest Insights",
+    "subscribeDescription": "Subscribe for new case studies, product updates, and expert grower insights.",
+    "subscribeNote": "We respect your privacy. Unsubscribe anytime."
+  }
+}

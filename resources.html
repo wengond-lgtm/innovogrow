@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="resources-overview.css">
   <link rel="stylesheet" href="global-ui.css">
 </head>
-<body>
+<body data-page="resources">
   <header class="site-header">
     <div class="header-scale">
       <div class="ig-container header-inner">
@@ -52,19 +52,19 @@
 
         <div class="ig-container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Resources</p>
-            <h1>Resources for Growers, Engineers, and Buyers</h1>
-            <p>Expert guidance, technical documentation, and real-world insights to help you plan, install, and optimize with confidence.</p>
+            <p class="eyebrow" id="resources-hero-eyebrow">Resources</p>
+            <h1 id="resources-hero-title">Resources for Growers, Engineers, and Buyers</h1>
+            <p id="resources-hero-description">Expert guidance, technical documentation, and real-world insights to help you plan, install, and optimize with confidence.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#resource-library">Browse All Resources</a>
-              <a class="btn btn-outline" href="contact.html">Request a Lighting Plan</a>
+              <a class="btn btn-primary" id="resources-hero-primary-cta" href="#resource-library">Browse All Resources</a>
+              <a class="btn btn-outline" id="resources-hero-secondary-cta" href="contact.html">Request a Lighting Plan</a>
             </div>
           </div>
         </div>
       </section>
 
       <section class="dark-band resources-strip">
-        <div class="ig-container resources-feature-grid">
+        <div class="ig-container resources-feature-grid" id="resources-feature-grid">
           <article><strong>Expert-Built Content</strong><span>Created by lighting specialists</span></article>
           <article><strong>Technical &amp; Practical</strong><span>Specs, how-tos, and best practices</span></article>
           <article><strong>Proven in the Field</strong><span>Real results from commercial growers</span></article>
@@ -76,11 +76,11 @@
         <div class="ig-container">
           <div class="library-header">
             <div>
-              <p class="eyebrow">Resource Library</p>
-              <h2>Download. Learn. Plan.</h2>
-              <p>Technical specs, installation guidance, planning tools, and more - everything you need to build better grow environments.</p>
+              <p class="eyebrow" id="resources-library-eyebrow">Resource Library</p>
+              <h2 id="resources-library-title">Download. Learn. Plan.</h2>
+              <p id="resources-library-description">Technical specs, installation guidance, planning tools, and more - everything you need to build better grow environments.</p>
             </div>
-            <div class="resource-tabs">
+            <div class="resource-tabs" id="resources-tabs">
               <span class="is-active">All Resources</span>
               <span id="spec-sheets">Spec Sheets</span>
               <span id="installation-guides">Installation Guides</span>
@@ -90,7 +90,7 @@
             </div>
           </div>
 
-          <div class="resource-card-grid">
+          <div class="resource-card-grid" id="resources-card-grid">
             <article class="resource-card">
               <span class="resource-badge">PDF</span>
               <img src="assets/site-images/resources-card-tl-spec-sheet.jpg" alt="IG 300-D1 spec sheet" loading="lazy" decoding="async">
@@ -129,7 +129,7 @@
           </div>
 
           <div class="library-cta">
-            <a class="btn btn-outline" href="#resource-library">Browse All Resources</a>
+            <a class="btn btn-outline" id="resources-library-button" href="#resource-library">Browse All Resources</a>
           </div>
         </div>
       </section>
@@ -138,14 +138,14 @@
         <div class="ig-container">
           <div class="section-title-row">
             <div>
-              <p class="eyebrow">Real Results</p>
-              <h2>Case Studies from Commercial Growers</h2>
+              <p class="eyebrow" id="resources-cases-eyebrow">Real Results</p>
+              <h2 id="resources-cases-title">Case Studies from Commercial Growers</h2>
             </div>
             <span class="section-rule"></span>
-            <a class="plain-link" href="#case-studies">View All Case Studies</a>
+            <a class="plain-link" id="resources-cases-link" href="#case-studies">View All Case Studies</a>
           </div>
 
-          <div class="case-grid">
+          <div class="case-grid" id="resources-case-grid">
             <article class="case-card">
               <picture>
                 <source type="image/webp" srcset="assets/site-images/resources-case-vertical-farming-480w.webp 480w, assets/site-images/resources-case-vertical-farming-768w.webp 768w, assets/site-images/resources-case-vertical-farming-1200w.webp 1200w" sizes="(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)">
@@ -194,15 +194,15 @@
         <div class="ig-container">
           <div class="section-title-row light-header">
             <div>
-              <p class="eyebrow">FAQ</p>
-              <h2>Frequently Asked Questions</h2>
-              <p class="faq-subtitle">Quick answers to the most common questions about our products and solutions.</p>
+              <p class="eyebrow" id="resources-faq-eyebrow">FAQ</p>
+              <h2 id="resources-faq-title">Frequently Asked Questions</h2>
+              <p class="faq-subtitle" id="resources-faq-description">Quick answers to the most common questions about our products and solutions.</p>
             </div>
             <span class="section-rule"></span>
-            <a class="plain-link light-link" href="#faq">View All FAQs</a>
+            <a class="plain-link light-link" id="resources-faq-link" href="#faq">View All FAQs</a>
           </div>
 
-          <div class="faq-grid">
+          <div class="faq-grid" id="resources-faq-grid">
             <article class="faq-item is-open" data-faq-item>
               <button type="button" data-faq-trigger>What is the difference between the IG 150 and IG 300-D1?</button>
               <div class="faq-answer" data-faq-panel><p>IG 150 is designed as under-canopy support for lower-zone coverage, while IG 300-D1 is built for primary top-light coverage and simplified room layouts.</p></div>
@@ -234,10 +234,10 @@
       <section class="light-band hub-band">
         <div class="ig-container hub-panel">
           <article class="hub-copy">
-            <p class="eyebrow">Stay Informed</p>
-            <h2>InnovoGrow Knowledge Hub</h2>
-            <p>Insights, grower tips, and industry updates to help you stay ahead and grow smarter.</p>
-            <a class="btn btn-primary" href="resources.html">Visit the Knowledge Hub</a>
+            <p class="eyebrow" id="resources-hub-eyebrow">Stay Informed</p>
+            <h2 id="resources-hub-title">InnovoGrow Knowledge Hub</h2>
+            <p id="resources-hub-description">Insights, grower tips, and industry updates to help you stay ahead and grow smarter.</p>
+            <a class="btn btn-primary" id="resources-hub-button" href="resources.html">Visit the Knowledge Hub</a>
           </article>
           <div class="hub-media">
             <picture>
@@ -246,13 +246,13 @@
             </picture>
           </div>
           <article class="hub-subscribe">
-            <h3>Get the Latest Insights</h3>
-            <p>Subscribe for new case studies, product updates, and expert grower insights.</p>
+            <h3 id="resources-subscribe-title">Get the Latest Insights</h3>
+            <p id="resources-subscribe-description">Subscribe for new case studies, product updates, and expert grower insights.</p>
             <form class="hub-form">
               <input type="email" placeholder="Enter your email" aria-label="Enter your email">
               <button type="button">Subscribe</button>
             </form>
-            <small>We respect your privacy. Unsubscribe anytime.</small>
+            <small id="resources-subscribe-note">We respect your privacy. Unsubscribe anytime.</small>
           </article>
         </div>
       </section>

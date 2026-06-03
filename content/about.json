@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "eyebrow": "About InnovoGrow",
+    "title": "About InnovoGrow",
+    "lead": "Engineering smarter light distribution for commercial growers.",
+    "description": "We design and deliver high-performance LED grow lighting solutions that drive consistent results, lower operating costs, and help cultivators grow better at every scale.",
+    "features": [
+      { "icon": "01", "title": "Purpose-Built", "text": "For commercial cultivation" },
+      { "icon": "02", "title": "Engineered for Performance", "text": "Reliable, efficient, and field-proven" },
+      { "icon": "03", "title": "Backed by Data", "text": "Expertise and real-world results" }
+    ]
+  },
+  "story": {
+    "eyebrow": "Our Story",
+    "title": "Born in the Grow Room. Built for What Matters.",
+    "paragraphs": [
+      "InnovoGrow was founded by growers and engineers who saw a better way to do lighting. We set out to solve the real challenges commercial cultivators face - heat, inefficiency, uneven coverage, and rising costs - by rethinking light distribution at the source.",
+      "Today, our solutions are trusted by cultivators across North America and beyond, from boutique facilities to large-scale commercial operations."
+    ],
+    "buttonLabel": "Talk With Our Team",
+    "buttonHref": "contact.html",
+    "sideCards": [
+      {
+        "title": "Mission",
+        "text": "Deliver innovative LED lighting solutions that maximize yield, efficiency, and profitability for commercial growers."
+      },
+      {
+        "title": "Vision",
+        "text": "A future where every grower has the smarter light they need to cultivate a better world."
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Our Journey",
+    "title": "Milestones That Light the Way",
+    "items": [
+      { "year": "2016", "text": "Founded by cultivators and engineers with a shared vision." },
+      { "year": "2017", "text": "Launched our first commercial LED fixture line." },
+      { "year": "2018", "text": "Expanded product portfolio with top-light-led room strategies and targeted support fixtures." },
+      { "year": "2020", "text": "Opened our engineering and test facility to drive innovation and rigor." },
+      { "year": "2022", "text": "Grew our U.S. distribution network and partner program." },
+      { "year": "2024+", "text": "Continuing to innovate and support growers worldwide." }
+    ]
+  },
+  "values": {
+    "eyebrow": "Our Core Values",
+    "title": "What We Stand For",
+    "items": [
+      { "icon": "assets/site-images/about-icon-grower-first.svg", "title": "Grower First", "text": "We listen, learn, and build solutions that solve real problems." },
+      { "icon": "assets/site-images/about-icon-integrity.svg", "title": "Integrity", "text": "We do what is right in our products, our partnerships, and our promises." },
+      { "icon": "assets/site-images/about-icon-innovation.svg", "title": "Innovation", "text": "We challenge the status quo and invest in ideas that move the industry forward." },
+      { "icon": "assets/site-images/about-icon-quality.svg", "title": "Quality", "text": "We engineer for reliability, test relentlessly, and stand behind our products." },
+      { "icon": "assets/site-images/about-icon-sustainability.svg", "title": "Sustainability", "text": "We design for efficiency to help growers reduce energy use and environmental impact." }
+    ]
+  },
+  "proof": {
+    "eyebrow": "Why Growers Choose InnovoGrow",
+    "title": "Smarter Light. Better Results.",
+    "metrics": [
+      { "icon": "assets/site-images/about-icon-higher-yields.svg", "title": "Higher Yields", "text": "Consistent PPFD where plants need it." },
+      { "icon": "assets/site-images/about-icon-lower-operating-costs.svg", "title": "Lower Operating Costs", "text": "High efficiency and reduced heat output." },
+      { "icon": "assets/site-images/about-icon-uniform-coverage.svg", "title": "Uniform Coverage", "text": "Engineered optics for even canopy penetration." },
+      { "icon": "assets/site-images/about-icon-built-to-last.svg", "title": "Built to Last", "text": "Premium components and rigorous testing." },
+      { "icon": "assets/site-images/about-icon-expert-support.svg", "title": "Expert Support", "text": "Real people. Real growers. Real solutions." }
+    ],
+    "stats": [
+      { "value": "20+", "text": "States and provinces served" },
+      { "value": "All Sizes", "text": "Helping facilities scale with confidence" }
+    ]
+  },
+  "team": {
+    "eyebrow": "Leadership Team",
+    "title": "Experienced. Passionate. Grower-Focused.",
+    "members": [
+      { "avatarClass": "team-avatar team-avatar--jason", "name": "Jason H.", "role": "Chief Executive Officer" },
+      { "avatarClass": "team-avatar team-avatar--megan", "name": "Megan T.", "role": "Chief Operating Officer" },
+      { "avatarClass": "team-avatar team-avatar--daniel", "name": "Daniel R.", "role": "Chief Engineering Officer" },
+      { "avatarClass": "team-avatar team-avatar--patrick", "name": "Patrick S.", "role": "VP of Sales" }
+    ],
+    "sideTitle": "A Team That's Been in Your Shoes",
+    "sideDescription": "Our leadership team combines deep horticulture experience with engineering excellence to deliver lighting solutions that make a measurable difference in your operation.",
+    "sideButtonLabel": "Meet the Team",
+    "sideButtonHref": "contact.html"
+  },
+  "craft": {
+    "eyebrow": "Engineered to Perform",
+    "title": "Designed. Built. Tested. For Commercial Excellence.",
+    "description": "From concept to canopy, every InnovoGrow product is designed with precision and built to perform in the toughest environments.",
+    "buttonLabel": "Learn About Our Products",
+    "buttonHref": "products.html",
+    "cards": [
+      {
+        "mediaClass": "craft-media craft-media--design",
+        "title": "Engineering & Design",
+        "text": "Advanced optical modeling and thermal management ensure maximum efficiency and uniformity."
+      },
+      {
+        "mediaClass": "craft-media craft-media--manufacturing",
+        "title": "Manufacturing Excellence",
+        "text": "Quality components, precision assembly, and robust processes you can count on."
+      },
+      {
+        "mediaClass": "craft-media craft-media--qa",
+        "title": "Quality Assurance",
+        "text": "Every fixture is tested for performance, safety, and durability before it ships."
+      }
+    ]
+  },
+  "support": {
+    "eyebrow": "Global Support",
+    "title": "Partners. Support. Anywhere You Grow.",
+    "description": "We partner with trusted distributors, reps, and service providers to deliver reliable support close to home, wherever your operation is located.",
+    "items": [
+      { "icon": "assets/site-images/about-icon-responsive-support.svg", "title": "Responsive Support", "text": "Get the help you need, faster." },
+      { "icon": "assets/site-images/about-icon-local-expertise.svg", "title": "Local Expertise", "text": "Knowledgeable partners in your region." },
+      { "icon": "assets/site-images/about-icon-training-resources.svg", "title": "Training & Resources", "text": "Tools to help you succeed." },
+      { "icon": "assets/site-images/about-icon-warranty-you-can-count-on.svg", "title": "Warranty You Can Count On", "text": "Backed by industry-leading coverage." }
+    ]
+  },
+  "cta": {
+    "title": "Let's Build a Better Grow - Together",
+    "description": "Have questions about our solutions or your facility? Our team is here to help.",
+    "buttonLabel": "Talk With Our Team",
+    "buttonHref": "contact.html"
+  }
+}

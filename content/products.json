@@ -1,0 +1,303 @@
+{
+  "hero": {
+    "eyebrow": "Products",
+    "title": "Products Built for Commercial Growers",
+    "description": "InnovoGrow delivers high-performance LED lighting solutions designed for commercial cultivation, led by top-light performance and supported by linear indoor and under-canopy options that help maximize yield, quality, and operational efficiency.",
+    "features": [
+      {
+        "icon": "YLD",
+        "title": "Engineered for Maximum Yield",
+        "text": "Uniform light placement across the canopy."
+      },
+      {
+        "icon": "SCL",
+        "title": "Reliable, Scalable & Future-Ready",
+        "text": "Built for commercial rooms and expansion."
+      },
+      {
+        "icon": "SUP",
+        "title": "Backed by Expert Support",
+        "text": "Layout guidance for real facility workflows."
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "tl-300-d1",
+      "badge": "Featured",
+      "title": "IG 300-D1 - Top Light",
+      "description": "Simplify your top-lighting layout with one driver architecture that powers up to 80 fixtures, reducing cost, complexity, and installation time.",
+      "primaryLabel": "View IG 300-D1 Details",
+      "primaryHref": "contact.html",
+      "secondaryLabel": "Download Spec Sheet",
+      "secondaryHref": "resources.html#spec-sheets",
+      "mediaClass": "catalog-media catalog-media--tl",
+      "image": "assets/site-images/products-fixture-tl-300-d1.png",
+      "alt": "IG 300-D1 top lighting fixture",
+      "bubble": {
+        "label": "One Driver",
+        "value": "Up to 80 Fixtures"
+      },
+      "applications": [
+        "Top Lighting",
+        "High-Density Canopies",
+        "Multi-Room Facilities"
+      ],
+      "table": {
+        "columns": [
+          "Model",
+          "Power",
+          "PPF",
+          "Efficacy",
+          "Light Distribution",
+          "Driver Solution",
+          "MAX output power",
+          "Output rated voltage"
+        ],
+        "rows": [
+          [
+            "IG 300-D1",
+            "300W",
+            "1170",
+            "3.9 (DC Input)",
+            "120°",
+            "1 Driver up to 80 Fixtures",
+            "40KW / 80KW",
+            "600-900V"
+          ]
+        ]
+      },
+      "benefits": [
+        {
+          "index": "01",
+          "title": "One Driver Architecture",
+          "text": "Power up to 80 fixtures with a single driver."
+        },
+        {
+          "index": "02",
+          "title": "Cost Effective",
+          "text": "Fewer drivers, less wiring, lower installation cost."
+        },
+        {
+          "index": "03",
+          "title": "Scalable by Design",
+          "text": "Easily expand as your operation grows."
+        },
+        {
+          "index": "04",
+          "title": "Versatile",
+          "text": "Ideal for racks, greenhouses, and large rooms."
+        }
+      ]
+    },
+    {
+      "id": "gen-iv",
+      "badge": "Featured",
+      "title": "IG 800 - Linear Indoor LED",
+      "modelLine": "IG 800",
+      "description": "Flexible linear lighting for indoor cultivation, with versatile applications, high performance, and superior light quality.",
+      "primaryLabel": "View IG 800 Details",
+      "primaryHref": "contact.html",
+      "secondaryLabel": "Download Spec Sheet",
+      "secondaryHref": "resources.html#spec-sheets",
+      "mediaClass": "catalog-media catalog-media--gen",
+      "image": "assets/site-images/products-fixture-gen-iv.png",
+      "alt": "IG 800 Linear Indoor LED fixture",
+      "applications": [
+        "Vertical Farming",
+        "Greenhouse",
+        "Grow Rooms",
+        "Racks & Tiers"
+      ],
+      "table": {
+        "columns": [
+          "Model",
+          "Power",
+          "Spectrum",
+          "PPF",
+          "Efficacy",
+          "Light Distribution",
+          "Voltage",
+          "Frequency"
+        ],
+        "rows": [
+          [
+            "IG 800",
+            "840W",
+            "Full Spectrum",
+            "2730",
+            "3.25",
+            "120°",
+            "200-277 VAC",
+            "50/60Hz"
+          ]
+        ]
+      },
+      "benefits": [
+        {
+          "index": "01",
+          "title": "Flexible Mounting",
+          "text": "Surface, suspended, or rack-mounted deployments."
+        },
+        {
+          "index": "02",
+          "title": "High Efficiency",
+          "text": "Top-tier diodes for maximum performance."
+        },
+        {
+          "index": "03",
+          "title": "Low Heat Output",
+          "text": "Passive cooling for reliable operation."
+        },
+        {
+          "index": "04",
+          "title": "Premium Build",
+          "text": "Durable aluminum body with IP66 rating."
+        }
+      ]
+    },
+    {
+      "id": "veg-330",
+      "badge": "Featured",
+      "title": "IG 330 - Linear Indoor LED",
+      "modelLine": "IG 330",
+      "description": "A dedicated linear indoor LED for vegetative rooms, early-stage crop development, and cultivation zones that need broad, uniform coverage with a clean overhead layout.",
+      "primaryLabel": "View IG 330 Details",
+      "primaryHref": "contact.html",
+      "secondaryLabel": "Download Spec Sheet",
+      "secondaryHref": "resources.html#spec-sheets",
+      "mediaClass": "catalog-media catalog-media--gen",
+      "image": "assets/site-images/products-fixture-veg-330.png",
+      "alt": "IG 330 Linear Indoor LED fixture",
+      "applications": [
+        "Vegetative Rooms",
+        "Propagation",
+        "Grow Rooms",
+        "Linear Indoor Layouts"
+      ],
+      "table": {
+        "columns": [
+          "Model",
+          "Power",
+          "Spectrum",
+          "PPF",
+          "Efficacy",
+          "Light Distribution",
+          "Voltage",
+          "Frequency"
+        ],
+        "rows": [
+          [
+            "IG 330",
+            "330W",
+            "Full Spectrum",
+            "1023",
+            "3.1",
+            "120°",
+            "120-277 VAC",
+            "50/60Hz"
+          ]
+        ]
+      },
+      "benefits": [
+        {
+          "index": "01",
+          "title": "Built for Veg Spaces",
+          "text": "Designed for vegetative development and uniform room coverage."
+        },
+        {
+          "index": "02",
+          "title": "Broad Linear Spread",
+          "text": "Supports even light placement across benches and indoor layouts."
+        },
+        {
+          "index": "03",
+          "title": "Clean Facility Integration",
+          "text": "Fits commercial indoor rooms with a streamlined linear fixture profile."
+        },
+        {
+          "index": "04",
+          "title": "Spec Support Available",
+          "text": "Talk to our team for fixture selection, layout guidance, and technical details."
+        }
+      ]
+    },
+    {
+      "id": "uc-series",
+      "badge": "Featured",
+      "title": "IG 150 - Under Canopy LED",
+      "modelLine": "IG 150",
+      "description": "A dedicated under-canopy support fixture engineered to improve lower-zone distribution in top-light rooms for stronger plant uniformity and more complete crop development.",
+      "primaryLabel": "View IG 150 Details",
+      "primaryHref": "contact.html",
+      "secondaryLabel": "Download Spec Sheet",
+      "secondaryHref": "resources.html#spec-sheets",
+      "mediaClass": "catalog-media catalog-media--uc",
+      "image": "assets/site-images/products-fixture-uc-series.png",
+      "alt": "IG 150 Under Canopy LED fixture",
+      "labels": [
+        {
+          "className": "catalog-label catalog-label--upper",
+          "text": "IG150"
+        }
+      ],
+      "applications": [
+        "Under-Canopy Support",
+        "Supplemental Lighting",
+        "Vegetative Growth"
+      ],
+      "table": {
+        "columns": [
+          "Model",
+          "Power",
+          "Spectrum",
+          "PPF",
+          "Efficacy",
+          "Light Distribution",
+          "Voltage",
+          "Frequency"
+        ],
+        "rows": [
+          [
+            "IG 150",
+            "150W",
+            "Full Spectrum",
+            "522",
+            "3.26",
+            "120°",
+            "200-277 VAC",
+            "50/60Hz"
+          ]
+        ]
+      },
+      "benefits": [
+        {
+          "index": "01",
+          "title": "Lower-Zone Support",
+          "text": "Improves light delivery beneath dense top-light canopies."
+        },
+        {
+          "index": "02",
+          "title": "Higher Yields",
+          "text": "Supports stronger lower growth and more complete crop performance."
+        },
+        {
+          "index": "03",
+          "title": "Simple Integration",
+          "text": "Easy to deploy as a companion layer in top-light rooms."
+        },
+        {
+          "index": "04",
+          "title": "Commercial Ready",
+          "text": "Built for demanding facility use and long operating cycles."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Not sure which product is right for your facility?",
+    "description": "Our lighting experts will design a custom solution tailored to your crop, layout, and goals.",
+    "buttonLabel": "Request a Lighting Plan",
+    "buttonHref": "contact.html"
+  }
+}

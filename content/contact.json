@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "eyebrow": "Contact InnovoGrow",
+    "title": "Talk to Our Lighting Team",
+    "description": "We're here to help you design the right lighting solution for higher yields, better efficiency, and long-term growth.",
+    "features": [
+      { "icon": "01", "title": "Commercial LED Experts", "text": "Built for cultivation operations" },
+      { "icon": "02", "title": "Tailored Solutions", "text": "For your facility and workflow" },
+      { "icon": "03", "title": "Fast, Reliable Response", "text": "From a real lighting team" }
+    ]
+  },
+  "form": {
+    "title": "Let's Build Your Lighting Advantage",
+    "description": "Share a few details about your operation and our team will create a customized lighting plan for you."
+  },
+  "sideCards": [
+    {
+      "title": "Talk to Our Lighting Team",
+      "strong": "+1 (888) 254-1457",
+      "text": "Mon-Fri, 8AM-6PM (EST)",
+      "link": {
+        "label": "grow@innovogrow.com",
+        "href": "mailto:grow@innovogrow.com"
+      }
+    },
+    {
+      "title": "We Respond Fast",
+      "strong": "Within 1 Business Day",
+      "text": "You'll hear back from a lighting expert who understands your grow."
+    },
+    {
+      "title": "Headquarters & Office",
+      "text": "InnovoGrow Technologies<br>1000 W Fulton Market, Suite 300<br>Chicago, IL 60607, USA",
+      "note": "Mon-Fri, 8AM-6PM (EST)"
+    },
+    {
+      "title": "Warehouse & Fulfillment",
+      "text": "InnovoGrow Distribution Center<br>2501 W 15th St, Suite B<br>Tempe, AZ 85281, USA",
+      "note": "Mon-Fri, 7AM-6PM (MST)"
+    },
+    {
+      "title": "Distributor & Partnership Inquiries",
+      "text": "Looking to become a distributor or partner? Let's grow together.",
+      "link": {
+        "label": "partners@innovogrow.com",
+        "href": "mailto:partners@innovogrow.com"
+      }
+    },
+    {
+      "title": "Technical Support",
+      "text": "For product support, installation guidance, or troubleshooting.",
+      "link": {
+        "label": "support@innovogrow.com",
+        "href": "mailto:support@innovogrow.com"
+      }
+    }
+  ],
+  "process": {
+    "title": "Request a Custom Lighting Plan",
+    "description": "Our team will analyze your facility and crops to design a lighting solution that maximizes yield and efficiency.",
+    "steps": [
+      { "number": "1", "title": "Share Your Details", "text": "Tell us about your facility and goals." },
+      { "number": "2", "title": "We Design Your Plan", "text": "Our experts create a tailored lighting layout." },
+      { "number": "3", "title": "Grow with Confidence", "text": "Get higher yields, lower costs, and proven results." }
+    ],
+    "buttonLabel": "Get My Lighting Plan",
+    "buttonHref": "#top",
+    "note": "No obligation. 100% free."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Next Steps & Common Questions",
+    "linkLabel": "View All Resources",
+    "linkHref": "resources.html#faq",
+    "items": [
+      {
+        "question": "How soon will I receive a response?",
+        "answer": "Most inquiries receive a response within one business day."
+      },
+      {
+        "question": "Is there a cost for a lighting plan?",
+        "answer": "No. Initial planning support and consultation are provided at no cost."
+      },
+      {
+        "question": "What information do I need to provide?",
+        "answer": "Facility type, crop, grow area, current lighting, and any layout files help us build a more accurate recommendation."
+      },
+      {
+        "question": "Do you ship internationally?",
+        "answer": "We support growers across multiple markets through distribution, partner networks, and project support."
+      }
+    ]
+  },
+  "map": {
+    "title": "We're Located in the Heart of U.S. Ag Innovation",
+    "description": "Proudly headquartered in Chicago with distribution operations in Arizona, serving growers across North America and beyond.",
+    "westLabel": "Distribution Center<br>Tempe, Arizona",
+    "midwestLabel": "InnovoGrow HQ<br>Chicago, Illinois"
+  }
+}

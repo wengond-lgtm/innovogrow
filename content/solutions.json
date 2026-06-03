@@ -1,0 +1,209 @@
+{
+  "hero": {
+    "eyebrow": "Solutions",
+    "title": "Lighting Solutions for Commercial Cultivation",
+    "description": "System-level strategies that maximize yield, improve efficiency, and future-proof your grow.",
+    "features": [
+      { "icon": "01", "title": "Higher Yields", "text": "Stronger crop growth" },
+      { "icon": "02", "title": "Better Light Distribution", "text": "Improve canopy uniformity" },
+      { "icon": "03", "title": "Reduced Complexity", "text": "Simplified installation" },
+      { "icon": "04", "title": "Lower Total Cost", "text": "Lower energy and ROI pressure" }
+    ],
+    "primaryCta": { "label": "Explore Solutions", "href": "#application-solutions" },
+    "secondaryCta": { "label": "Request a Lighting Plan", "href": "contact.html" }
+  },
+  "applicationLinks": {
+    "title": "Explore Solutions by Application",
+    "description": "Every grow is different. Find the right lighting strategy for your facility.",
+    "cards": [
+      { "id": "under-canopy-lighting", "icon": "UC", "title": "Under Canopy Lighting", "text": "Drive lower growth and improve distribution." },
+      { "id": "top-lighting", "icon": "TL", "title": "Top Lighting", "text": "Power photosynthesis from the top down." },
+      { "id": "indoor-cultivation", "icon": "IN", "title": "Indoor Cultivation", "text": "Controlled environments for maximum output." },
+      { "id": "greenhouse-lighting", "icon": "GH", "title": "Greenhouse Lighting", "text": "Natural light, smarter supplemental light." },
+      { "id": "full-facility-layouts", "icon": "FF", "title": "Full Facility Layouts", "text": "End-to-end lighting design and integration." }
+    ]
+  },
+  "system": {
+    "eyebrow": "The InnovoGrow System",
+    "title": "Engineered to Work Better Together",
+    "description": "Our lighting solutions are designed to work as a system, delivering uniform light distribution, greater efficiency, and higher yields.",
+    "linkLabel": "See how it works",
+    "linkHref": "#solution-packages",
+    "summary": "One Integrated System. Better Light. Better Results.",
+    "cards": [
+      {
+        "image": "assets/site-images/products-fixture-tl-300-d1.png",
+        "alt": "IG 300-D1 fixture",
+        "title": "IG 300-D1",
+        "heading": "Primary Top Light Solution",
+        "text": "Lead your room with a simplified one-driver top-light architecture."
+      },
+      {
+        "image": "assets/site-images/products-fixture-gen-iv.png",
+        "alt": "IG 800 fixture",
+        "title": "IG 800",
+        "heading": "Linear Indoor Support",
+        "text": "Add flexible linear coverage for propagation, racks, and specialty zones."
+      },
+      {
+        "image": "assets/site-images/products-fixture-veg-330.png",
+        "alt": "IG 330 fixture",
+        "title": "IG 330",
+        "heading": "Vegetative Linear Support",
+        "text": "Deliver uniform early-stage linear coverage in dedicated veg environments."
+      },
+      {
+        "image": "assets/site-images/products-fixture-uc-series.png",
+        "alt": "IG 150 fixture",
+        "title": "IG 150",
+        "heading": "Under-Canopy Support",
+        "text": "Support lower zones where top light alone needs more penetration."
+      }
+    ]
+  },
+  "compare": {
+    "eyebrow": "From Challenge to Solution",
+    "title": "Common Challenges",
+    "challenges": [
+      { "title": "Uneven light distribution", "text": "Leaves lower canopy behind" },
+      { "title": "Complex layouts & more drivers", "text": "Higher install time and cost" },
+      { "title": "High energy usage", "text": "Cuts into margins" },
+      { "title": "Inconsistent results", "text": "Lower quality and yield" }
+    ],
+    "negativeChip": "Without a System",
+    "positiveChip": "With the InnovoGrow System",
+    "advantageTitle": "The InnovoGrow Advantage",
+    "advantages": [
+      { "title": "Uniform light across all canopy levels", "text": "Stronger, more consistent growth" },
+      { "title": "Simplified systems, fewer drivers", "text": "Faster installation, lower cost" },
+      { "title": "Higher efficiency, lower operating cost", "text": "Better ROI, year after year" },
+      { "title": "Scalable solutions that grow with you", "text": "Flexible for any facility size" }
+    ]
+  },
+  "useCases": {
+    "title": "Solutions Built for Every Grow",
+    "description": "See how our lighting strategies perform in real-world applications.",
+    "linkLabel": "View All Use Cases",
+    "linkHref": "#solution-packages",
+    "cards": [
+      {
+        "title": "High-Density Flowering Crops",
+        "text": "Maximize light penetration and increase flower quality and yield.",
+        "href": "#under-canopy-lighting",
+        "imageBase": "assets/site-images/solutions-usecase-high-density-flowering-crops"
+      },
+      {
+        "title": "Greenhouse Cultivation",
+        "text": "Supplement natural light to extend seasons and boost production.",
+        "href": "#greenhouse-lighting",
+        "imageBase": "assets/site-images/solutions-usecase-greenhouse-cultivation"
+      },
+      {
+        "title": "Vertical Farming",
+        "text": "Light every layer with precision and energy efficiency.",
+        "href": "#indoor-cultivation",
+        "imageBase": "assets/site-images/solutions-usecase-vertical-farming"
+      },
+      {
+        "title": "Indoor Grow Rooms",
+        "text": "Consistent, controllable light for every stage of growth.",
+        "href": "#full-facility-layouts",
+        "imageBase": "assets/site-images/solutions-usecase-indoor-grow-rooms"
+      }
+    ]
+  },
+  "packages": {
+    "title": "Complete Solutions. Proven Results.",
+    "description": "Recommended lighting strategies for common grow scenarios.",
+    "cards": [
+      {
+        "eyebrow": "Under-Canopy Upgrade",
+        "title": "Boost Lower Growth & Uniformity",
+        "description": "Best for facilities looking to improve lower canopy performance.",
+        "includes": [
+          "IG 150 Under-Canopy Support",
+          "Mounting & Control Accessories"
+        ],
+        "image": "assets/site-images/solutions-package-ig-150.png",
+        "alt": "IG 150 under-canopy package fixture",
+        "benefits": [
+          "Better light distribution",
+          "Increased yields",
+          "Easy integration"
+        ],
+        "href": "#under-canopy-lighting"
+      },
+      {
+        "eyebrow": "Top-Light Simplification",
+        "title": "Simplify Primary Top Lighting. Lower Costs.",
+        "description": "Ideal for building your main room lighting strategy around fewer drivers and higher efficiency.",
+        "includes": [
+          "IG 300-D1 Top Light",
+          "Compatible Top Light Fixtures"
+        ],
+        "image": "assets/site-images/solutions-package-ig-300-d1.png",
+        "alt": "IG 300-D1 top-light package fixture",
+        "benefits": [
+          "Fewer drivers",
+          "Lower energy use",
+          "Faster installation"
+        ],
+        "href": "#top-lighting"
+      },
+      {
+        "eyebrow": "Complete Indoor Layout",
+        "title": "End-to-End Lighting Strategy",
+        "description": "Turnkey lighting layout for new builds or full facility upgrades.",
+        "includes": [
+          "IG 300-D1 Top Light",
+          "IG 800 Linear Indoor LED",
+          "IG 330 Linear Indoor LED",
+          "IG 150 Under-Canopy Support",
+          "Controls & Layout Planning"
+        ],
+        "image": "assets/site-images/solutions-package-ig-800.png",
+        "alt": "IG 800 complete indoor layout fixture",
+        "benefits": [
+          "Optimized layout",
+          "Max ROI & efficiency",
+          "Scalable & future-ready"
+        ],
+        "href": "#full-facility-layouts",
+        "wide": true
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Process. Your Success.",
+    "description": "A top-light-first planning process, with support layers added only where the room needs them.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Consultation",
+        "text": "We learn about your facility goals, crop needs, and top-light priorities."
+      },
+      {
+        "number": "02",
+        "title": "Lighting Plan",
+        "text": "We build a primary top-light layout, then map support layers where needed."
+      },
+      {
+        "number": "03",
+        "title": "Product Selection",
+        "text": "We match IG 300-D1, IG 800, IG 330, and IG 150 fixtures to the exact zones that need them."
+      },
+      {
+        "number": "04",
+        "title": "Deployment",
+        "text": "We help you install, integrate, and scale with confidence."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build a Smarter Grow?",
+    "description": "Request a custom lighting plan built around your primary top-light layout, with support fixtures where they add value.",
+    "buttonLabel": "Request Your Lighting Plan",
+    "buttonHref": "contact.html",
+    "status": "Typically delivered within 1-2 business days."
+  }
+}
