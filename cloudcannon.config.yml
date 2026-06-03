@@ -1,29 +1,28 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/CloudCannon/configuration-types/main/cloudcannon-config.schema.json
-editor:
-  default_path: /index.html
-
 collections_config:
   pages:
     path: .
     glob:
-      - "*.html"
+      - '*.html'
     icon: article
-    disable_add: true
-    disable_duplicate: true
+    disable_url: false
     _enabled_editors:
       - visual
       - content
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: false
   content:
     path: content
     glob:
-      - "*.json"
-    icon: notes
-    disable_add: true
-    disable_duplicate: true
+      - '*.json'
+    icon: ''
+    disable_url: false
     _enabled_editors:
       - visual
       - data
-
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: false
 file_config:
   index.html:
     label: Home
@@ -79,3 +78,6 @@ file_config:
     _enabled_editors:
       - visual
       - data
+editor:
+  default_path: /index.html
+timezone: Etc/UTC
