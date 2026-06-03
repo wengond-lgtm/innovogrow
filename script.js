@@ -172,6 +172,24 @@ function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200])
   `;
 }
 
+function textAttrs(prop, type = "text") {
+  const typeAttr = type ? ` data-type="${type}"` : "";
+  return `data-editable="text" data-prop="${prop}"${typeAttr}`;
+}
+
+function imageAttrs(srcProp, altProp) {
+  const altAttr = altProp ? ` data-prop-alt="${altProp}"` : "";
+  return `data-editable="image" data-prop-src="${srcProp}"${altAttr}`;
+}
+
+function arrayAttrs(prop) {
+  return `data-editable="array" data-prop="${prop}"`;
+}
+
+function arrayItemAttrs() {
+  return `data-editable="array-item"`;
+}
+
 function renderHero(content) {
   document.querySelector("#hero-title").textContent = content.hero.title;
   document.querySelector("#hero-description").textContent = content.hero.description;
@@ -180,12 +198,15 @@ function renderHero(content) {
   document.querySelector("#hero-secondary-cta").textContent = content.hero.secondaryCta.label;
   document.querySelector("#hero-secondary-cta").href = content.hero.secondaryCta.href;
 
-  document.querySelector("#hero-features").innerHTML = content.hero.features.map((feature) => `
-    <div class="hero-feature">
-      <span class="round-icon">${icons[feature.icon]}</span>
+  const features = document.querySelector("#hero-features");
+  features.setAttribute("data-editable", "array");
+  features.setAttribute("data-prop", "hero.features");
+  features.innerHTML = content.hero.features.map((feature) => `
+    <div class="hero-feature" ${arrayItemAttrs()}>
+      <span class="round-icon">${icons[feature.icon] || feature.icon}</span>
       <div>
-        <strong>${feature.title}</strong>
-        <span>${feature.text}</span>
+        <strong ${textAttrs("title")}>${feature.title}</strong>
+        <span ${textAttrs("text", "text")}>${feature.text}</span>
       </div>
     </div>
   `).join("");
@@ -203,16 +224,19 @@ function renderProducts(content) {
   document.querySelector("#products-section-link").textContent = content.productsSection.linkLabel;
   document.querySelector("#products-section-link").href = content.productsSection.linkHref;
 
-  document.querySelector("#product-grid").innerHTML = content.products.map((product) => `
-    <article class="product-card ${product.className || ""}">
+  const grid = document.querySelector("#product-grid");
+  grid.setAttribute("data-editable", "array");
+  grid.setAttribute("data-prop", "products");
+  grid.innerHTML = content.products.map((product) => `
+    <article class="product-card ${product.className || ""}" ${arrayItemAttrs()}>
       <div class="product-copy">
-        ${product.badge ? `<span class="badge ${product.badge === "Classic" ? "badge--classic" : ""}">${product.badge}</span>` : ""}
-        <h3>${product.title}</h3>
-        <p>${product.description}</p>
-        <ul>${product.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
+        ${product.badge ? `<span class="badge ${product.badge === "Classic" ? "badge--classic" : ""}" ${textAttrs("badge")}>${product.badge}</span>` : ""}
+        <h3 ${textAttrs("title", "block")}>${product.title}</h3>
+        <p ${textAttrs("description", "text")}>${product.description}</p>
+        <ul ${arrayAttrs("bullets")}>${product.bullets.map((item) => `<li ${arrayItemAttrs()}>${item}</li>`).join("")}</ul>
       </div>
       <div class="product-media">
-        <img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">
+        <img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async" ${imageAttrs("image", "title")}>
       </div>
     </article>
   `).join("");
@@ -222,12 +246,15 @@ function renderStrategies(content) {
   document.querySelector("#strategies-section-eyebrow").textContent = content.strategiesSection.eyebrow;
   document.querySelector("#strategies-section-title").textContent = content.strategiesSection.title;
 
-  document.querySelector("#strategy-grid").innerHTML = content.strategies.map((strategy) => `
-    <article class="strategy-card">
-      <span class="round-icon">${icons[strategy.icon]}</span>
-      <h3>${strategy.title}</h3>
-      <strong>${strategy.model}</strong>
-      <p>${strategy.text}</p>
+  const grid = document.querySelector("#strategy-grid");
+  grid.setAttribute("data-editable", "array");
+  grid.setAttribute("data-prop", "strategies");
+  grid.innerHTML = content.strategies.map((strategy) => `
+    <article class="strategy-card" ${arrayItemAttrs()}>
+      <span class="round-icon">${icons[strategy.icon] || strategy.icon}</span>
+      <h3 ${textAttrs("title")}>${strategy.title}</h3>
+      <strong ${textAttrs("model")}>${strategy.model}</strong>
+      <p ${textAttrs("text", "text")}>${strategy.text}</p>
       <a href="${strategy.href}">Learn More</a>
     </article>
   `).join("");
@@ -237,10 +264,13 @@ function renderMetrics(content) {
   document.querySelector("#performance-section-eyebrow").textContent = content.performanceSection.eyebrow;
   document.querySelector("#performance-section-title").textContent = content.performanceSection.title;
 
-  document.querySelector("#metric-grid").innerHTML = content.metrics.map((metric) => `
-    <div class="metric-item">
-      <span class="round-icon">${icons[metric.icon]}</span>
-      <strong>${metric.title}</strong>
+  const grid = document.querySelector("#metric-grid");
+  grid.setAttribute("data-editable", "array");
+  grid.setAttribute("data-prop", "metrics");
+  grid.innerHTML = content.metrics.map((metric) => `
+    <div class="metric-item" ${arrayItemAttrs()}>
+      <span class="round-icon">${icons[metric.icon] || metric.icon}</span>
+      <strong ${textAttrs("title")}>${metric.title}</strong>
     </div>
   `).join("");
 }
@@ -248,10 +278,13 @@ function renderMetrics(content) {
 function renderApplications(content) {
   document.querySelector("#applications-section-eyebrow").textContent = content.applicationsSection.eyebrow;
 
-  document.querySelector("#application-grid").innerHTML = content.applications.map((application) => `
-    <article class="application-card">
+  const grid = document.querySelector("#application-grid");
+  grid.setAttribute("data-editable", "array");
+  grid.setAttribute("data-prop", "applications");
+  grid.innerHTML = content.applications.map((application) => `
+    <article class="application-card" ${arrayItemAttrs()}>
       ${buildResponsivePicture(application.imageBase, application.title, photoCardSizes)}
-      <strong>${application.title}</strong>
+      <strong ${textAttrs("title")}>${application.title}</strong>
     </article>
   `).join("");
 }
@@ -260,9 +293,17 @@ function renderContact(content) {
   document.querySelector("#contact-section-eyebrow").textContent = content.contactSection.eyebrow;
   document.querySelector("#contact-section-title").textContent = content.contactSection.title;
   document.querySelector("#contact-section-description").textContent = content.contactSection.description;
-  document.querySelector("#contact-benefits").innerHTML = content.contactSection.benefits.map((benefit) => `
-    <span><img src="${benefit.icon}" alt="" aria-hidden="true" decoding="async">${benefit.text}</span>
+
+  const benefits = document.querySelector("#contact-benefits");
+  benefits.setAttribute("data-editable", "array");
+  benefits.setAttribute("data-prop", "contactSection.benefits");
+  benefits.innerHTML = content.contactSection.benefits.map((benefit) => `
+    <span ${arrayItemAttrs()}>
+      <img src="${benefit.icon}" alt="" aria-hidden="true" decoding="async" ${imageAttrs("icon")}>
+      <span ${textAttrs("text")}>${benefit.text}</span>
+    </span>
   `).join("");
+
   document.querySelector("#contact-card-text").textContent = content.contactSection.cardText;
   document.querySelector("#contact-card-button").textContent = content.contactSection.cardButtonLabel;
   document.querySelector("#contact-card-button").href = content.contactSection.cardButtonHref;
@@ -272,6 +313,10 @@ function setupMenu() {
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".menu-toggle");
 
+  if (!header || !toggle) {
+    return;
+  }
+
   toggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
@@ -279,7 +324,12 @@ function setupMenu() {
 }
 
 function setupForm() {
-  document.querySelector(".contact-form").addEventListener("submit", (event) => {
+  const form = document.querySelector(".contact-form");
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
   });
 }

@@ -28,21 +28,64 @@ function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200])
   `;
 }
 
-function setText(selector, value) {
+function textAttrs(prop, type = "text") {
+  const typeAttr = type ? ` data-type="${type}"` : "";
+  return `data-editable="text" data-prop="${prop}"${typeAttr}`;
+}
+
+function imageAttrs(srcProp, altProp) {
+  const altAttr = altProp ? ` data-prop-alt="${altProp}"` : "";
+  return `data-editable="image" data-prop-src="${srcProp}"${altAttr}`;
+}
+
+function arrayAttrs(prop) {
+  return `data-editable="array" data-prop="${prop}"`;
+}
+
+function arrayItemAttrs() {
+  return `data-editable="array-item"`;
+}
+
+function bindTextElement(element, prop, type = "text") {
+  if (!element || !prop) {
+    return;
+  }
+
+  element.setAttribute("data-editable", "text");
+  element.setAttribute("data-prop", prop);
+  if (type) {
+    element.setAttribute("data-type", type);
+  }
+}
+
+function bindArrayElement(element, prop) {
+  if (!element || !prop) {
+    return;
+  }
+
+  element.setAttribute("data-editable", "array");
+  element.setAttribute("data-prop", prop);
+}
+
+function setText(selector, value, prop, type = "text") {
   const element = document.querySelector(selector);
   if (element && typeof value === "string") {
     element.textContent = value;
   }
+
+  bindTextElement(element, prop, type);
 }
 
-function setHTML(selector, value) {
+function setHTML(selector, value, prop, type = "text") {
   const element = document.querySelector(selector);
   if (element && typeof value === "string") {
     element.innerHTML = value;
   }
+
+  bindTextElement(element, prop, type);
 }
 
-function setLink(selector, label, href) {
+function setLink(selector, label, href, labelProp, type = "text") {
   const element = document.querySelector(selector);
   if (!element) {
     return;
@@ -55,6 +98,8 @@ function setLink(selector, label, href) {
   if (typeof href === "string") {
     element.href = href;
   }
+
+  bindTextElement(element, labelProp, type);
 }
 
 function setupSubpageMenu() {
@@ -104,87 +149,94 @@ async function loadSubpageContent(page) {
   }
 }
 
-function renderFeatureList(containerSelector, features) {
+function renderFeatureList(containerSelector, features, baseProp) {
   const container = document.querySelector(containerSelector);
   if (!container || !Array.isArray(features)) {
     return;
   }
 
+  bindArrayElement(container, baseProp);
   container.innerHTML = features.map((feature) => `
-    <div class="hero-feature">
-      <span class="round-icon">${feature.icon}</span>
+    <div class="hero-feature" ${arrayItemAttrs()}>
+      <span class="round-icon" ${textAttrs("icon")}>${feature.icon}</span>
       <div>
-        <strong>${feature.title}</strong>
-        <span>${feature.text}</span>
+        <strong ${textAttrs("title")}>${feature.title}</strong>
+        <span ${textAttrs("text")}>${feature.text}</span>
       </div>
     </div>
   `).join("");
 }
 
-function renderFaqGrid(containerSelector, items) {
+function renderFaqGrid(containerSelector, items, baseProp) {
   const container = document.querySelector(containerSelector);
   if (!container || !Array.isArray(items)) {
     return;
   }
 
+  bindArrayElement(container, baseProp);
   container.innerHTML = items.map((item) => `
-    <article class="faq-item ${item.open ? "is-open" : ""}" data-faq-item>
-      <button type="button" data-faq-trigger>${item.question}</button>
-      <div class="faq-answer" data-faq-panel><p>${item.answer}</p></div>
+    <article class="faq-item ${item.open ? "is-open" : ""}" data-faq-item ${arrayItemAttrs()}>
+      <button type="button" data-faq-trigger ${textAttrs("question")}>${item.question}</button>
+      <div class="faq-answer" data-faq-panel><p ${textAttrs("answer", "text")}>${item.answer}</p></div>
     </article>
   `).join("");
 }
 
 function renderProductsPage(content) {
-  setText("#products-hero-eyebrow", content.hero?.eyebrow);
-  setText("#products-hero-title", content.hero?.title);
-  setText("#products-hero-description", content.hero?.description);
-  renderFeatureList("#products-hero-features", content.hero?.features);
+  setText("#products-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
+  setText("#products-hero-title", content.hero?.title, "hero.title", "block");
+  setText("#products-hero-description", content.hero?.description, "hero.description", "text");
+  renderFeatureList("#products-hero-features", content.hero?.features, "hero.features");
 
   const stack = document.querySelector("#products-catalog-stack");
   if (stack && Array.isArray(content.products)) {
+    bindArrayElement(stack, "products");
     stack.innerHTML = content.products.map((product) => `
-      <article class="catalog-card" id="${product.id}">
+      <article class="catalog-card" id="${product.id}" ${arrayItemAttrs()}>
         <div class="catalog-top">
           <div class="catalog-copy">
-            ${product.badge ? `<span class="badge">${product.badge}</span>` : ""}
-            <h2>${product.title}</h2>
-            ${product.modelLine ? `<p class="catalog-model-line">${product.modelLine}</p>` : ""}
-            <p class="catalog-description">${product.description}</p>
+            ${product.badge ? `<span class="badge" ${textAttrs("badge")}>${product.badge}</span>` : ""}
+            <h2 ${textAttrs("title", "block")}>${product.title}</h2>
+            ${product.modelLine ? `<p class="catalog-model-line" ${textAttrs("modelLine")}>${product.modelLine}</p>` : ""}
+            <p class="catalog-description" ${textAttrs("description", "text")}>${product.description}</p>
             <div class="catalog-actions">
-              <a class="btn btn-primary" href="${product.primaryHref}">${product.primaryLabel}</a>
-              <a class="catalog-secondary-link" href="${product.secondaryHref}">${product.secondaryLabel}</a>
+              <a class="btn btn-primary" href="${product.primaryHref}" ${textAttrs("primaryLabel")}>${product.primaryLabel}</a>
+              <a class="catalog-secondary-link" href="${product.secondaryHref}" ${textAttrs("secondaryLabel")}>${product.secondaryLabel}</a>
             </div>
           </div>
           <div class="${product.mediaClass}">
-            <img src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async">
-            ${product.bubble ? `<div class="catalog-bubble"><span>${product.bubble.label}</span><strong>${product.bubble.value}</strong></div>` : ""}
-            ${Array.isArray(product.labels) ? product.labels.map((label) => `<span class="${label.className}">${label.text}</span>`).join("") : ""}
+            <img src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async" ${imageAttrs("image", "alt")}>
+            ${product.bubble ? `<div class="catalog-bubble"><span ${textAttrs("bubble.label")}>${product.bubble.label}</span><strong ${textAttrs("bubble.value")}>${product.bubble.value}</strong></div>` : ""}
+            ${Array.isArray(product.labels) ? `
+              <div ${arrayAttrs("labels")}>
+                ${product.labels.map((label) => `<span class="${label.className}" ${arrayItemAttrs()}><span ${textAttrs("text")}>${label.text}</span></span>`).join("")}
+              </div>
+            ` : ""}
           </div>
         </div>
         <div class="catalog-apps">
           <p>Ideal Applications</p>
-          <div class="catalog-tags">
-            ${product.applications.map((application) => `<span>${application}</span>`).join("")}
+          <div class="catalog-tags" ${arrayAttrs("applications")}>
+            ${product.applications.map((application) => `<span ${arrayItemAttrs()}>${application}</span>`).join("")}
           </div>
         </div>
         <div class="catalog-table-wrap">
           <table class="catalog-table">
             <thead>
-              <tr>${product.table.columns.map((column) => `<th>${column}</th>`).join("")}</tr>
+              <tr ${arrayAttrs("table.columns")}>${product.table.columns.map((column) => `<th ${arrayItemAttrs()}>${column}</th>`).join("")}</tr>
             </thead>
             <tbody>
               ${product.table.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}
             </tbody>
           </table>
         </div>
-        <div class="catalog-benefits">
+        <div class="catalog-benefits" ${arrayAttrs("benefits")}>
           ${product.benefits.map((benefit) => `
-            <div class="catalog-benefit">
-              <span class="round-icon">${benefit.index}</span>
+            <div class="catalog-benefit" ${arrayItemAttrs()}>
+              <span class="round-icon" ${textAttrs("index")}>${benefit.index}</span>
               <div>
-                <strong>${benefit.title}</strong>
-                <p>${benefit.text}</p>
+                <strong ${textAttrs("title")}>${benefit.title}</strong>
+                <p ${textAttrs("text", "text")}>${benefit.text}</p>
               </div>
             </div>
           `).join("")}
@@ -193,33 +245,35 @@ function renderProductsPage(content) {
     `).join("");
   }
 
-  setText("#products-cta-title", content.cta?.title);
-  setText("#products-cta-description", content.cta?.description);
-  setLink("#products-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref);
+  setText("#products-cta-title", content.cta?.title, "cta.title", "block");
+  setText("#products-cta-description", content.cta?.description, "cta.description", "text");
+  setLink("#products-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref, "cta.buttonLabel");
 }
 
 function renderSolutionsPage(content) {
-  setText("#solutions-hero-eyebrow", content.hero?.eyebrow);
-  setText("#solutions-hero-title", content.hero?.title);
-  setText("#solutions-hero-description", content.hero?.description);
-  renderFeatureList("#solutions-hero-features", content.hero?.features);
-  setLink("#solutions-hero-primary-cta", content.hero?.primaryCta?.label, content.hero?.primaryCta?.href);
-  setLink("#solutions-hero-secondary-cta", content.hero?.secondaryCta?.label, content.hero?.secondaryCta?.href);
+  setText("#solutions-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
+  setText("#solutions-hero-title", content.hero?.title, "hero.title", "block");
+  setText("#solutions-hero-description", content.hero?.description, "hero.description", "text");
+  renderFeatureList("#solutions-hero-features", content.hero?.features, "hero.features");
+  setLink("#solutions-hero-primary-cta", content.hero?.primaryCta?.label, content.hero?.primaryCta?.href, "hero.primaryCta.label");
+  setLink("#solutions-hero-secondary-cta", content.hero?.secondaryCta?.label, content.hero?.secondaryCta?.href, "hero.secondaryCta.label");
 
   const links = document.querySelector("#solutions-link-grid");
   if (links && content.applicationLinks) {
     links.innerHTML = `
       <article class="solution-link-intro">
-        <h2>${content.applicationLinks.title}</h2>
-        <p>${content.applicationLinks.description}</p>
+        <h2 ${textAttrs("applicationLinks.title", "block")}>${content.applicationLinks.title}</h2>
+        <p ${textAttrs("applicationLinks.description", "text")}>${content.applicationLinks.description}</p>
       </article>
-      ${content.applicationLinks.cards.map((card) => `
-        <a class="solution-link-card" href="#${card.id}" id="${card.id}">
-          <span class="solution-link-icon">${card.icon}</span>
-          <strong>${card.title}</strong>
-          <p>${card.text}</p>
-        </a>
-      `).join("")}
+      <div class="solution-link-cards" ${arrayAttrs("applicationLinks.cards")} style="display: contents;">
+        ${content.applicationLinks.cards.map((card) => `
+          <a class="solution-link-card" href="#${card.id}" id="${card.id}" ${arrayItemAttrs()}>
+            <span class="solution-link-icon" ${textAttrs("icon")}>${card.icon}</span>
+            <strong ${textAttrs("title")}>${card.title}</strong>
+            <p ${textAttrs("text", "text")}>${card.text}</p>
+          </a>
+        `).join("")}
+      </div>
     `;
   }
 
@@ -227,25 +281,25 @@ function renderSolutionsPage(content) {
   if (systemGrid && content.system) {
     systemGrid.innerHTML = `
       <article class="system-intro">
-        <p class="eyebrow">${content.system.eyebrow}</p>
-        <h2>${content.system.title}</h2>
-        <p>${content.system.description}</p>
-        <a class="plain-link" href="${content.system.linkHref}">${content.system.linkLabel}</a>
+        <p class="eyebrow" ${textAttrs("system.eyebrow")}>${content.system.eyebrow}</p>
+        <h2 ${textAttrs("system.title", "block")}>${content.system.title}</h2>
+        <p ${textAttrs("system.description", "text")}>${content.system.description}</p>
+        <a class="plain-link" href="${content.system.linkHref}" ${textAttrs("system.linkLabel")}>${content.system.linkLabel}</a>
       </article>
-      <div class="system-cards">
+      <div class="system-cards" ${arrayAttrs("system.cards")}>
         ${content.system.cards.map((card, index) => `
           ${index > 0 ? `<span class="system-plus">+</span>` : ""}
-          <article class="system-card">
-            <img src="${card.image}" alt="${card.alt}" loading="lazy" decoding="async">
+          <article class="system-card" ${arrayItemAttrs()}>
+            <img src="${card.image}" alt="${card.alt}" loading="lazy" decoding="async" ${imageAttrs("image", "alt")}>
             <div>
-              <p class="system-card-title">${card.title}</p>
-              <strong>${card.heading}</strong>
-              <span>${card.text}</span>
+              <p class="system-card-title" ${textAttrs("title")}>${card.title}</p>
+              <strong ${textAttrs("heading")}>${card.heading}</strong>
+              <span ${textAttrs("text", "text")}>${card.text}</span>
             </div>
           </article>
         `).join("")}
       </div>
-      <p class="system-summary">${content.system.summary}</p>
+      <p class="system-summary" ${textAttrs("system.summary", "text")}>${content.system.summary}</p>
     `;
   }
 
@@ -253,13 +307,13 @@ function renderSolutionsPage(content) {
   if (comparePanel && content.compare) {
     comparePanel.innerHTML = `
       <div class="compare-challenges">
-        <p class="eyebrow">${content.compare.eyebrow}</p>
-        <h2>${content.compare.title}</h2>
-        <ul>
+        <p class="eyebrow" ${textAttrs("compare.eyebrow")}>${content.compare.eyebrow}</p>
+        <h2 ${textAttrs("compare.title", "block")}>${content.compare.title}</h2>
+        <ul ${arrayAttrs("compare.challenges")}>
           ${content.compare.challenges.map((challenge) => `
-            <li>
-              <strong>${challenge.title}</strong>
-              <span>${challenge.text}</span>
+            <li ${arrayItemAttrs()}>
+              <strong ${textAttrs("title")}>${challenge.title}</strong>
+              <span ${textAttrs("text", "text")}>${challenge.text}</span>
             </li>
           `).join("")}
         </ul>
@@ -267,7 +321,7 @@ function renderSolutionsPage(content) {
       <div class="compare-visuals compare-visuals--single">
         <img class="compare-composite-image" src="assets/site-images/solutions-comparison-panel.png" alt="Lighting comparison with and without the InnovoGrow system">
         <article class="compare-card compare-card--negative">
-          <span class="compare-chip">${content.compare.negativeChip}</span>
+          <span class="compare-chip" ${textAttrs("compare.negativeChip")}>${content.compare.negativeChip}</span>
           <div class="compare-stage compare-stage--weak">
             <img class="compare-fixture compare-fixture--weak" src="assets/site-images/products-fixture-tl-300-d1.png" alt="Top lighting only fixture">
             <div class="compare-canopy">
@@ -280,7 +334,7 @@ function renderSolutionsPage(content) {
           </div>
         </article>
         <article class="compare-card compare-card--positive">
-          <span class="compare-chip compare-chip--green">${content.compare.positiveChip}</span>
+          <span class="compare-chip compare-chip--green" ${textAttrs("compare.positiveChip")}>${content.compare.positiveChip}</span>
           <div class="compare-stage compare-stage--strong">
             <img class="compare-fixture compare-fixture--strong" src="assets/site-images/products-fixture-uc-series.png" alt="InnovoGrow system fixture">
             <div class="compare-canopy">
@@ -294,12 +348,12 @@ function renderSolutionsPage(content) {
         </article>
       </div>
       <div class="compare-advantage">
-        <h2>${content.compare.advantageTitle}</h2>
-        <ul>
+        <h2 ${textAttrs("compare.advantageTitle", "block")}>${content.compare.advantageTitle}</h2>
+        <ul ${arrayAttrs("compare.advantages")}>
           ${content.compare.advantages.map((advantage) => `
-            <li>
-              <strong>${advantage.title}</strong>
-              <span>${advantage.text}</span>
+            <li ${arrayItemAttrs()}>
+              <strong ${textAttrs("title")}>${advantage.title}</strong>
+              <span ${textAttrs("text", "text")}>${advantage.text}</span>
             </li>
           `).join("")}
         </ul>
@@ -307,152 +361,165 @@ function renderSolutionsPage(content) {
     `;
   }
 
-  setText("#solutions-use-cases-title", content.useCases?.title);
-  setText("#solutions-use-cases-description", content.useCases?.description);
-  setLink("#solutions-use-cases-link", content.useCases?.linkLabel, content.useCases?.linkHref);
+  setText("#solutions-use-cases-title", content.useCases?.title, "useCases.title", "block");
+  setText("#solutions-use-cases-description", content.useCases?.description, "useCases.description", "text");
+  setLink("#solutions-use-cases-link", content.useCases?.linkLabel, content.useCases?.linkHref, "useCases.linkLabel");
   const useCaseGrid = document.querySelector("#solutions-use-case-grid");
   if (useCaseGrid && Array.isArray(content.useCases?.cards)) {
+    bindArrayElement(useCaseGrid, "useCases.cards");
     useCaseGrid.innerHTML = content.useCases.cards.map((card) => `
-      <article class="use-case-card">
+      <article class="use-case-card" ${arrayItemAttrs()}>
         ${buildResponsivePicture(card.imageBase, card.title, cardPictureSizes)}
         <div class="use-case-copy">
-          <strong>${card.title}</strong>
-          <p>${card.text}</p>
+          <strong ${textAttrs("title")}>${card.title}</strong>
+          <p ${textAttrs("text", "text")}>${card.text}</p>
           <a href="${card.href}">View Solution</a>
         </div>
       </article>
     `).join("");
   }
 
-  setText("#solutions-packages-title", content.packages?.title);
-  setText("#solutions-packages-description", content.packages?.description);
+  setText("#solutions-packages-title", content.packages?.title, "packages.title", "block");
+  setText("#solutions-packages-description", content.packages?.description, "packages.description", "text");
   const packageGrid = document.querySelector("#solutions-package-grid");
   if (packageGrid && Array.isArray(content.packages?.cards)) {
+    bindArrayElement(packageGrid, "packages.cards");
     packageGrid.innerHTML = content.packages.cards.map((card) => `
-      <article class="package-card ${card.wide ? "package-card--wide" : ""}">
-        <p class="eyebrow">${card.eyebrow}</p>
-        <h3>${card.title}</h3>
-        <p>${card.description}</p>
+      <article class="package-card ${card.wide ? "package-card--wide" : ""}" ${arrayItemAttrs()}>
+        <p class="eyebrow" ${textAttrs("eyebrow")}>${card.eyebrow}</p>
+        <h3 ${textAttrs("title", "block")}>${card.title}</h3>
+        <p ${textAttrs("description", "text")}>${card.description}</p>
         <div class="package-includes">
           <strong>Includes:</strong>
-          ${card.includes.map((item) => `<span>${item}</span>`).join("")}
+          <div ${arrayAttrs("includes")}>
+            ${card.includes.map((item) => `<span ${arrayItemAttrs()}>${item}</span>`).join("")}
+          </div>
         </div>
-        <img src="${card.image}" alt="${card.alt}" loading="lazy" decoding="async">
-        <div class="package-benefits">
-          ${card.benefits.map((benefit) => `<span>${benefit}</span>`).join("")}
+        <img src="${card.image}" alt="${card.alt}" loading="lazy" decoding="async" ${imageAttrs("image", "alt")}>
+        <div class="package-benefits" ${arrayAttrs("benefits")}>
+          ${card.benefits.map((benefit) => `<span ${arrayItemAttrs()}>${benefit}</span>`).join("")}
         </div>
         <a href="${card.href}">View Details</a>
       </article>
     `).join("");
   }
 
-  setText("#solutions-process-title", content.process?.title);
-  setText("#solutions-process-description", content.process?.description);
+  setText("#solutions-process-title", content.process?.title, "process.title", "block");
+  setText("#solutions-process-description", content.process?.description, "process.description", "text");
   const processGrid = document.querySelector("#solutions-process-grid");
   if (processGrid && Array.isArray(content.process?.steps)) {
+    bindArrayElement(processGrid, "process.steps");
     processGrid.innerHTML = content.process.steps.map((step) => `
-      <article class="process-card">
-        <span class="process-icon">${step.number}</span>
-        <strong>${step.title}</strong>
-        <p>${step.text}</p>
+      <article class="process-card" ${arrayItemAttrs()}>
+        <span class="process-icon" ${textAttrs("number")}>${step.number}</span>
+        <strong ${textAttrs("title")}>${step.title}</strong>
+        <p ${textAttrs("text", "text")}>${step.text}</p>
       </article>
     `).join("");
   }
 
-  setText("#solutions-cta-title", content.cta?.title);
-  setText("#solutions-cta-description", content.cta?.description);
-  setLink("#solutions-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref);
-  setText("#solutions-cta-status", content.cta?.status);
+  setText("#solutions-cta-title", content.cta?.title, "cta.title", "block");
+  setText("#solutions-cta-description", content.cta?.description, "cta.description", "text");
+  setLink("#solutions-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref, "cta.buttonLabel");
+  setText("#solutions-cta-status", content.cta?.status, "cta.status", "text");
 }
 
 function renderResourcesPage(content) {
-  setText("#resources-hero-eyebrow", content.hero?.eyebrow);
-  setText("#resources-hero-title", content.hero?.title);
-  setText("#resources-hero-description", content.hero?.description);
-  setLink("#resources-hero-primary-cta", content.hero?.primaryCta?.label, content.hero?.primaryCta?.href);
-  setLink("#resources-hero-secondary-cta", content.hero?.secondaryCta?.label, content.hero?.secondaryCta?.href);
+  setText("#resources-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
+  setText("#resources-hero-title", content.hero?.title, "hero.title", "block");
+  setText("#resources-hero-description", content.hero?.description, "hero.description", "text");
+  setLink("#resources-hero-primary-cta", content.hero?.primaryCta?.label, content.hero?.primaryCta?.href, "hero.primaryCta.label");
+  setLink("#resources-hero-secondary-cta", content.hero?.secondaryCta?.label, content.hero?.secondaryCta?.href, "hero.secondaryCta.label");
 
   const features = document.querySelector("#resources-feature-grid");
   if (features && Array.isArray(content.features)) {
+    bindArrayElement(features, "features");
     features.innerHTML = content.features.map((item) => `
-      <article><strong>${item.title}</strong><span>${item.text}</span></article>
+      <article ${arrayItemAttrs()}>
+        <strong ${textAttrs("title")}>${item.title}</strong>
+        <span ${textAttrs("text", "text")}>${item.text}</span>
+      </article>
     `).join("");
   }
 
-  setText("#resources-library-eyebrow", content.library?.eyebrow);
-  setText("#resources-library-title", content.library?.title);
-  setText("#resources-library-description", content.library?.description);
+  setText("#resources-library-eyebrow", content.library?.eyebrow, "library.eyebrow");
+  setText("#resources-library-title", content.library?.title, "library.title", "block");
+  setText("#resources-library-description", content.library?.description, "library.description", "text");
   const tabs = document.querySelector("#resources-tabs");
   if (tabs && Array.isArray(content.library?.tabs)) {
+    bindArrayElement(tabs, "library.tabs");
     tabs.innerHTML = content.library.tabs.map((tab, index) => `
-      <span class="${index === 0 ? "is-active" : ""}">${tab}</span>
+      <span class="${index === 0 ? "is-active" : ""}" ${arrayItemAttrs()}>${tab}</span>
     `).join("");
   }
   const cards = document.querySelector("#resources-card-grid");
   if (cards && Array.isArray(content.library?.cards)) {
+    bindArrayElement(cards, "library.cards");
     cards.innerHTML = content.library.cards.map((card) => `
-      <article class="resource-card">
-        <span class="resource-badge">${card.badge}</span>
-        ${card.graphic ? `<div class="resource-graphic" aria-hidden="true"></div>` : `<img src="${card.image}" alt="${card.title}" loading="lazy" decoding="async">`}
-        <strong>${card.title}</strong>
-        <p>${card.description}</p>
-        <a href="${card.href}">${card.linkLabel}</a>
+      <article class="resource-card" ${arrayItemAttrs()}>
+        <span class="resource-badge" ${textAttrs("badge")}>${card.badge}</span>
+        ${card.graphic ? `<div class="resource-graphic" aria-hidden="true"></div>` : `<img src="${card.image}" alt="${card.title}" loading="lazy" decoding="async" ${imageAttrs("image", "title")}>`}
+        <strong ${textAttrs("title", "block")}>${card.title}</strong>
+        <p ${textAttrs("description", "text")}>${card.description}</p>
+        <a href="${card.href}" ${textAttrs("linkLabel")}>${card.linkLabel}</a>
       </article>
     `).join("");
   }
-  setLink("#resources-library-button", content.library?.buttonLabel, content.library?.buttonHref);
+  setLink("#resources-library-button", content.library?.buttonLabel, content.library?.buttonHref, "library.buttonLabel");
 
-  setText("#resources-cases-eyebrow", content.cases?.eyebrow);
-  setText("#resources-cases-title", content.cases?.title);
-  setLink("#resources-cases-link", content.cases?.linkLabel, content.cases?.linkHref);
+  setText("#resources-cases-eyebrow", content.cases?.eyebrow, "cases.eyebrow");
+  setText("#resources-cases-title", content.cases?.title, "cases.title", "block");
+  setLink("#resources-cases-link", content.cases?.linkLabel, content.cases?.linkHref, "cases.linkLabel");
   const caseGrid = document.querySelector("#resources-case-grid");
   if (caseGrid && Array.isArray(content.cases?.cards)) {
+    bindArrayElement(caseGrid, "cases.cards");
     caseGrid.innerHTML = content.cases.cards.map((card) => `
-      <article class="case-card">
+      <article class="case-card" ${arrayItemAttrs()}>
         ${buildResponsivePicture(card.imageBase, `${card.title} case study`, cardPictureSizes)}
-        <p class="case-kicker">${card.kicker}</p>
-        <strong>${card.title}</strong>
-        <p>${card.description}</p>
+        <p class="case-kicker" ${textAttrs("kicker")}>${card.kicker}</p>
+        <strong ${textAttrs("title", "block")}>${card.title}</strong>
+        <p ${textAttrs("description", "text")}>${card.description}</p>
         <a href="${card.href}">Read Case Study</a>
       </article>
     `).join("");
   }
 
-  setText("#resources-faq-eyebrow", content.faq?.eyebrow);
-  setText("#resources-faq-title", content.faq?.title);
-  setText("#resources-faq-description", content.faq?.description);
-  setLink("#resources-faq-link", content.faq?.linkLabel, content.faq?.linkHref);
-  renderFaqGrid("#resources-faq-grid", content.faq?.items);
+  setText("#resources-faq-eyebrow", content.faq?.eyebrow, "faq.eyebrow");
+  setText("#resources-faq-title", content.faq?.title, "faq.title", "block");
+  setText("#resources-faq-description", content.faq?.description, "faq.description", "text");
+  setLink("#resources-faq-link", content.faq?.linkLabel, content.faq?.linkHref, "faq.linkLabel");
+  renderFaqGrid("#resources-faq-grid", content.faq?.items, "faq.items");
 
-  setText("#resources-hub-eyebrow", content.hub?.eyebrow);
-  setText("#resources-hub-title", content.hub?.title);
-  setText("#resources-hub-description", content.hub?.description);
-  setLink("#resources-hub-button", content.hub?.buttonLabel, content.hub?.buttonHref);
-  setText("#resources-subscribe-title", content.hub?.subscribeTitle);
-  setText("#resources-subscribe-description", content.hub?.subscribeDescription);
-  setText("#resources-subscribe-note", content.hub?.subscribeNote);
+  setText("#resources-hub-eyebrow", content.hub?.eyebrow, "hub.eyebrow");
+  setText("#resources-hub-title", content.hub?.title, "hub.title", "block");
+  setText("#resources-hub-description", content.hub?.description, "hub.description", "text");
+  setLink("#resources-hub-button", content.hub?.buttonLabel, content.hub?.buttonHref, "hub.buttonLabel");
+  setText("#resources-subscribe-title", content.hub?.subscribeTitle, "hub.subscribeTitle", "block");
+  setText("#resources-subscribe-description", content.hub?.subscribeDescription, "hub.subscribeDescription", "text");
+  setText("#resources-subscribe-note", content.hub?.subscribeNote, "hub.subscribeNote", "text");
 }
 
 function renderAboutPage(content) {
-  setText("#about-hero-eyebrow", content.hero?.eyebrow);
-  setText("#about-hero-title", content.hero?.title);
-  setText("#about-hero-lead", content.hero?.lead);
-  setText("#about-hero-description", content.hero?.description);
-  renderFeatureList("#about-hero-features", content.hero?.features);
+  setText("#about-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
+  setText("#about-hero-title", content.hero?.title, "hero.title", "block");
+  setText("#about-hero-lead", content.hero?.lead, "hero.lead", "text");
+  setText("#about-hero-description", content.hero?.description, "hero.description", "text");
+  renderFeatureList("#about-hero-features", content.hero?.features, "hero.features");
 
-  setText("#about-story-eyebrow", content.story?.eyebrow);
-  setText("#about-story-title", content.story?.title);
+  setText("#about-story-eyebrow", content.story?.eyebrow, "story.eyebrow");
+  setText("#about-story-title", content.story?.title, "story.title", "block");
   if (Array.isArray(content.story?.paragraphs)) {
-    setText("#about-story-paragraph-1", content.story.paragraphs[0]);
-    setText("#about-story-paragraph-2", content.story.paragraphs[1]);
+    setText("#about-story-paragraph-1", content.story.paragraphs[0], "story.paragraphs.0", "text");
+    setText("#about-story-paragraph-2", content.story.paragraphs[1], "story.paragraphs.1", "text");
   }
-  setLink("#about-story-button", content.story?.buttonLabel, content.story?.buttonHref);
+  setLink("#about-story-button", content.story?.buttonLabel, content.story?.buttonHref, "story.buttonLabel");
   const storySide = document.querySelector("#about-story-side");
   if (storySide && Array.isArray(content.story?.sideCards)) {
+    bindArrayElement(storySide, "story.sideCards");
     storySide.innerHTML = content.story.sideCards.map((card) => `
-      <article class="story-side-card">
-        <h3>${card.title}</h3>
-        <p>${card.text}</p>
+      <article class="story-side-card" ${arrayItemAttrs()}>
+        <h3 ${textAttrs("title")}>${card.title}</h3>
+        <p ${textAttrs("text", "text")}>${card.text}</p>
       </article>
     `).join("");
   }
@@ -461,132 +528,153 @@ function renderAboutPage(content) {
   if (journeyGrid && content.journey) {
     journeyGrid.innerHTML = `
       <article class="journey-intro">
-        <p class="eyebrow">${content.journey.eyebrow}</p>
-        <h2>${content.journey.title}</h2>
+        <p class="eyebrow" ${textAttrs("journey.eyebrow")}>${content.journey.eyebrow}</p>
+        <h2 ${textAttrs("journey.title", "block")}>${content.journey.title}</h2>
       </article>
-      ${content.journey.items.map((item) => `<article class="journey-item"><strong>${item.year}</strong><span>${item.text}</span></article>`).join("")}
+      <div class="journey-items" ${arrayAttrs("journey.items")} style="display: contents;">
+        ${content.journey.items.map((item) => `<article class="journey-item" ${arrayItemAttrs()}><strong ${textAttrs("year")}>${item.year}</strong><span ${textAttrs("text", "text")}>${item.text}</span></article>`).join("")}
+      </div>
     `;
   }
 
-  setText("#about-values-eyebrow", content.values?.eyebrow);
-  setText("#about-values-title", content.values?.title);
+  setText("#about-values-eyebrow", content.values?.eyebrow, "values.eyebrow");
+  setText("#about-values-title", content.values?.title, "values.title", "block");
   const valuesGrid = document.querySelector("#about-values-grid");
   if (valuesGrid && Array.isArray(content.values?.items)) {
+    bindArrayElement(valuesGrid, "values.items");
     valuesGrid.innerHTML = content.values.items.map((item) => `
-      <article class="value-card">
-        <img class="value-card__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async">
-        <strong>${item.title}</strong>
-        <p>${item.text}</p>
+      <article class="value-card" ${arrayItemAttrs()}>
+        <img class="value-card__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async" ${imageAttrs("icon")}>
+        <strong ${textAttrs("title")}>${item.title}</strong>
+        <p ${textAttrs("text", "text")}>${item.text}</p>
       </article>
     `).join("");
   }
 
-  setText("#about-proof-eyebrow", content.proof?.eyebrow);
-  setText("#about-proof-title", content.proof?.title);
+  setText("#about-proof-eyebrow", content.proof?.eyebrow, "proof.eyebrow");
+  setText("#about-proof-title", content.proof?.title, "proof.title", "block");
   const proofMetrics = document.querySelector("#about-proof-metrics");
   if (proofMetrics && Array.isArray(content.proof?.metrics)) {
+    bindArrayElement(proofMetrics, "proof.metrics");
     proofMetrics.innerHTML = content.proof.metrics.map((item) => `
-      <article class="proof-metric">
-        <img class="proof-metric__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async">
-        <strong>${item.title}</strong>
-        <span>${item.text}</span>
+      <article class="proof-metric" ${arrayItemAttrs()}>
+        <img class="proof-metric__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async" ${imageAttrs("icon")}>
+        <strong ${textAttrs("title")}>${item.title}</strong>
+        <span ${textAttrs("text", "text")}>${item.text}</span>
       </article>
     `).join("");
   }
   const proofStats = document.querySelector("#about-proof-stats");
   if (proofStats && Array.isArray(content.proof?.stats)) {
+    bindArrayElement(proofStats, "proof.stats");
     proofStats.innerHTML = content.proof.stats.map((stat) => `
-      <article><strong>${stat.value}</strong><span>${stat.text}</span></article>
+      <article ${arrayItemAttrs()}>
+        <strong ${textAttrs("value")}>${stat.value}</strong>
+        <span ${textAttrs("text", "text")}>${stat.text}</span>
+      </article>
     `).join("");
   }
 
-  setText("#about-team-eyebrow", content.team?.eyebrow);
-  setText("#about-team-title", content.team?.title);
+  setText("#about-team-eyebrow", content.team?.eyebrow, "team.eyebrow");
+  setText("#about-team-title", content.team?.title, "team.title", "block");
   const teamCards = document.querySelector("#about-team-cards");
   if (teamCards && Array.isArray(content.team?.members)) {
+    bindArrayElement(teamCards, "team.members");
     teamCards.innerHTML = content.team.members.map((member) => `
-      <article class="team-card"><span class="${member.avatarClass}"></span><strong>${member.name}</strong><p>${member.role}</p></article>
+      <article class="team-card" ${arrayItemAttrs()}>
+        <span class="${member.avatarClass}"></span>
+        <strong ${textAttrs("name")}>${member.name}</strong>
+        <p ${textAttrs("role", "text")}>${member.role}</p>
+      </article>
     `).join("");
   }
-  setText("#about-team-side-title", content.team?.sideTitle);
-  setText("#about-team-side-description", content.team?.sideDescription);
-  setLink("#about-team-side-button", content.team?.sideButtonLabel, content.team?.sideButtonHref);
+  setText("#about-team-side-title", content.team?.sideTitle, "team.sideTitle", "block");
+  setText("#about-team-side-description", content.team?.sideDescription, "team.sideDescription", "text");
+  setLink("#about-team-side-button", content.team?.sideButtonLabel, content.team?.sideButtonHref, "team.sideButtonLabel");
 
-  setText("#about-craft-eyebrow", content.craft?.eyebrow);
-  setText("#about-craft-title", content.craft?.title);
-  setText("#about-craft-description", content.craft?.description);
-  setLink("#about-craft-button", content.craft?.buttonLabel, content.craft?.buttonHref);
+  setText("#about-craft-eyebrow", content.craft?.eyebrow, "craft.eyebrow");
+  setText("#about-craft-title", content.craft?.title, "craft.title", "block");
+  setText("#about-craft-description", content.craft?.description, "craft.description", "text");
+  setLink("#about-craft-button", content.craft?.buttonLabel, content.craft?.buttonHref, "craft.buttonLabel");
   const craftCards = document.querySelector("#about-craft-cards");
   if (craftCards && Array.isArray(content.craft?.cards)) {
+    bindArrayElement(craftCards, "craft.cards");
     craftCards.innerHTML = content.craft.cards.map((card) => `
-      <article class="craft-card">
+      <article class="craft-card" ${arrayItemAttrs()}>
         <div class="${card.mediaClass}" aria-hidden="true"></div>
-        <strong>${card.title}</strong>
-        <p>${card.text}</p>
+        <strong ${textAttrs("title")}>${card.title}</strong>
+        <p ${textAttrs("text", "text")}>${card.text}</p>
       </article>
     `).join("");
   }
 
-  setText("#about-support-eyebrow", content.support?.eyebrow);
-  setText("#about-support-title", content.support?.title);
-  setText("#about-support-description", content.support?.description);
+  setText("#about-support-eyebrow", content.support?.eyebrow, "support.eyebrow");
+  setText("#about-support-title", content.support?.title, "support.title", "block");
+  setText("#about-support-description", content.support?.description, "support.description", "text");
   const supportList = document.querySelector("#about-support-list");
   if (supportList && Array.isArray(content.support?.items)) {
+    bindArrayElement(supportList, "support.items");
     supportList.innerHTML = content.support.items.map((item) => `
-      <article>
-        <img class="support-list__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async">
-        <strong>${item.title}</strong>
-        <span>${item.text}</span>
+      <article ${arrayItemAttrs()}>
+        <img class="support-list__icon" src="${item.icon}" alt="${item.title} icon" loading="lazy" decoding="async" ${imageAttrs("icon")}>
+        <strong ${textAttrs("title")}>${item.title}</strong>
+        <span ${textAttrs("text", "text")}>${item.text}</span>
       </article>
     `).join("");
   }
 
-  setText("#about-cta-title", content.cta?.title);
-  setText("#about-cta-description", content.cta?.description);
-  setLink("#about-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref);
+  setText("#about-cta-title", content.cta?.title, "cta.title", "block");
+  setText("#about-cta-description", content.cta?.description, "cta.description", "text");
+  setLink("#about-cta-button", content.cta?.buttonLabel, content.cta?.buttonHref, "cta.buttonLabel");
 }
 
 function renderContactPage(content) {
-  setText("#contact-hero-eyebrow", content.hero?.eyebrow);
-  setText("#contact-hero-title", content.hero?.title);
-  setText("#contact-hero-description", content.hero?.description);
-  renderFeatureList("#contact-hero-features", content.hero?.features);
+  setText("#contact-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
+  setText("#contact-hero-title", content.hero?.title, "hero.title", "block");
+  setText("#contact-hero-description", content.hero?.description, "hero.description", "text");
+  renderFeatureList("#contact-hero-features", content.hero?.features, "hero.features");
 
-  setText("#contact-form-title", content.form?.title);
-  setText("#contact-form-description", content.form?.description);
+  setText("#contact-form-title", content.form?.title, "form.title", "block");
+  setText("#contact-form-description", content.form?.description, "form.description", "text");
   const sideCards = document.querySelector("#contact-side-cards");
   if (sideCards && Array.isArray(content.sideCards)) {
+    bindArrayElement(sideCards, "sideCards");
     sideCards.innerHTML = content.sideCards.map((card) => `
-      <article class="contact-info-card">
-        <h3>${card.title}</h3>
-        ${card.strong ? `<strong>${card.strong}</strong>` : ""}
-        ${card.text ? `<p>${card.text}</p>` : ""}
-        ${card.note ? `<span>${card.note}</span>` : ""}
-        ${card.link ? `<a href="${card.link.href}">${card.link.label}</a>` : ""}
+      <article class="contact-info-card" ${arrayItemAttrs()}>
+        <h3 ${textAttrs("title")}>${card.title}</h3>
+        ${card.strong ? `<strong ${textAttrs("strong")}>${card.strong}</strong>` : ""}
+        ${card.text ? `<p ${textAttrs("text", "text")}>${card.text}</p>` : ""}
+        ${card.note ? `<span ${textAttrs("note", "text")}>${card.note}</span>` : ""}
+        ${card.link ? `<a href="${card.link.href}" ${textAttrs("link.label")}>${card.link.label}</a>` : ""}
       </article>
     `).join("");
   }
 
-  setText("#contact-process-title", content.process?.title);
-  setText("#contact-process-description", content.process?.description);
+  setText("#contact-process-title", content.process?.title, "process.title", "block");
+  setText("#contact-process-description", content.process?.description, "process.description", "text");
   const processSteps = document.querySelector("#contact-process-steps");
   if (processSteps && Array.isArray(content.process?.steps)) {
+    bindArrayElement(processSteps, "process.steps");
     processSteps.innerHTML = content.process.steps.map((step) => `
-      <article><strong>${step.number}</strong><span>${step.title}</span><p>${step.text}</p></article>
+      <article ${arrayItemAttrs()}>
+        <strong ${textAttrs("number")}>${step.number}</strong>
+        <span ${textAttrs("title")}>${step.title}</span>
+        <p ${textAttrs("text", "text")}>${step.text}</p>
+      </article>
     `).join("");
   }
-  setLink("#contact-process-button", content.process?.buttonLabel, content.process?.buttonHref);
-  setText("#contact-process-note", content.process?.note);
+  setLink("#contact-process-button", content.process?.buttonLabel, content.process?.buttonHref, "process.buttonLabel");
+  setText("#contact-process-note", content.process?.note, "process.note", "text");
 
-  setText("#contact-faq-eyebrow", content.faq?.eyebrow);
-  setText("#contact-faq-title", content.faq?.title);
-  setLink("#contact-faq-link", content.faq?.linkLabel, content.faq?.linkHref);
-  renderFaqGrid("#contact-faq-list", content.faq?.items);
+  setText("#contact-faq-eyebrow", content.faq?.eyebrow, "faq.eyebrow");
+  setText("#contact-faq-title", content.faq?.title, "faq.title", "block");
+  setLink("#contact-faq-link", content.faq?.linkLabel, content.faq?.linkHref, "faq.linkLabel");
+  renderFaqGrid("#contact-faq-list", content.faq?.items, "faq.items");
 
-  setText("#contact-map-title", content.map?.title);
-  setText("#contact-map-description", content.map?.description);
-  setHTML("#contact-map-pin-west", content.map?.westLabel);
-  setHTML("#contact-map-pin-midwest", content.map?.midwestLabel);
+  setText("#contact-map-title", content.map?.title, "map.title", "block");
+  setText("#contact-map-description", content.map?.description, "map.description", "text");
+  setHTML("#contact-map-pin-west", content.map?.westLabel, "map.westLabel", "text");
+  setHTML("#contact-map-pin-midwest", content.map?.midwestLabel, "map.midwestLabel", "text");
 }
 
 function renderSubpageContent(page, content) {

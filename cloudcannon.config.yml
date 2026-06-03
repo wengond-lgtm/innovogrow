@@ -1,3 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/CloudCannon/configuration-types/main/cloudcannon-config.schema.json
+editor:
+  default_path: /index.html
+
 collections_config:
   pages:
     path: .
@@ -6,6 +10,9 @@ collections_config:
     icon: article
     disable_add: true
     disable_duplicate: true
+    _enabled_editors:
+      - visual
+      - content
   content:
     path: content
     glob:
@@ -13,3 +20,62 @@ collections_config:
     icon: notes
     disable_add: true
     disable_duplicate: true
+    _enabled_editors:
+      - visual
+      - data
+
+file_config:
+  index.html:
+    label: Home
+    url: /
+  products.html:
+    label: Products
+    url: /products.html
+  solutions.html:
+    label: Solutions
+    url: /solutions.html
+  resources.html:
+    label: Resources
+    url: /resources.html
+  about.html:
+    label: About
+    url: /about.html
+  contact.html:
+    label: Contact
+    url: /contact.html
+  content/home.json:
+    label: Home Content
+    url: /
+    _enabled_editors:
+      - visual
+      - data
+  content/products.json:
+    label: Products Content
+    url: /products.html
+    _enabled_editors:
+      - visual
+      - data
+  content/solutions.json:
+    label: Solutions Content
+    url: /solutions.html
+    _enabled_editors:
+      - visual
+      - data
+  content/resources.json:
+    label: Resources Content
+    url: /resources.html
+    _enabled_editors:
+      - visual
+      - data
+  content/about.json:
+    label: About Content
+    url: /about.html
+    _enabled_editors:
+      - visual
+      - data
+  content/contact.json:
+    label: Contact Content
+    url: /contact.html
+    _enabled_editors:
+      - visual
+      - data

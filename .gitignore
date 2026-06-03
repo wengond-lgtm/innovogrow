@@ -14,3 +14,7 @@ home hero.jpg
 
 *.psd
 *.ai
+
+.cloudcannon/
+dist/
+or/
