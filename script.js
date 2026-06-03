@@ -18,6 +18,7 @@ function syncViewportScale() {
 
 syncViewportScale();
 window.addEventListener("resize", syncViewportScale, { passive: true });
+const homeContentRoot = "@file[/content/home.json].";
 
 const defaultHomeContent = {
   hero: {
@@ -177,6 +178,10 @@ function textAttrs(prop, type = "text") {
   return `data-editable="text" data-prop="${prop}"${typeAttr}`;
 }
 
+function rootProp(prop) {
+  return `${homeContentRoot}${prop}`;
+}
+
 function imageAttrs(srcProp, altProp) {
   const altAttr = altProp ? ` data-prop-alt="${altProp}"` : "";
   return `data-editable="image" data-prop-src="${srcProp}"${altAttr}`;
@@ -200,7 +205,7 @@ function renderHero(content) {
 
   const features = document.querySelector("#hero-features");
   features.setAttribute("data-editable", "array");
-  features.setAttribute("data-prop", "hero.features");
+  features.setAttribute("data-prop", rootProp("hero.features"));
   features.innerHTML = content.hero.features.map((feature) => `
     <div class="hero-feature" ${arrayItemAttrs()}>
       <span class="round-icon">${icons[feature.icon] || feature.icon}</span>
@@ -226,7 +231,7 @@ function renderProducts(content) {
 
   const grid = document.querySelector("#product-grid");
   grid.setAttribute("data-editable", "array");
-  grid.setAttribute("data-prop", "products");
+  grid.setAttribute("data-prop", rootProp("products"));
   grid.innerHTML = content.products.map((product) => `
     <article class="product-card ${product.className || ""}" ${arrayItemAttrs()}>
       <div class="product-copy">
@@ -248,7 +253,7 @@ function renderStrategies(content) {
 
   const grid = document.querySelector("#strategy-grid");
   grid.setAttribute("data-editable", "array");
-  grid.setAttribute("data-prop", "strategies");
+  grid.setAttribute("data-prop", rootProp("strategies"));
   grid.innerHTML = content.strategies.map((strategy) => `
     <article class="strategy-card" ${arrayItemAttrs()}>
       <span class="round-icon">${icons[strategy.icon] || strategy.icon}</span>
@@ -266,7 +271,7 @@ function renderMetrics(content) {
 
   const grid = document.querySelector("#metric-grid");
   grid.setAttribute("data-editable", "array");
-  grid.setAttribute("data-prop", "metrics");
+  grid.setAttribute("data-prop", rootProp("metrics"));
   grid.innerHTML = content.metrics.map((metric) => `
     <div class="metric-item" ${arrayItemAttrs()}>
       <span class="round-icon">${icons[metric.icon] || metric.icon}</span>
@@ -280,7 +285,7 @@ function renderApplications(content) {
 
   const grid = document.querySelector("#application-grid");
   grid.setAttribute("data-editable", "array");
-  grid.setAttribute("data-prop", "applications");
+  grid.setAttribute("data-prop", rootProp("applications"));
   grid.innerHTML = content.applications.map((application) => `
     <article class="application-card" ${arrayItemAttrs()}>
       ${buildResponsivePicture(application.imageBase, application.title, photoCardSizes)}
@@ -296,7 +301,7 @@ function renderContact(content) {
 
   const benefits = document.querySelector("#contact-benefits");
   benefits.setAttribute("data-editable", "array");
-  benefits.setAttribute("data-prop", "contactSection.benefits");
+  benefits.setAttribute("data-prop", rootProp("contactSection.benefits"));
   benefits.innerHTML = content.contactSection.benefits.map((benefit) => `
     <span ${arrayItemAttrs()}>
       <img src="${benefit.icon}" alt="" aria-hidden="true" decoding="async" ${imageAttrs("icon")}>

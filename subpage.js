@@ -7,6 +7,8 @@ function syncViewportScale() {
 const cardPictureSizes = "(max-width: 800px) calc(100vw - 24px), (max-width: 1366px) calc(50vw - 28px), calc(25vw - 28px)";
 const supportPictureSizes = "(max-width: 1100px) calc(100vw - 36px), 320px";
 const hubPictureSizes = "(max-width: 1100px) calc(100vw - 36px), 220px";
+const currentPage = document.body.dataset.page || "home";
+const currentContentRoot = `@file[/content/${currentPage}.json].`;
 
 function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200]) {
   const webpSet = widths.map((width) => `${basePath}-${width}w.webp ${width}w`).join(", ");
@@ -28,9 +30,17 @@ function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200])
   `;
 }
 
+function rootProp(prop) {
+  return `${currentContentRoot}${prop}`;
+}
+
 function textAttrs(prop, type = "text") {
   const typeAttr = type ? ` data-type="${type}"` : "";
   return `data-editable="text" data-prop="${prop}"${typeAttr}`;
+}
+
+function rootTextAttrs(prop, type = "text") {
+  return textAttrs(rootProp(prop), type);
 }
 
 function imageAttrs(srcProp, altProp) {
@@ -40,6 +50,10 @@ function imageAttrs(srcProp, altProp) {
 
 function arrayAttrs(prop) {
   return `data-editable="array" data-prop="${prop}"`;
+}
+
+function rootArrayAttrs(prop) {
+  return arrayAttrs(rootProp(prop));
 }
 
 function arrayItemAttrs() {
@@ -52,7 +66,8 @@ function bindTextElement(element, prop, type = "text") {
   }
 
   element.setAttribute("data-editable", "text");
-  element.setAttribute("data-prop", prop);
+  const resolvedProp = prop.startsWith("@file[") || !prop.includes(".") ? prop : rootProp(prop);
+  element.setAttribute("data-prop", resolvedProp);
   if (type) {
     element.setAttribute("data-type", type);
   }
@@ -64,7 +79,8 @@ function bindArrayElement(element, prop) {
   }
 
   element.setAttribute("data-editable", "array");
-  element.setAttribute("data-prop", prop);
+  const resolvedProp = prop.startsWith("@file[") ? prop : rootProp(prop);
+  element.setAttribute("data-prop", resolvedProp);
 }
 
 function setText(selector, value, prop, type = "text") {
@@ -262,10 +278,10 @@ function renderSolutionsPage(content) {
   if (links && content.applicationLinks) {
     links.innerHTML = `
       <article class="solution-link-intro">
-        <h2 ${textAttrs("applicationLinks.title", "block")}>${content.applicationLinks.title}</h2>
-        <p ${textAttrs("applicationLinks.description", "text")}>${content.applicationLinks.description}</p>
+        <h2 ${rootTextAttrs("applicationLinks.title", "block")}>${content.applicationLinks.title}</h2>
+        <p ${rootTextAttrs("applicationLinks.description", "text")}>${content.applicationLinks.description}</p>
       </article>
-      <div class="solution-link-cards" ${arrayAttrs("applicationLinks.cards")} style="display: contents;">
+      <div class="solution-link-cards" ${rootArrayAttrs("applicationLinks.cards")} style="display: contents;">
         ${content.applicationLinks.cards.map((card) => `
           <a class="solution-link-card" href="#${card.id}" id="${card.id}" ${arrayItemAttrs()}>
             <span class="solution-link-icon" ${textAttrs("icon")}>${card.icon}</span>
@@ -281,12 +297,12 @@ function renderSolutionsPage(content) {
   if (systemGrid && content.system) {
     systemGrid.innerHTML = `
       <article class="system-intro">
-        <p class="eyebrow" ${textAttrs("system.eyebrow")}>${content.system.eyebrow}</p>
-        <h2 ${textAttrs("system.title", "block")}>${content.system.title}</h2>
-        <p ${textAttrs("system.description", "text")}>${content.system.description}</p>
-        <a class="plain-link" href="${content.system.linkHref}" ${textAttrs("system.linkLabel")}>${content.system.linkLabel}</a>
+        <p class="eyebrow" ${rootTextAttrs("system.eyebrow")}>${content.system.eyebrow}</p>
+        <h2 ${rootTextAttrs("system.title", "block")}>${content.system.title}</h2>
+        <p ${rootTextAttrs("system.description", "text")}>${content.system.description}</p>
+        <a class="plain-link" href="${content.system.linkHref}" ${rootTextAttrs("system.linkLabel")}>${content.system.linkLabel}</a>
       </article>
-      <div class="system-cards" ${arrayAttrs("system.cards")}>
+      <div class="system-cards" ${rootArrayAttrs("system.cards")}>
         ${content.system.cards.map((card, index) => `
           ${index > 0 ? `<span class="system-plus">+</span>` : ""}
           <article class="system-card" ${arrayItemAttrs()}>
@@ -299,7 +315,7 @@ function renderSolutionsPage(content) {
           </article>
         `).join("")}
       </div>
-      <p class="system-summary" ${textAttrs("system.summary", "text")}>${content.system.summary}</p>
+      <p class="system-summary" ${rootTextAttrs("system.summary", "text")}>${content.system.summary}</p>
     `;
   }
 
@@ -307,9 +323,9 @@ function renderSolutionsPage(content) {
   if (comparePanel && content.compare) {
     comparePanel.innerHTML = `
       <div class="compare-challenges">
-        <p class="eyebrow" ${textAttrs("compare.eyebrow")}>${content.compare.eyebrow}</p>
-        <h2 ${textAttrs("compare.title", "block")}>${content.compare.title}</h2>
-        <ul ${arrayAttrs("compare.challenges")}>
+        <p class="eyebrow" ${rootTextAttrs("compare.eyebrow")}>${content.compare.eyebrow}</p>
+        <h2 ${rootTextAttrs("compare.title", "block")}>${content.compare.title}</h2>
+        <ul ${rootArrayAttrs("compare.challenges")}>
           ${content.compare.challenges.map((challenge) => `
             <li ${arrayItemAttrs()}>
               <strong ${textAttrs("title")}>${challenge.title}</strong>
@@ -321,7 +337,7 @@ function renderSolutionsPage(content) {
       <div class="compare-visuals compare-visuals--single">
         <img class="compare-composite-image" src="assets/site-images/solutions-comparison-panel.png" alt="Lighting comparison with and without the InnovoGrow system">
         <article class="compare-card compare-card--negative">
-          <span class="compare-chip" ${textAttrs("compare.negativeChip")}>${content.compare.negativeChip}</span>
+          <span class="compare-chip" ${rootTextAttrs("compare.negativeChip")}>${content.compare.negativeChip}</span>
           <div class="compare-stage compare-stage--weak">
             <img class="compare-fixture compare-fixture--weak" src="assets/site-images/products-fixture-tl-300-d1.png" alt="Top lighting only fixture">
             <div class="compare-canopy">
@@ -334,7 +350,7 @@ function renderSolutionsPage(content) {
           </div>
         </article>
         <article class="compare-card compare-card--positive">
-          <span class="compare-chip compare-chip--green" ${textAttrs("compare.positiveChip")}>${content.compare.positiveChip}</span>
+          <span class="compare-chip compare-chip--green" ${rootTextAttrs("compare.positiveChip")}>${content.compare.positiveChip}</span>
           <div class="compare-stage compare-stage--strong">
             <img class="compare-fixture compare-fixture--strong" src="assets/site-images/products-fixture-uc-series.png" alt="InnovoGrow system fixture">
             <div class="compare-canopy">
@@ -348,8 +364,8 @@ function renderSolutionsPage(content) {
         </article>
       </div>
       <div class="compare-advantage">
-        <h2 ${textAttrs("compare.advantageTitle", "block")}>${content.compare.advantageTitle}</h2>
-        <ul ${arrayAttrs("compare.advantages")}>
+        <h2 ${rootTextAttrs("compare.advantageTitle", "block")}>${content.compare.advantageTitle}</h2>
+        <ul ${rootArrayAttrs("compare.advantages")}>
           ${content.compare.advantages.map((advantage) => `
             <li ${arrayItemAttrs()}>
               <strong ${textAttrs("title")}>${advantage.title}</strong>
@@ -528,10 +544,10 @@ function renderAboutPage(content) {
   if (journeyGrid && content.journey) {
     journeyGrid.innerHTML = `
       <article class="journey-intro">
-        <p class="eyebrow" ${textAttrs("journey.eyebrow")}>${content.journey.eyebrow}</p>
-        <h2 ${textAttrs("journey.title", "block")}>${content.journey.title}</h2>
+        <p class="eyebrow" ${rootTextAttrs("journey.eyebrow")}>${content.journey.eyebrow}</p>
+        <h2 ${rootTextAttrs("journey.title", "block")}>${content.journey.title}</h2>
       </article>
-      <div class="journey-items" ${arrayAttrs("journey.items")} style="display: contents;">
+      <div class="journey-items" ${rootArrayAttrs("journey.items")} style="display: contents;">
         ${content.journey.items.map((item) => `<article class="journey-item" ${arrayItemAttrs()}><strong ${textAttrs("year")}>${item.year}</strong><span ${textAttrs("text", "text")}>${item.text}</span></article>`).join("")}
       </div>
     `;
