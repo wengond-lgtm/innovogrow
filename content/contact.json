@@ -4,9 +4,21 @@
     "title": "Talk to Our Lighting Team",
     "description": "We're here to help you design the right lighting solution for higher yields, better efficiency, and long-term growth.",
     "features": [
-      { "icon": "01", "title": "Commercial LED Experts", "text": "Built for cultivation operations" },
-      { "icon": "02", "title": "Tailored Solutions", "text": "For your facility and workflow" },
-      { "icon": "03", "title": "Fast, Reliable Response", "text": "From a real lighting team" }
+      {
+        "icon": "01",
+        "title": "Commercial LED Experts",
+        "text": "Built for cultivation operations"
+      },
+      {
+        "icon": "02",
+        "title": "Tailored Solutions",
+        "text": "For your facility and workflow"
+      },
+      {
+        "icon": "03",
+        "title": "Fast, Reliable Response",
+        "text": "From a real lighting team"
+      }
     ]
   },
   "form": {
@@ -15,11 +27,11 @@
   },
   "sideCards": [
     {
-      "title": "Talk to Our Lighting Team",
-      "strong": "+1 (888) 254-1457",
-      "text": "Mon-Fri, 8AM-6PM (EST)",
+      "title": "Talk to Our Management",
+      "strong": "+1 (310) 738-9334",
+      "text": "Mon-Sat 6AM-6PM (PST)",
       "link": {
-        "label": "grow@innovogrow.com",
+        "label": "sean@innovogrow.com",
         "href": "mailto:grow@innovogrow.com"
       }
     },
@@ -29,9 +41,9 @@
       "text": "You'll hear back from a lighting expert who understands your grow."
     },
     {
-      "title": "Headquarters & Office",
-      "text": "InnovoGrow Technologies<br>1000 W Fulton Market, Suite 300<br>Chicago, IL 60607, USA",
-      "note": "Mon-Fri, 8AM-6PM (EST)"
+      "title": "Headquarters Office",
+      "text": "InnovoGrow Technologies<br />1722 J Street, Suite 306<br />Sacramento, California 95811 USA",
+      "note": "Mon-Fri, 8AM-6PM (PST)"
     },
     {
       "title": "Warehouse & Fulfillment",
@@ -59,9 +71,21 @@
     "title": "Request a Custom Lighting Plan",
     "description": "Our team will analyze your facility and crops to design a lighting solution that maximizes yield and efficiency.",
     "steps": [
-      { "number": "1", "title": "Share Your Details", "text": "Tell us about your facility and goals." },
-      { "number": "2", "title": "We Design Your Plan", "text": "Our experts create a tailored lighting layout." },
-      { "number": "3", "title": "Grow with Confidence", "text": "Get higher yields, lower costs, and proven results." }
+      {
+        "number": "1",
+        "title": "Share Your Details",
+        "text": "Tell us about your facility and goals."
+      },
+      {
+        "number": "2",
+        "title": "We Design Your Plan",
+        "text": "Our experts create a tailored lighting layout."
+      },
+      {
+        "number": "3",
+        "title": "Grow with Confidence",
+        "text": "Get higher yields, lower costs, and proven results."
+      }
     ],
     "buttonLabel": "Get My Lighting Plan",
     "buttonHref": "#top",
