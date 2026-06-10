@@ -92,6 +92,7 @@
     "title": "Case Studies from Commercial Growers",
     "linkLabel": "View All Case Studies",
     "linkHref": "#case-studies",
+    "cardLinkLabel": "Read Case Study",
     "cards": [
       {
         "kicker": "Vertical Farming",
@@ -165,6 +166,11 @@
     "buttonHref": "resources.html",
     "subscribeTitle": "Get the Latest Insights",
     "subscribeDescription": "Subscribe for new case studies, product updates, and expert grower insights.",
+    "subscribeForm": {
+      "placeholder": "Enter your email",
+      "ariaLabel": "Enter your email",
+      "buttonLabel": "Subscribe"
+    },
     "subscribeNote": "We respect your privacy. Unsubscribe anytime."
   }
 }

@@ -9,6 +9,7 @@ const supportPictureSizes = "(max-width: 1100px) calc(100vw - 36px), 320px";
 const hubPictureSizes = "(max-width: 1100px) calc(100vw - 36px), 220px";
 const currentPage = document.body.dataset.page || "home";
 const currentContentRoot = `@file[/content/${currentPage}.json].`;
+const siteHelpers = window.InnovoGrowSite || {};
 
 function buildResponsivePicture(basePath, alt, sizes, widths = [480, 768, 1200]) {
   const webpSet = widths.map((width) => `${basePath}-${width}w.webp ${width}w`).join(", ");
@@ -132,13 +133,6 @@ function setupSubpageMenu() {
   });
 }
 
-function setFooterYear() {
-  const year = document.querySelector("[data-year]");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-}
-
 function setupFaqs() {
   document.querySelectorAll("[data-faq-trigger]").forEach((trigger) => {
     trigger.addEventListener("click", () => {
@@ -163,6 +157,41 @@ async function loadSubpageContent(page) {
     console.warn(`Unable to load content for ${page}.`, error);
     return null;
   }
+}
+
+function renderFormField(field) {
+  const classNames = [];
+  if (field.className) {
+    classNames.push(field.className);
+  }
+  if (field.fullWidth) {
+    classNames.push("full-width");
+  }
+
+  const classAttr = classNames.length ? ` class="${classNames.join(" ")}"` : "";
+  const noteMarkup = field.note ? `<small ${textAttrs("note", "text")}>${field.note}</small>` : "";
+  let controlMarkup = "";
+
+  if (field.type === "select") {
+    const options = Array.isArray(field.options) ? field.options : [];
+    controlMarkup = `
+      <select name="${field.name}" ${arrayAttrs("options")}>
+        ${options.map((option) => `<option ${arrayItemAttrs()}>${option}</option>`).join("")}
+      </select>
+    `;
+  } else if (field.type === "textarea") {
+    controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"></textarea>`;
+  } else {
+    controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}">`;
+  }
+
+  return `
+    <label${classAttr} ${arrayItemAttrs()}>
+      <span ${textAttrs("label")}>${field.label}</span>
+      ${controlMarkup}
+      ${noteMarkup}
+    </label>
+  `;
 }
 
 function renderFeatureList(containerSelector, features, baseProp) {
@@ -199,6 +228,7 @@ function renderFaqGrid(containerSelector, items, baseProp) {
 }
 
 function renderProductsPage(content) {
+  const applicationsTitle = content.labels?.applicationsTitle || "Ideal Applications";
   setText("#products-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
   setText("#products-hero-title", content.hero?.title, "hero.title", "block");
   setText("#products-hero-description", content.hero?.description, "hero.description", "text");
@@ -231,7 +261,7 @@ function renderProductsPage(content) {
           </div>
         </div>
         <div class="catalog-apps">
-          <p>Ideal Applications</p>
+          <p ${rootTextAttrs("labels.applicationsTitle")}>${applicationsTitle}</p>
           <div class="catalog-tags" ${arrayAttrs("applications")}>
             ${product.applications.map((application) => `<span ${arrayItemAttrs()}>${application}</span>`).join("")}
           </div>
@@ -267,6 +297,26 @@ function renderProductsPage(content) {
 }
 
 function renderSolutionsPage(content) {
+  const negativeCalloutClasses = [
+    "compare-callout compare-callout--left compare-callout--top",
+    "compare-callout compare-callout--left compare-callout--mid",
+    "compare-callout compare-callout--left compare-callout--bottom"
+  ];
+  const positiveCalloutClasses = [
+    "compare-callout compare-callout--right compare-callout--top",
+    "compare-callout compare-callout--right compare-callout--mid",
+    "compare-callout compare-callout--right compare-callout--bottom"
+  ];
+  const negativeCallouts = Array.isArray(content.compare?.negativeCallouts)
+    ? content.compare.negativeCallouts
+    : ["Hot spots<br>and shadows", "Lower canopy<br>left behind", "Wasted light<br>and energy"];
+  const positiveCallouts = Array.isArray(content.compare?.positiveCallouts)
+    ? content.compare.positiveCallouts
+    : ["Uniform light<br>across canopy", "Lower growth<br>fully optimized", "Higher yield<br>&amp; efficiency"];
+  const useCaseLinkLabel = content.useCases?.cardLinkLabel || "View Solution";
+  const packagesIncludesLabel = content.packages?.includesLabel || "Includes:";
+  const packagesCardLinkLabel = content.packages?.cardLinkLabel || "View Details";
+
   setText("#solutions-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
   setText("#solutions-hero-title", content.hero?.title, "hero.title", "block");
   setText("#solutions-hero-description", content.hero?.description, "hero.description", "text");
@@ -344,9 +394,9 @@ function renderSolutionsPage(content) {
               ${buildResponsivePicture("assets/site-images/solutions-usecase-high-density-flowering-crops", "Lighting without a system", supportPictureSizes)}
             </div>
             <div class="compare-floor"></div>
-            <span class="compare-callout compare-callout--left compare-callout--top">Hot spots<br>and shadows</span>
-            <span class="compare-callout compare-callout--left compare-callout--mid">Lower canopy<br>left behind</span>
-            <span class="compare-callout compare-callout--left compare-callout--bottom">Wasted light<br>and energy</span>
+            <div ${rootArrayAttrs("compare.negativeCallouts")} style="display: contents;">
+              ${negativeCallouts.map((callout, index) => `<span class="${negativeCalloutClasses[index] || negativeCalloutClasses[negativeCalloutClasses.length - 1]}" ${arrayItemAttrs()}>${callout}</span>`).join("")}
+            </div>
           </div>
         </article>
         <article class="compare-card compare-card--positive">
@@ -357,9 +407,9 @@ function renderSolutionsPage(content) {
               ${buildResponsivePicture("assets/site-images/solutions-usecase-indoor-grow-rooms", "Lighting with the InnovoGrow system", supportPictureSizes)}
             </div>
             <div class="compare-floor"></div>
-            <span class="compare-callout compare-callout--right compare-callout--top">Uniform light<br>across canopy</span>
-            <span class="compare-callout compare-callout--right compare-callout--mid">Lower growth<br>fully optimized</span>
-            <span class="compare-callout compare-callout--right compare-callout--bottom">Higher yield<br>&amp; efficiency</span>
+            <div ${rootArrayAttrs("compare.positiveCallouts")} style="display: contents;">
+              ${positiveCallouts.map((callout, index) => `<span class="${positiveCalloutClasses[index] || positiveCalloutClasses[positiveCalloutClasses.length - 1]}" ${arrayItemAttrs()}>${callout}</span>`).join("")}
+            </div>
           </div>
         </article>
       </div>
@@ -389,7 +439,7 @@ function renderSolutionsPage(content) {
         <div class="use-case-copy">
           <strong ${textAttrs("title")}>${card.title}</strong>
           <p ${textAttrs("text", "text")}>${card.text}</p>
-          <a href="${card.href}">View Solution</a>
+          <a href="${card.href}"><span ${rootTextAttrs("useCases.cardLinkLabel")}>${useCaseLinkLabel}</span></a>
         </div>
       </article>
     `).join("");
@@ -406,7 +456,7 @@ function renderSolutionsPage(content) {
         <h3 ${textAttrs("title", "block")}>${card.title}</h3>
         <p ${textAttrs("description", "text")}>${card.description}</p>
         <div class="package-includes">
-          <strong>Includes:</strong>
+          <strong><span ${rootTextAttrs("packages.includesLabel")}>${packagesIncludesLabel}</span></strong>
           <div ${arrayAttrs("includes")}>
             ${card.includes.map((item) => `<span ${arrayItemAttrs()}>${item}</span>`).join("")}
           </div>
@@ -415,7 +465,7 @@ function renderSolutionsPage(content) {
         <div class="package-benefits" ${arrayAttrs("benefits")}>
           ${card.benefits.map((benefit) => `<span ${arrayItemAttrs()}>${benefit}</span>`).join("")}
         </div>
-        <a href="${card.href}">View Details</a>
+        <a href="${card.href}"><span ${rootTextAttrs("packages.cardLinkLabel")}>${packagesCardLinkLabel}</span></a>
       </article>
     `).join("");
   }
@@ -441,6 +491,7 @@ function renderSolutionsPage(content) {
 }
 
 function renderResourcesPage(content) {
+  const caseCardLinkLabel = content.cases?.cardLinkLabel || "Read Case Study";
   setText("#resources-hero-eyebrow", content.hero?.eyebrow, "hero.eyebrow");
   setText("#resources-hero-title", content.hero?.title, "hero.title", "block");
   setText("#resources-hero-description", content.hero?.description, "hero.description", "text");
@@ -495,7 +546,7 @@ function renderResourcesPage(content) {
         <p class="case-kicker" ${textAttrs("kicker")}>${card.kicker}</p>
         <strong ${textAttrs("title", "block")}>${card.title}</strong>
         <p ${textAttrs("description", "text")}>${card.description}</p>
-        <a href="${card.href}">Read Case Study</a>
+        <a href="${card.href}"><span ${rootTextAttrs("cases.cardLinkLabel")}>${caseCardLinkLabel}</span></a>
       </article>
     `).join("");
   }
@@ -513,6 +564,17 @@ function renderResourcesPage(content) {
   setText("#resources-subscribe-title", content.hub?.subscribeTitle, "hub.subscribeTitle", "block");
   setText("#resources-subscribe-description", content.hub?.subscribeDescription, "hub.subscribeDescription", "text");
   setText("#resources-subscribe-note", content.hub?.subscribeNote, "hub.subscribeNote", "text");
+
+  const subscribeInput = document.querySelector("#resources-subscribe-input");
+  if (subscribeInput && content.hub?.subscribeForm) {
+    subscribeInput.placeholder = content.hub.subscribeForm.placeholder || "";
+    subscribeInput.setAttribute("aria-label", content.hub.subscribeForm.ariaLabel || content.hub.subscribeForm.placeholder || "");
+  }
+
+  const subscribeButton = document.querySelector("#resources-subscribe-button");
+  if (subscribeButton && content.hub?.subscribeForm?.buttonLabel) {
+    subscribeButton.innerHTML = `<span ${rootTextAttrs("hub.subscribeForm.buttonLabel")}>${content.hub.subscribeForm.buttonLabel}</span>`;
+  }
 }
 
 function renderAboutPage(content) {
@@ -652,6 +714,46 @@ function renderContactPage(content) {
 
   setText("#contact-form-title", content.form?.title, "form.title", "block");
   setText("#contact-form-description", content.form?.description, "form.description", "text");
+  const formGrid = document.querySelector("#contact-form-grid");
+  if (formGrid && Array.isArray(content.form?.fields)) {
+    bindArrayElement(formGrid, "form.fields");
+    formGrid.innerHTML = content.form.fields.map((field) => renderFormField(field)).join("");
+  }
+
+  const uploadRow = document.querySelector("#contact-upload-row");
+  if (uploadRow && content.form?.upload) {
+    uploadRow.innerHTML = `
+      <div class="upload-box">
+        <strong ${rootTextAttrs("form.upload.title")}>${content.form.upload.title}</strong>
+        <div class="upload-drop">
+          <span ${rootTextAttrs("form.upload.dropText", "text")}>${content.form.upload.dropText}</span><br>
+          <span ${rootTextAttrs("form.upload.fileNote", "text")}>${content.form.upload.fileNote}</span>
+        </div>
+      </div>
+      <div class="upload-notes">
+        <strong ${rootTextAttrs("form.upload.helpfulTitle")}>${content.form.upload.helpfulTitle}</strong>
+        <div ${rootArrayAttrs("form.upload.helpfulFiles")} style="display: contents;">
+          ${content.form.upload.helpfulFiles.map((item) => `<span ${arrayItemAttrs()}>${item}</span>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  const agreeLabel = document.querySelector("#contact-agree-label");
+  if (agreeLabel && content.form?.agreementLabel) {
+    agreeLabel.innerHTML = `<input type="checkbox"> <span ${rootTextAttrs("form.agreementLabel", "text")}>${content.form.agreementLabel}</span>`;
+  }
+
+  const ctaRow = document.querySelector("#contact-form-cta-row");
+  if (ctaRow && content.form?.submitLabel) {
+    ctaRow.innerHTML = `
+      <button class="btn btn-primary" type="button">
+        <span ${rootTextAttrs("form.submitLabel")}>${content.form.submitLabel}</span>
+      </button>
+      <span ${rootTextAttrs("form.secureNote", "text")}>${content.form.secureNote}</span>
+    `;
+  }
+
   const sideCards = document.querySelector("#contact-side-cards");
   if (sideCards && Array.isArray(content.sideCards)) {
     bindArrayElement(sideCards, "sideCards");
@@ -728,9 +830,15 @@ window.addEventListener("resize", syncViewportScale, { passive: true });
 
 document.addEventListener("DOMContentLoaded", async () => {
   setupSubpageMenu();
-  setFooterYear();
-
   const page = document.body.dataset.page;
+  const siteContent = typeof siteHelpers.loadSiteContent === "function"
+    ? await siteHelpers.loadSiteContent()
+    : null;
+
+  if (typeof siteHelpers.renderSiteChrome === "function") {
+    siteHelpers.renderSiteChrome(page || currentPage, siteContent);
+  }
+
   if (page) {
     const content = await loadSubpageContent(page);
     renderSubpageContent(page, content);

@@ -78,6 +78,43 @@ file_config:
     _enabled_editors:
       - visual
       - data
+  content/site.json:
+    label: Shared Site Content
+    url: /
+    _enabled_editors:
+      - visual
+      - data
+_inputs:
+  href:
+    type: url
+  primaryHref:
+    type: url
+  secondaryHref:
+    type: url
+  buttonHref:
+    type: url
+  linkHref:
+    type: url
+  cardButtonHref:
+    type: url
+  image:
+    type: image
+  description:
+    type: textarea
+  text:
+    type: textarea
+  note:
+    type: textarea
+  summary:
+    type: textarea
+  lead:
+    type: textarea
+  brandDescription:
+    type: textarea
+  secureNote:
+    type: textarea
+  dropText:
+    type: textarea
 editor:
   default_path: /index.html
 timezone: Etc/UTC

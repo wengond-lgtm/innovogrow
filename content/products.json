@@ -21,6 +21,9 @@
       }
     ]
   },
+  "labels": {
+    "applicationsTitle": "Ideal Applications"
+  },
   "products": [
     {
       "id": "tl-300-d1",

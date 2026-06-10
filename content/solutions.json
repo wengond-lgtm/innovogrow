@@ -72,6 +72,16 @@
     ],
     "negativeChip": "Without a System",
     "positiveChip": "With the InnovoGrow System",
+    "negativeCallouts": [
+      "Hot spots<br>and shadows",
+      "Lower canopy<br>left behind",
+      "Wasted light<br>and energy"
+    ],
+    "positiveCallouts": [
+      "Uniform light<br>across canopy",
+      "Lower growth<br>fully optimized",
+      "Higher yield<br>&amp; efficiency"
+    ],
     "advantageTitle": "The InnovoGrow Advantage",
     "advantages": [
       { "title": "Uniform light across all canopy levels", "text": "Stronger, more consistent growth" },
@@ -85,6 +95,7 @@
     "description": "See how our lighting strategies perform in real-world applications.",
     "linkLabel": "View All Use Cases",
     "linkHref": "#solution-packages",
+    "cardLinkLabel": "View Solution",
     "cards": [
       {
         "title": "High-Density Flowering Crops",
@@ -115,6 +126,8 @@
   "packages": {
     "title": "Complete Solutions. Proven Results.",
     "description": "Recommended lighting strategies for common grow scenarios.",
+    "includesLabel": "Includes:",
+    "cardLinkLabel": "View Details",
     "cards": [
       {
         "eyebrow": "Under-Canopy Upgrade",

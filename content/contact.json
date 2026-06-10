@@ -23,7 +23,100 @@
   },
   "form": {
     "title": "Let's Build Your Lighting Advantage",
-    "description": "Share a few details about your operation and our team will create a customized lighting plan for you."
+    "description": "Share a few details about your operation and our team will create a customized lighting plan for you.",
+    "fields": [
+      {
+        "label": "Full Name *",
+        "type": "text",
+        "name": "full_name",
+        "placeholder": "Your name"
+      },
+      {
+        "label": "Company *",
+        "type": "text",
+        "name": "company",
+        "placeholder": "Company name"
+      },
+      {
+        "label": "Email *",
+        "type": "email",
+        "name": "email",
+        "placeholder": "you@company.com"
+      },
+      {
+        "label": "Phone / WhatsApp *",
+        "type": "text",
+        "name": "phone",
+        "placeholder": "e.g. (555) 123-4567"
+      },
+      {
+        "label": "Country / State *",
+        "type": "select",
+        "name": "country",
+        "options": [
+          "Select country / state"
+        ]
+      },
+      {
+        "label": "Crop Type *",
+        "type": "select",
+        "name": "crop",
+        "options": [
+          "Select crop type"
+        ]
+      },
+      {
+        "label": "Grow Area Size *",
+        "type": "text",
+        "name": "area",
+        "placeholder": "e.g. 10,000 sq ft",
+        "note": "Total canopy area (sq ft / m&sup2;)"
+      },
+      {
+        "label": "Current Lighting System",
+        "type": "select",
+        "name": "system",
+        "note": "Your existing lighting (if any)",
+        "options": [
+          "Select current system"
+        ]
+      },
+      {
+        "label": "Interested Products *",
+        "type": "select",
+        "name": "products",
+        "fullWidth": true,
+        "note": "Select all that apply",
+        "options": [
+          "Select products",
+          "IG 300-D1",
+          "IG 800",
+          "IG 330",
+          "IG 150"
+        ]
+      },
+      {
+        "label": "Message / Additional Information",
+        "type": "textarea",
+        "name": "message",
+        "fullWidth": true,
+        "placeholder": "Tell us more about your grow, goals, challenges, or timeline..."
+      }
+    ],
+    "upload": {
+      "title": "Upload Layout / Drawing (Optional)",
+      "dropText": "Drag & drop your file here or click to browse",
+      "fileNote": "PDF, PNG, JPG up to 10MB",
+      "helpfulTitle": "Helpful files include:",
+      "helpfulFiles": [
+        "Facility layout or floor plan",
+        "Lighting plan (if available)",
+        "Photos of your grow space"
+      ]
+    },
+    "agreementLabel": "I agree to the Terms of Use and Privacy Policy.",
+    "submitLabel": "Request Lighting Plan",
+    "secureNote": "Your information is secure and will never be shared."
   },
   "sideCards": [
     {

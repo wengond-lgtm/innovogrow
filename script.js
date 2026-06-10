@@ -19,6 +19,7 @@ function syncViewportScale() {
 syncViewportScale();
 window.addEventListener("resize", syncViewportScale, { passive: true });
 const homeContentRoot = "@file[/content/home.json].";
+const siteHelpers = window.InnovoGrowSite || {};
 
 const defaultHomeContent = {
   hero: {
@@ -140,6 +141,41 @@ const defaultHomeContent = {
     eyebrow: "Get Started",
     title: "Need a Lighting Layout for Your Facility?",
     description: "Tell us about your grow. Our lighting experts will help you design the right solution for higher yields, better quality, and long-term efficiency.",
+    formFields: [
+      { label: "Full Name", type: "text", name: "fullName", placeholder: "Your name" },
+      { label: "Company", type: "text", name: "company", placeholder: "Company name" },
+      { label: "Email", type: "email", name: "email", placeholder: "you@company.com" },
+      { label: "Phone / WhatsApp", type: "text", name: "phone", placeholder: "+1 (555) 123-4567" },
+      { label: "Country / State", type: "text", name: "region", placeholder: "Select your country" },
+      {
+        label: "Crop Type",
+        type: "select",
+        name: "cropType",
+        options: ["Select crop type", "Flowering crops", "Tomatoes", "Leafy greens"]
+      },
+      { label: "Grow Area Size", type: "text", name: "area", placeholder: "e.g. 1000 sq ft / 300 m2" },
+      { label: "Current Lighting System", type: "text", name: "lighting", placeholder: "e.g. HPS, LED, Mixed" },
+      {
+        label: "Interested Products",
+        type: "select",
+        name: "products",
+        options: ["Select products", "IG 300-D1", "IG 800", "IG 330", "IG 150"]
+      },
+      {
+        label: "Message / Additional Information",
+        type: "textarea",
+        name: "message",
+        placeholder: "Tell us more about your grow, goals, or challenges...",
+        className: "message-field"
+      },
+      {
+        label: "Upload Layout / Drawing (optional)",
+        type: "file",
+        name: "layout",
+        className: "upload-field",
+        note: "PDF, PNG, JPG up to 10MB"
+      }
+    ],
     benefits: [
       { icon: "assets/site-images/home-icon-personalized-lighting-plan.svg", text: "Personalized Lighting Plan" },
       { icon: "assets/site-images/home-icon-ppfd-layout-recommendation.svg", text: "PPFD & Layout Recommendation" },
@@ -294,10 +330,50 @@ function renderApplications(content) {
   `).join("");
 }
 
+function renderHomeContactForm(content) {
+  const formGrid = document.querySelector("#home-contact-form-grid");
+  const fields = content.contactSection?.formFields;
+  if (!formGrid || !Array.isArray(fields)) {
+    return;
+  }
+
+  formGrid.setAttribute("data-editable", "array");
+  formGrid.setAttribute("data-prop", rootProp("contactSection.formFields"));
+  formGrid.innerHTML = fields.map((field) => {
+    const classAttr = field.className ? ` class="${field.className}"` : "";
+    const noteMarkup = field.note ? `<small ${textAttrs("note", "text")}>${field.note}</small>` : "";
+    let controlMarkup = "";
+
+    if (field.type === "select") {
+      const options = Array.isArray(field.options) ? field.options : [];
+      controlMarkup = `
+        <select name="${field.name}" ${arrayAttrs("options")}>
+          ${options.map((option) => `<option ${arrayItemAttrs()}>${option}</option>`).join("")}
+        </select>
+      `;
+    } else if (field.type === "textarea") {
+      controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"></textarea>`;
+    } else if (field.type === "file") {
+      controlMarkup = `<input type="file" name="${field.name}">`;
+    } else {
+      controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}">`;
+    }
+
+    return `
+      <label${classAttr} ${arrayItemAttrs()}>
+        <span ${textAttrs("label")}>${field.label}</span>
+        ${controlMarkup}
+        ${noteMarkup}
+      </label>
+    `;
+  }).join("");
+}
+
 function renderContact(content) {
   document.querySelector("#contact-section-eyebrow").textContent = content.contactSection.eyebrow;
   document.querySelector("#contact-section-title").textContent = content.contactSection.title;
   document.querySelector("#contact-section-description").textContent = content.contactSection.description;
+  renderHomeContactForm(content);
 
   const benefits = document.querySelector("#contact-benefits");
   benefits.setAttribute("data-editable", "array");
@@ -353,7 +429,15 @@ async function loadHomeContent() {
 }
 
 async function init() {
-  const content = await loadHomeContent();
+  const [content, siteContent] = await Promise.all([
+    loadHomeContent(),
+    typeof siteHelpers.loadSiteContent === "function" ? siteHelpers.loadSiteContent() : Promise.resolve(null)
+  ]);
+
+  if (typeof siteHelpers.renderSiteChrome === "function") {
+    siteHelpers.renderSiteChrome("home", siteContent);
+  }
+
   renderHero(content);
   renderChallenge(content);
   renderProducts(content);
@@ -363,7 +447,6 @@ async function init() {
   renderContact(content);
   setupMenu();
   setupForm();
-  document.querySelector("#year").textContent = new Date().getFullYear();
 }
 
 document.addEventListener("DOMContentLoaded", init);

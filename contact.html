@@ -37,7 +37,7 @@
           <a class="active" href="contact.html">Contact</a>
         </nav>
 
-        <a class="header-plan" href="contact.html">
+        <a class="header-plan" id="site-header-cta" href="contact.html">
           <span class="calendar-icon"></span>
           Request Lighting Plan
         </a>
@@ -89,7 +89,7 @@
             <h2 id="contact-form-title" data-editable="text" data-prop="@file[/content/contact.json].form.title" data-type="block">Let's Build Your Lighting Advantage</h2>
             <p id="contact-form-description" data-editable="text" data-prop="@file[/content/contact.json].form.description" data-type="text">Share a few details about your operation and our team will create a customized lighting plan for you.</p>
 
-            <div class="contact-form-grid">
+            <div class="contact-form-grid" id="contact-form-grid">
               <label>Full Name *<input type="text" name="full_name" placeholder="Your name"></label>
               <label>Company *<input type="text" name="company" placeholder="Company name"></label>
               <label>Email *<input type="email" name="email" placeholder="you@company.com"></label>
@@ -102,7 +102,7 @@
               <label class="full-width">Message / Additional Information<textarea name="message" placeholder="Tell us more about your grow, goals, challenges, or timeline..."></textarea></label>
             </div>
 
-            <div class="upload-row">
+            <div class="upload-row" id="contact-upload-row">
               <div class="upload-box">
                 <strong>Upload Layout / Drawing (Optional)</strong>
                 <div class="upload-drop">Drag &amp; drop your file here or click to browse<br>PDF, PNG, JPG up to 10MB</div>
@@ -115,9 +115,9 @@
               </div>
             </div>
 
-            <label class="agree-row"><input type="checkbox"> I agree to the Terms of Use and Privacy Policy.</label>
+            <label class="agree-row" id="contact-agree-label"><input type="checkbox"> I agree to the Terms of Use and Privacy Policy.</label>
 
-            <div class="form-cta-row">
+            <div class="form-cta-row" id="contact-form-cta-row">
               <button class="btn btn-primary" type="button">Request Lighting Plan</button>
               <span>Your information is secure and will never be shared.</span>
             </div>
@@ -221,7 +221,7 @@
     </main>
 
     <footer class="site-footer dark-band contact-footer">
-      <div class="ig-container footer-inner">
+      <div class="ig-container footer-inner" id="site-footer-inner">
         <div class="footer-brand">
           <img src="assets/site-images/brand-innovogrow-logo.svg" alt="InnovoGrow">
           <p>InnovoGrow delivers advanced LED grow lighting solutions for commercial growers worldwide.</p>
@@ -262,7 +262,7 @@
           </form>
         </div>
       </div>
-      <div class="ig-container footer-bottom">
+      <div class="ig-container footer-bottom" id="site-footer-bottom">
         <p>&copy; <span data-year></span> InnovoGrow. All rights reserved.</p>
         <div>
           <a href="#top">Privacy Policy</a>
@@ -272,6 +272,7 @@
     </footer>
   </div>
 
+  <script src="shared-site.js"></script>
   <script src="subpage.js"></script>
 </body>
 </html>
