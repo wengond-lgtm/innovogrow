@@ -81,8 +81,17 @@ function siteTextAttrs(prop, type = "text") {
   return `data-editable="text" data-prop="${siteRootProp(prop)}"${typeAttr}`;
 }
 
+function itemTextAttrs(prop, type = "text") {
+  const typeAttr = type ? ` data-type="${type}"` : "";
+  return `data-editable="text" data-prop="${prop}"${typeAttr}`;
+}
+
 function siteArrayAttrs(prop) {
   return `data-editable="array" data-prop="${siteRootProp(prop)}"`;
+}
+
+function itemArrayAttrs(prop) {
+  return `data-editable="array" data-prop="${prop}"`;
 }
 
 function siteArrayItemAttrs() {
@@ -101,7 +110,7 @@ function renderSiteNav(currentPage, content) {
     const activeClass = siteNavPages[index] === currentPage ? ' class="active"' : "";
     return `
       <a${activeClass} href="${item.href}" ${siteArrayItemAttrs()}>
-        <span ${siteTextAttrs("label")}>${item.label}</span>
+        <span ${itemTextAttrs("label")}>${item.label}</span>
       </a>
     `;
   }).join("");
@@ -131,11 +140,11 @@ function renderSiteFooter(content) {
       <div ${siteArrayAttrs("footer.columns")} style="display: contents;">
         ${content.footer.columns.map((column) => `
           <div class="footer-col" ${siteArrayItemAttrs()}>
-            <h3 ${siteTextAttrs("title")}>${column.title}</h3>
-            <div ${siteArrayAttrs("links")} style="display: contents;">
+            <h3 ${itemTextAttrs("title")}>${column.title}</h3>
+            <div ${itemArrayAttrs("links")} style="display: contents;">
               ${column.links.map((link) => `
                 <a href="${link.href}" ${siteArrayItemAttrs()}>
-                  <span ${siteTextAttrs("label")}>${link.label}</span>
+                  <span ${itemTextAttrs("label")}>${link.label}</span>
                 </a>
               `).join("")}
             </div>
