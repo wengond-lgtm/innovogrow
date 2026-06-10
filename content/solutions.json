@@ -4,23 +4,70 @@
     "title": "Lighting Solutions for Commercial Cultivation",
     "description": "System-level strategies that maximize yield, improve efficiency, and future-proof your grow.",
     "features": [
-      { "icon": "01", "title": "Higher Yields", "text": "Stronger crop growth" },
-      { "icon": "02", "title": "Better Light Distribution", "text": "Improve canopy uniformity" },
-      { "icon": "03", "title": "Reduced Complexity", "text": "Simplified installation" },
-      { "icon": "04", "title": "Lower Total Cost", "text": "Lower energy and ROI pressure" }
+      {
+        "icon": "01",
+        "title": "Higher Yields",
+        "text": "Stronger crop growth"
+      },
+      {
+        "icon": "02",
+        "title": "Better Light Distribution",
+        "text": "Improve canopy uniformity"
+      },
+      {
+        "icon": "03",
+        "title": "Reduced Complexity",
+        "text": "Simplified installation"
+      },
+      {
+        "icon": "04",
+        "title": "Lower Total Cost",
+        "text": "Lower energy and ROI pressure"
+      }
     ],
-    "primaryCta": { "label": "Explore Solutions", "href": "#application-solutions" },
-    "secondaryCta": { "label": "Request a Lighting Plan", "href": "contact.html" }
+    "primaryCta": {
+      "label": "Explore Solutions",
+      "href": "#application-solutions"
+    },
+    "secondaryCta": {
+      "label": "Request a Lighting Plan",
+      "href": "contact.html"
+    }
   },
   "applicationLinks": {
     "title": "Explore Solutions by Application",
     "description": "Every grow is different. Find the right lighting strategy for your facility.",
     "cards": [
-      { "id": "under-canopy-lighting", "icon": "UC", "title": "Under Canopy Lighting", "text": "Drive lower growth and improve distribution." },
-      { "id": "top-lighting", "icon": "TL", "title": "Top Lighting", "text": "Power photosynthesis from the top down." },
-      { "id": "indoor-cultivation", "icon": "IN", "title": "Indoor Cultivation", "text": "Controlled environments for maximum output." },
-      { "id": "greenhouse-lighting", "icon": "GH", "title": "Greenhouse Lighting", "text": "Natural light, smarter supplemental light." },
-      { "id": "full-facility-layouts", "icon": "FF", "title": "Full Facility Layouts", "text": "End-to-end lighting design and integration." }
+      {
+        "id": "under-canopy-lighting",
+        "icon": "UC",
+        "title": "Under Canopy Lighting",
+        "text": "Drive lower growth and improve distribution."
+      },
+      {
+        "id": "top-lighting",
+        "icon": "TL",
+        "title": "Top Lighting",
+        "text": "Power photosynthesis from the top down."
+      },
+      {
+        "id": "indoor-cultivation",
+        "icon": "IN",
+        "title": "Indoor Cultivation",
+        "text": "Controlled environments for maximum output."
+      },
+      {
+        "id": "greenhouse-lighting",
+        "icon": "GH",
+        "title": "Greenhouse Lighting",
+        "text": "Natural light, smarter supplemental light."
+      },
+      {
+        "id": "full-facility-layouts",
+        "icon": "FF",
+        "title": "Full Facility Layouts",
+        "text": "End-to-end lighting design and integration."
+      }
     ]
   },
   "system": {
@@ -65,10 +112,22 @@
     "eyebrow": "From Challenge to Solution",
     "title": "Common Challenges",
     "challenges": [
-      { "title": "Uneven light distribution", "text": "Leaves lower canopy behind" },
-      { "title": "Complex layouts & more drivers", "text": "Higher install time and cost" },
-      { "title": "High energy usage", "text": "Cuts into margins" },
-      { "title": "Inconsistent results", "text": "Lower quality and yield" }
+      {
+        "title": "Uneven light distribution",
+        "text": "Leaves lower canopy behind"
+      },
+      {
+        "title": "Complex layouts &amp; more drivers",
+        "text": "Higher install time and cost"
+      },
+      {
+        "title": "High energy usage",
+        "text": "Cuts into margins"
+      },
+      {
+        "title": "Inconsistent results",
+        "text": "Lower quality and yield"
+      }
     ],
     "negativeChip": "Without a System",
     "positiveChip": "With the InnovoGrow System",
@@ -84,10 +143,22 @@
     ],
     "advantageTitle": "The InnovoGrow Advantage",
     "advantages": [
-      { "title": "Uniform light across all canopy levels", "text": "Stronger, more consistent growth" },
-      { "title": "Simplified systems, fewer drivers", "text": "Faster installation, lower cost" },
-      { "title": "Higher efficiency, lower operating cost", "text": "Better ROI, year after year" },
-      { "title": "Scalable solutions that grow with you", "text": "Flexible for any facility size" }
+      {
+        "title": "Uniform light across all canopy levels",
+        "text": "Stronger, more consistent growth"
+      },
+      {
+        "title": "Simplified systems, fewer drivers",
+        "text": "Faster installation, lower cost"
+      },
+      {
+        "title": "Higher efficiency, lower operating cost",
+        "text": "Better ROI, year after year"
+      },
+      {
+        "title": "Scalable solutions that grow with you",
+        "text": "Flexible for any facility size"
+      }
     ]
   },
   "useCases": {
@@ -131,7 +202,7 @@
     "cards": [
       {
         "eyebrow": "Under-Canopy Upgrade",
-        "title": "Boost Lower Growth & Uniformity",
+        "title": "Boost Lower Growth &amp; Uniformity",
         "description": "Best for facilities looking to improve lower canopy performance.",
         "includes": [
           "IG 150 Under-Canopy Support",

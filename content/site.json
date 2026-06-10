@@ -120,7 +120,7 @@
       "description": "Stay updated with the latest products and cultivation insights.",
       "placeholder": "Your email",
       "ariaLabel": "Your email",
-      "buttonLabel": "->"
+      "buttonLabel": "-&gt;"
     },
     "bottom": {
       "copyrightText": "InnovoGrow. All rights reserved.",

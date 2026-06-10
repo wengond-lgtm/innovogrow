@@ -105,7 +105,7 @@
     ],
     "upload": {
       "title": "Upload Layout / Drawing (Optional)",
-      "dropText": "Drag & drop your file here or click to browse",
+      "dropText": "Drag &amp; drop your file here or click to browse",
       "fileNote": "PDF, PNG, JPG up to 10MB",
       "helpfulTitle": "Helpful files include:",
       "helpfulFiles": [
@@ -139,12 +139,12 @@
       "note": "Mon-Fri, 8AM-6PM (PST)"
     },
     {
-      "title": "Warehouse & Fulfillment",
-      "text": "InnovoGrow Distribution Center<br>2501 W 15th St, Suite B<br>Tempe, AZ 85281, USA",
+      "title": "Warehouse &amp; Fulfillment",
+      "text": "InnovoGrow Distribution Center<br />2501 W 15th St, Suite B<br />Tempe, AZ 85281, USA",
       "note": "Mon-Fri, 7AM-6PM (MST)"
     },
     {
-      "title": "Distributor & Partnership Inquiries",
+      "title": "Distributor &amp; Partnership Inquiries",
       "text": "Looking to become a distributor or partner? Let's grow together.",
       "link": {
         "label": "partners@innovogrow.com",
@@ -186,7 +186,7 @@
   },
   "faq": {
     "eyebrow": "FAQ",
-    "title": "Next Steps & Common Questions",
+    "title": "Next Steps &amp; Common Questions",
     "linkLabel": "View All Resources",
     "linkHref": "resources.html#faq",
     "items": [
@@ -211,7 +211,7 @@
   "map": {
     "title": "We're Located in the Heart of U.S. Ag Innovation",
     "description": "Proudly headquartered in Chicago with distribution operations in Arizona, serving growers across North America and beyond.",
-    "westLabel": "Distribution Center<br>Tempe, Arizona",
-    "midwestLabel": "InnovoGrow HQ<br>Chicago, Illinois"
+    "westLabel": "Distribution Center<br />Tempe, Arizona",
+    "midwestLabel": "InnovoGrow HQ<br />Chicago, Illinois"
   }
 }
