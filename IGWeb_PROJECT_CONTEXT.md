@@ -45,6 +45,8 @@ InnovoGrow 官网静态网页项目。项目用于展示 InnovoGrow 商业种植
 - `assets/site-images/`：站点图片、SVG 图标和响应式图片资源。
 - `tools/build-cloudcannon.js`：构建脚本，将源码复制到 `dist/`，排除 `.git`、`.cloudcannon`、`dist`、`or`。
 - `cloudcannon.config.yml`：CloudCannon 页面、内容集合和输入类型配置。
+- `sync-from-github.ps1`：一键同步脚本，执行 `fetch + pull --rebase origin main`。
+- `sync-from-github.cmd`：Windows 双击入口，调用 `sync-from-github.ps1`。
 
 ## 页面与功能模块说明
 
@@ -123,6 +125,7 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 - 2026-06-13：新增本项目上下文文档 `IGWeb_PROJECT_CONTEXT.md`，作为后续协作入口。
 - 2026-06-13：首页和 Contact 页表单已简化为联系方式收集，仅保留姓名、公司、邮箱、电话和留言。
 - 2026-06-13：表单提交接入 `formsubmit.co`，当前目标邮箱为 `sean@innovogrow.com`，用于免费邮件转发，不再收集附件。
+- 2026-06-13：新增 `sync-from-github.ps1` 和 `sync-from-github.cmd`，用于从 GitHub 一键同步本地仓库。
 
 ## 开发注意事项
 
@@ -137,6 +140,7 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 - 工作区可能存在用户或 CloudCannon 产生的改动；修改前先看 `git status --short --branch`，不要回滚未确认的他人改动。
 - 当前免费表单方案依赖 `formsubmit.co`，如果更换收件邮箱，需要同步更新首页和 Contact 页表单 `action`。
 - 当前全站官方联系收口统一为：`sean@innovogrow.com` 和 `+1 (310) 738-9334`。
+- `sync-from-github.ps1` 默认要求工作区干净；如果确实需要带着本地改动同步，可运行 `.\sync-from-github.ps1 -StashLocalChanges`。
 
 ## 后续修改约定
 
