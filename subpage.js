@@ -653,23 +653,6 @@ function renderAboutPage(content) {
     `).join("");
   }
 
-  setText("#about-team-eyebrow", content.team?.eyebrow, "team.eyebrow");
-  setText("#about-team-title", content.team?.title, "team.title", "block");
-  const teamCards = document.querySelector("#about-team-cards");
-  if (teamCards && Array.isArray(content.team?.members)) {
-    bindArrayElement(teamCards, "team.members");
-    teamCards.innerHTML = content.team.members.map((member) => `
-      <article class="team-card" ${arrayItemAttrs()}>
-        <span class="${member.avatarClass}"></span>
-        <strong ${textAttrs("name")}>${member.name}</strong>
-        <p ${textAttrs("role", "text")}>${member.role}</p>
-      </article>
-    `).join("");
-  }
-  setText("#about-team-side-title", content.team?.sideTitle, "team.sideTitle", "block");
-  setText("#about-team-side-description", content.team?.sideDescription, "team.sideDescription", "text");
-  setLink("#about-team-side-button", content.team?.sideButtonLabel, content.team?.sideButtonHref, "team.sideButtonLabel");
-
   setText("#about-craft-eyebrow", content.craft?.eyebrow, "craft.eyebrow");
   setText("#about-craft-title", content.craft?.title, "craft.title", "block");
   setText("#about-craft-description", content.craft?.description, "craft.description", "text");

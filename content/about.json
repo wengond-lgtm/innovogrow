@@ -68,20 +68,6 @@
       { "value": "All Sizes", "text": "Helping facilities scale with confidence" }
     ]
   },
-  "team": {
-    "eyebrow": "Leadership Team",
-    "title": "Experienced. Passionate. Grower-Focused.",
-    "members": [
-      { "avatarClass": "team-avatar team-avatar--jason", "name": "Jason H.", "role": "Chief Executive Officer" },
-      { "avatarClass": "team-avatar team-avatar--megan", "name": "Megan T.", "role": "Chief Operating Officer" },
-      { "avatarClass": "team-avatar team-avatar--daniel", "name": "Daniel R.", "role": "Chief Engineering Officer" },
-      { "avatarClass": "team-avatar team-avatar--patrick", "name": "Patrick S.", "role": "VP of Sales" }
-    ],
-    "sideTitle": "A Team That's Been in Your Shoes",
-    "sideDescription": "Our leadership team combines deep horticulture experience with engineering excellence to deliver lighting solutions that make a measurable difference in your operation.",
-    "sideButtonLabel": "Meet the Team",
-    "sideButtonHref": "contact.html"
-  },
   "craft": {
     "eyebrow": "Engineered to Perform",
     "title": "Designed. Built. Tested. For Commercial Excellence.",
