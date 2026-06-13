@@ -23,8 +23,8 @@ const siteHelpers = window.InnovoGrowSite || {};
 
 const defaultHomeContent = {
   hero: {
-    title: "Simplify Commercial Top Lighting at Scale",
-    description: "Commercial LED grow lighting solutions built around simplified top-light layouts, with IG 800 and IG 330 linear indoor options, plus IG 150 under-canopy support where your facility needs them.",
+    title: "The Standard of Excellence in Enlightened Commercial Growing",
+    description: "At InnovoGrow, we believe simplicity is elegance and innovation is poetry-in-motion. As the actual designer, engineer and manufacturer of our best-in-class LED grow lighting solutions, we are passionately committed to delivering superior results at optimal costs with unparalleled ongoing support for commercial indoor & greenhouse grower clientele.",
     primaryCta: {
       label: "Explore Top Light",
       href: "products.html#tl-300-d1"
@@ -43,11 +43,11 @@ const defaultHomeContent = {
   challenge: {
     eyebrow: "The Challenge",
     title: "A Full-Dimensional Approach to Crop Architecture",
-    description: "To maximize yield and quality in modern commercial facilities, single-source lighting is no longer sufficient. InnovoGrow provides a complete, multi-layered lighting ecosystem designed to deliver precise photobiological support from every angle, adapting seamlessly to any spatial constraint and growth stage."
+    description: "To maximize yield and quality in today's commercial indoor and greenhouse growing facilities, single-source lighting is no longer sufficient. InnovoGrow provides a complete, multi-layered lighting ecosystem designed to deliver precise photobiological support from every angle of crops, adapting seamlessly to any spatial constraint and growth stage."
   },
   productsSection: {
     eyebrow: "Our Solutions",
-    title: "Products Built for Commercial Growers",
+    title: "Products Designed and Built for Commercial Indoor and Greenhouse Growers",
     linkLabel: "View All Products",
     linkHref: "products.html"
   },
@@ -139,41 +139,19 @@ const defaultHomeContent = {
   ],
   contactSection: {
     eyebrow: "Get Started",
-    title: "Need a Lighting Layout for Your Facility?",
-    description: "Tell us about your grow. Our lighting experts will help you design the right solution for higher yields, better quality, and long-term efficiency.",
+    title: "Prefer Email, Phone, or a Quick Callback?",
+    description: "The fastest way to reach us is by phone or email. If you'd rather have us contact you, leave your details below.",
     formFields: [
-      { label: "Full Name", type: "text", name: "fullName", placeholder: "Your name" },
+      { label: "Full Name", type: "text", name: "full_name", placeholder: "Your name", required: true },
       { label: "Company", type: "text", name: "company", placeholder: "Company name" },
-      { label: "Email", type: "email", name: "email", placeholder: "you@company.com" },
-      { label: "Phone / WhatsApp", type: "text", name: "phone", placeholder: "+1 (555) 123-4567" },
-      { label: "Country / State", type: "text", name: "region", placeholder: "Select your country" },
+      { label: "Email", type: "email", name: "email", placeholder: "you@company.com", required: true },
+      { label: "Phone / WhatsApp", type: "text", name: "phone", placeholder: "+1 (555) 123-4567", required: true },
       {
-        label: "Crop Type",
-        type: "select",
-        name: "cropType",
-        options: ["Select crop type", "Flowering crops", "Tomatoes", "Leafy greens"]
-      },
-      { label: "Grow Area Size", type: "text", name: "area", placeholder: "e.g. 1000 sq ft / 300 m2" },
-      { label: "Current Lighting System", type: "text", name: "lighting", placeholder: "e.g. HPS, LED, Mixed" },
-      {
-        label: "Interested Products",
-        type: "select",
-        name: "products",
-        options: ["Select products", "IG 300-D1", "IG 800", "IG 330", "IG 150"]
-      },
-      {
-        label: "Message / Additional Information",
+        label: "Message",
         type: "textarea",
         name: "message",
-        placeholder: "Tell us more about your grow, goals, or challenges...",
+        placeholder: "Tell us the best way and time to reach you.",
         className: "message-field"
-      },
-      {
-        label: "Upload Layout / Drawing (optional)",
-        type: "file",
-        name: "layout",
-        className: "upload-field",
-        note: "PDF, PNG, JPG up to 10MB"
       }
     ],
     benefits: [
@@ -181,8 +159,8 @@ const defaultHomeContent = {
       { icon: "assets/site-images/home-icon-ppfd-layout-recommendation.svg", text: "PPFD & Layout Recommendation" },
       { icon: "assets/site-images/home-icon-product-roi-guidance.svg", text: "Product & ROI Guidance" }
     ],
-    cardText: "Our team typically responds within 1 business day.",
-    cardButtonLabel: "Request Lighting Plan",
+    cardText: "Call +1 (310) 738-9334 or email sean@innovogrow.com for the fastest response.",
+    cardButtonLabel: "Open Contact Page",
     cardButtonHref: "contact.html"
   }
 };
@@ -231,12 +209,37 @@ function arrayItemAttrs() {
   return `data-editable="array-item"`;
 }
 
+function decodeContentText(value) {
+  if (value == null) {
+    return "";
+  }
+
+  const normalized = String(value);
+  const entityDecoder = document.createElement("div");
+  entityDecoder.innerHTML = normalized;
+
+  const decoded = (entityDecoder.textContent || "").trim() || normalized;
+  const tagStripper = document.createElement("div");
+  tagStripper.innerHTML = decoded;
+
+  return (tagStripper.textContent || "").trim() || decoded;
+}
+
+function setDecodedText(selector, value) {
+  const element = document.querySelector(selector);
+  if (!element) {
+    return;
+  }
+
+  element.textContent = decodeContentText(value);
+}
+
 function renderHero(content) {
-  document.querySelector("#hero-title").textContent = content.hero.title;
-  document.querySelector("#hero-description").textContent = content.hero.description;
-  document.querySelector("#hero-primary-cta").textContent = content.hero.primaryCta.label;
+  setDecodedText("#hero-title", content.hero.title);
+  setDecodedText("#hero-description", content.hero.description);
+  setDecodedText("#hero-primary-cta", content.hero.primaryCta.label);
   document.querySelector("#hero-primary-cta").href = content.hero.primaryCta.href;
-  document.querySelector("#hero-secondary-cta").textContent = content.hero.secondaryCta.label;
+  setDecodedText("#hero-secondary-cta", content.hero.secondaryCta.label);
   document.querySelector("#hero-secondary-cta").href = content.hero.secondaryCta.href;
 
   const features = document.querySelector("#hero-features");
@@ -254,15 +257,15 @@ function renderHero(content) {
 }
 
 function renderChallenge(content) {
-  document.querySelector("#challenge-eyebrow").textContent = content.challenge.eyebrow;
-  document.querySelector("#challenge-title").textContent = content.challenge.title;
-  document.querySelector("#challenge-description").textContent = content.challenge.description;
+  setDecodedText("#challenge-eyebrow", content.challenge.eyebrow);
+  setDecodedText("#challenge-title", content.challenge.title);
+  setDecodedText("#challenge-description", content.challenge.description);
 }
 
 function renderProducts(content) {
-  document.querySelector("#products-section-eyebrow").textContent = content.productsSection.eyebrow;
-  document.querySelector("#products-section-title").textContent = content.productsSection.title;
-  document.querySelector("#products-section-link").textContent = content.productsSection.linkLabel;
+  setDecodedText("#products-section-eyebrow", content.productsSection.eyebrow);
+  setDecodedText("#products-section-title", content.productsSection.title);
+  setDecodedText("#products-section-link", content.productsSection.linkLabel);
   document.querySelector("#products-section-link").href = content.productsSection.linkHref;
 
   const grid = document.querySelector("#product-grid");
@@ -284,8 +287,8 @@ function renderProducts(content) {
 }
 
 function renderStrategies(content) {
-  document.querySelector("#strategies-section-eyebrow").textContent = content.strategiesSection.eyebrow;
-  document.querySelector("#strategies-section-title").textContent = content.strategiesSection.title;
+  setDecodedText("#strategies-section-eyebrow", content.strategiesSection.eyebrow);
+  setDecodedText("#strategies-section-title", content.strategiesSection.title);
 
   const grid = document.querySelector("#strategy-grid");
   grid.setAttribute("data-editable", "array");
@@ -302,8 +305,8 @@ function renderStrategies(content) {
 }
 
 function renderMetrics(content) {
-  document.querySelector("#performance-section-eyebrow").textContent = content.performanceSection.eyebrow;
-  document.querySelector("#performance-section-title").textContent = content.performanceSection.title;
+  setDecodedText("#performance-section-eyebrow", content.performanceSection.eyebrow);
+  setDecodedText("#performance-section-title", content.performanceSection.title);
 
   const grid = document.querySelector("#metric-grid");
   grid.setAttribute("data-editable", "array");
@@ -317,7 +320,7 @@ function renderMetrics(content) {
 }
 
 function renderApplications(content) {
-  document.querySelector("#applications-section-eyebrow").textContent = content.applicationsSection.eyebrow;
+  setDecodedText("#applications-section-eyebrow", content.applicationsSection.eyebrow);
 
   const grid = document.querySelector("#application-grid");
   grid.setAttribute("data-editable", "array");
@@ -371,9 +374,9 @@ function renderHomeContactForm(content) {
 }
 
 function renderContact(content) {
-  document.querySelector("#contact-section-eyebrow").textContent = content.contactSection.eyebrow;
-  document.querySelector("#contact-section-title").textContent = content.contactSection.title;
-  document.querySelector("#contact-section-description").textContent = content.contactSection.description;
+  setDecodedText("#contact-section-eyebrow", content.contactSection.eyebrow);
+  setDecodedText("#contact-section-title", content.contactSection.title);
+  setDecodedText("#contact-section-description", content.contactSection.description);
   renderHomeContactForm(content);
 
   const benefits = document.querySelector("#contact-benefits");
