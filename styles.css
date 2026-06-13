@@ -378,6 +378,65 @@ strong {
   line-height: 1.25;
 }
 
+body:not([data-page]) .hero {
+  height: auto;
+  min-height: 342px;
+}
+
+body:not([data-page]) .hero-media {
+  height: 100%;
+}
+
+body:not([data-page]) .hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+  min-height: 342px;
+  padding: 52px 0 24px;
+}
+
+body:not([data-page]) .hero-copy {
+  width: min(100%, 680px);
+  padding-top: 0;
+}
+
+body:not([data-page]) .hero-copy h1 {
+  width: min(100%, 680px);
+  margin-bottom: 16px;
+  font-size: clamp(40px, 5.8vw, 58px);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+body:not([data-page]) .hero-copy p {
+  width: min(100%, 620px);
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+body:not([data-page]) .hero-actions {
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+body:not([data-page]) .hero-features {
+  position: static;
+  width: min(100%, 760px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 2px;
+}
+
+body:not([data-page]) .hero-feature {
+  align-items: flex-start;
+}
+
+body:not([data-page]) .hero-feature strong {
+  margin: 2px 0 2px;
+}
+
 .challenge {
   height: 344px;
 }
@@ -1414,6 +1473,21 @@ strong {
     gap: 14px;
     margin-top: 24px;
     padding-bottom: 8px;
+  }
+
+  body:not([data-page]) .hero-inner {
+    gap: 18px;
+    padding: 0;
+  }
+
+  body:not([data-page]) .hero-copy h1 {
+    font-size: 38px;
+    line-height: 1.02;
+  }
+
+  body:not([data-page]) .hero-copy p {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .challenge {
