@@ -17,16 +17,45 @@ function Invoke-Git {
     [string[]]$Arguments
   )
 
-  $output = & git @Arguments 2>&1
-  $exitCode = $LASTEXITCODE
-  if ($exitCode -ne 0) {
-    if ($output) {
-      $output | Write-Host
+  $psi = New-Object System.Diagnostics.ProcessStartInfo
+  $psi.FileName = "git"
+  $psi.WorkingDirectory = (Get-Location).Path
+  $psi.UseShellExecute = $false
+  $psi.RedirectStandardOutput = $true
+  $psi.RedirectStandardError = $true
+  $psi.CreateNoWindow = $true
+  $psi.Arguments = ($Arguments | ForEach-Object {
+    if ($_ -match '[\s"]') {
+      '"' + ($_ -replace '"', '\"') + '"'
+    } else {
+      $_
     }
-    throw "git $($Arguments -join ' ') failed with exit code $exitCode."
+  }) -join " "
+
+  $process = New-Object System.Diagnostics.Process
+  $process.StartInfo = $psi
+
+  [void]$process.Start()
+  $stdout = $process.StandardOutput.ReadToEnd()
+  $stderr = $process.StandardError.ReadToEnd()
+  $process.WaitForExit()
+
+  if ($process.ExitCode -ne 0) {
+    if ($stderr.Trim()) {
+      $stderr.TrimEnd() | Write-Host
+    }
+    if ($stdout.Trim()) {
+      $stdout.TrimEnd() | Write-Host
+    }
+    throw "git $($Arguments -join ' ') failed with exit code $($process.ExitCode)."
   }
 
-  return $output
+  $outputText = if ($stdout.Trim()) { $stdout } else { $stderr }
+  if (-not $outputText) {
+    return @()
+  }
+
+  return ($outputText -split "`r?`n")
 }
 
 function Get-GitFirstLine {
@@ -92,10 +121,7 @@ try {
 
   if ($stashed) {
     Write-Step "Restoring stashed changes"
-    & git stash pop
-    if ($LASTEXITCODE -ne 0) {
-      throw "git stash pop failed. Resolve the stash restore manually."
-    }
+    Invoke-Git -Arguments @("stash", "pop") | Out-Null
   }
 
   $head = (Get-GitFirstLine -Arguments @("log", "-1", "--oneline")).Trim()
