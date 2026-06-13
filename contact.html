@@ -85,50 +85,35 @@
 
       <section class="dark-band contact-main-band">
         <div class="ig-container contact-page-grid">
-          <form class="contact-page-form">
-            <h2 id="contact-form-title" data-editable="text" data-prop="@file[/content/contact.json].form.title" data-type="block">Let's Build Your Lighting Advantage</h2>
-            <p id="contact-form-description" data-editable="text" data-prop="@file[/content/contact.json].form.description" data-type="text">Share a few details about your operation and our team will create a customized lighting plan for you.</p>
+          <form class="contact-page-form" action="https://formsubmit.co/sean@innovogrow.com" method="POST">
+            <input type="hidden" name="_subject" value="New InnovoGrow contact request">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" class="visually-hidden-input" tabindex="-1" autocomplete="off">
+            <h2 id="contact-form-title" data-editable="text" data-prop="@file[/content/contact.json].form.title" data-type="block">Share Your Contact Details</h2>
+            <p id="contact-form-description" data-editable="text" data-prop="@file[/content/contact.json].form.description" data-type="text">The fastest way to reach us is by phone or email. If you prefer, leave your contact details below and our team will follow up.</p>
 
             <div class="contact-form-grid" id="contact-form-grid">
-              <label>Full Name *<input type="text" name="full_name" placeholder="Your name"></label>
-              <label>Company *<input type="text" name="company" placeholder="Company name"></label>
-              <label>Email *<input type="email" name="email" placeholder="you@company.com"></label>
-              <label>Phone / WhatsApp *<input type="text" name="phone" placeholder="e.g. (555) 123-4567"></label>
-              <label>Country / State *<select name="country"><option>Select country / state</option></select></label>
-              <label>Crop Type *<select name="crop"><option>Select crop type</option></select></label>
-              <label>Grow Area Size *<input type="text" name="area" placeholder="e.g. 10,000 sq ft"><small>Total canopy area (sq ft / m&sup2;)</small></label>
-              <label>Current Lighting System<select name="system"><option>Select current system</option></select><small>Your existing lighting (if any)</small></label>
-              <label class="full-width">Interested Products *<select name="products"><option>Select products</option><option>IG 300-D1</option><option>IG 800</option><option>IG 330</option><option>IG 150</option></select><small>Select all that apply</small></label>
-              <label class="full-width">Message / Additional Information<textarea name="message" placeholder="Tell us more about your grow, goals, challenges, or timeline..."></textarea></label>
-            </div>
-
-            <div class="upload-row" id="contact-upload-row">
-              <div class="upload-box">
-                <strong>Upload Layout / Drawing (Optional)</strong>
-                <div class="upload-drop">Drag &amp; drop your file here or click to browse<br>PDF, PNG, JPG up to 10MB</div>
-              </div>
-              <div class="upload-notes">
-                <strong>Helpful files include:</strong>
-                <span>Facility layout or floor plan</span>
-                <span>Lighting plan (if available)</span>
-                <span>Photos of your grow space</span>
-              </div>
+              <label>Full Name *<input type="text" name="full_name" placeholder="Your name" required></label>
+              <label>Company<input type="text" name="company" placeholder="Company name"></label>
+              <label>Email *<input type="email" name="email" placeholder="you@company.com" required></label>
+              <label>Phone / WhatsApp *<input type="text" name="phone" placeholder="e.g. (555) 123-4567" required></label>
+              <label class="full-width">Message<textarea name="message" placeholder="Tell us the best way and time to reach you."></textarea></label>
             </div>
 
             <label class="agree-row" id="contact-agree-label"><input type="checkbox"> I agree to the Terms of Use and Privacy Policy.</label>
 
             <div class="form-cta-row" id="contact-form-cta-row">
-              <button class="btn btn-primary" type="button">Request Lighting Plan</button>
+              <button class="btn btn-primary" type="submit">Send Contact Details</button>
               <span>Your information is secure and will never be shared.</span>
             </div>
           </form>
 
           <aside class="contact-side" id="contact-side-cards" data-editable="array" data-prop="@file[/content/contact.json].sideCards">
             <article class="contact-info-card">
-              <h3>Talk to Our Lighting Team</h3>
-              <strong>+1 (888) 254-1457</strong>
-              <p>Mon-Fri, 8AM-6PM (EST)</p>
-              <a href="mailto:grow@innovogrow.com">grow@innovogrow.com</a>
+              <h3>Email or Call Us Directly</h3>
+              <strong>+1 (310) 738-9334</strong>
+              <p>Mon-Sat 6AM-6PM (PST)</p>
+              <a href="mailto:sean@innovogrow.com">sean@innovogrow.com</a>
             </article>
             <article class="contact-info-card">
               <h3>We Respond Fast</h3>
@@ -148,12 +133,12 @@
             <article class="contact-info-card">
               <h3>Distributor &amp; Partnership Inquiries</h3>
               <p>Looking to become a distributor or partner? Let's grow together.</p>
-              <a href="mailto:partners@innovogrow.com">partners@innovogrow.com</a>
+              <a href="mailto:sean@innovogrow.com">sean@innovogrow.com</a>
             </article>
             <article class="contact-info-card">
               <h3>Technical Support</h3>
               <p>For product support, installation guidance, or troubleshooting.</p>
-              <a href="mailto:support@innovogrow.com">support@innovogrow.com</a>
+              <a href="mailto:sean@innovogrow.com">sean@innovogrow.com</a>
             </article>
           </aside>
         </div>

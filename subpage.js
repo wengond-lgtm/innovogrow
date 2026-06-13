@@ -171,18 +171,19 @@ function renderFormField(field) {
   const classAttr = classNames.length ? ` class="${classNames.join(" ")}"` : "";
   const noteMarkup = field.note ? `<small ${textAttrs("note", "text")}>${field.note}</small>` : "";
   let controlMarkup = "";
+  const requiredAttr = field.required ? " required" : "";
 
   if (field.type === "select") {
     const options = Array.isArray(field.options) ? field.options : [];
     controlMarkup = `
-      <select name="${field.name}" ${arrayAttrs("options")}>
+      <select name="${field.name}"${requiredAttr} ${arrayAttrs("options")}>
         ${options.map((option) => `<option ${arrayItemAttrs()}>${option}</option>`).join("")}
       </select>
     `;
   } else if (field.type === "textarea") {
-    controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"></textarea>`;
+    controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"${requiredAttr}></textarea>`;
   } else {
-    controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}">`;
+    controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}"${requiredAttr}>`;
   }
 
   return `
@@ -703,25 +704,6 @@ function renderContactPage(content) {
     formGrid.innerHTML = content.form.fields.map((field) => renderFormField(field)).join("");
   }
 
-  const uploadRow = document.querySelector("#contact-upload-row");
-  if (uploadRow && content.form?.upload) {
-    uploadRow.innerHTML = `
-      <div class="upload-box">
-        <strong ${rootTextAttrs("form.upload.title")}>${content.form.upload.title}</strong>
-        <div class="upload-drop">
-          <span ${rootTextAttrs("form.upload.dropText", "text")}>${content.form.upload.dropText}</span><br>
-          <span ${rootTextAttrs("form.upload.fileNote", "text")}>${content.form.upload.fileNote}</span>
-        </div>
-      </div>
-      <div class="upload-notes">
-        <strong ${rootTextAttrs("form.upload.helpfulTitle")}>${content.form.upload.helpfulTitle}</strong>
-        <div ${rootArrayAttrs("form.upload.helpfulFiles")} style="display: contents;">
-          ${content.form.upload.helpfulFiles.map((item) => `<span ${arrayItemAttrs()}>${item}</span>`).join("")}
-        </div>
-      </div>
-    `;
-  }
-
   const agreeLabel = document.querySelector("#contact-agree-label");
   if (agreeLabel && content.form?.agreementLabel) {
     agreeLabel.innerHTML = `<input type="checkbox"> <span ${rootTextAttrs("form.agreementLabel", "text")}>${content.form.agreementLabel}</span>`;
@@ -730,7 +712,7 @@ function renderContactPage(content) {
   const ctaRow = document.querySelector("#contact-form-cta-row");
   if (ctaRow && content.form?.submitLabel) {
     ctaRow.innerHTML = `
-      <button class="btn btn-primary" type="button">
+      <button class="btn btn-primary" type="submit">
         <span ${rootTextAttrs("form.submitLabel")}>${content.form.submitLabel}</span>
       </button>
       <span ${rootTextAttrs("form.secureNote", "text")}>${content.form.secureNote}</span>

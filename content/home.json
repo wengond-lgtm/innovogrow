@@ -178,14 +178,15 @@
   ],
   "contactSection": {
     "eyebrow": "Get Started",
-    "title": "Need a Lighting Layout for Your Facility?",
-    "description": "Tell us about your grow. Our lighting experts will help you design the right solution for higher yields, better quality, and long-term efficiency.",
+    "title": "Prefer Email, Phone, or a Quick Callback?",
+    "description": "The fastest way to reach us is by phone or email. If you'd rather have us contact you, leave your details below.",
     "formFields": [
       {
         "label": "Full Name",
         "type": "text",
-        "name": "fullName",
-        "placeholder": "Your name"
+        "name": "full_name",
+        "placeholder": "Your name",
+        "required": true
       },
       {
         "label": "Company",
@@ -197,68 +198,22 @@
         "label": "Email",
         "type": "email",
         "name": "email",
-        "placeholder": "you@company.com"
+        "placeholder": "you@company.com",
+        "required": true
       },
       {
         "label": "Phone / WhatsApp",
         "type": "text",
         "name": "phone",
-        "placeholder": "+1 (555) 123-4567"
+        "placeholder": "+1 (555) 123-4567",
+        "required": true
       },
       {
-        "label": "Country / State",
-        "type": "text",
-        "name": "region",
-        "placeholder": "Select your country"
-      },
-      {
-        "label": "Crop Type",
-        "type": "select",
-        "name": "cropType",
-        "options": [
-          "Select crop type",
-          "Flowering crops",
-          "Tomatoes",
-          "Leafy greens"
-        ]
-      },
-      {
-        "label": "Grow Area Size",
-        "type": "text",
-        "name": "area",
-        "placeholder": "e.g. 1000 sq ft / 300 m2"
-      },
-      {
-        "label": "Current Lighting System",
-        "type": "text",
-        "name": "lighting",
-        "placeholder": "e.g. HPS, LED, Mixed"
-      },
-      {
-        "label": "Interested Products",
-        "type": "select",
-        "name": "products",
-        "options": [
-          "Select products",
-          "IG 300-D1",
-          "IG 800",
-          "IG 330",
-          "IG 150"
-        ]
-      },
-      {
-        "label": "Message / Additional Information",
+        "label": "Message",
         "type": "textarea",
         "name": "message",
-        "placeholder": "Tell us more about your grow, goals, or challenges...",
+        "placeholder": "Tell us the best way and time to reach you.",
         "className": "message-field"
-      },
-      {
-        "label": "Upload Layout / Drawing (optional)",
-        "type": "file",
-        "name": "layout",
-        "className": "upload-field",
-        "note": "PDF, PNG, JPG up to 10MB"
       }
     ],
     "benefits": [
@@ -275,8 +230,8 @@
         "text": "Product & ROI Guidance"
       }
     ],
-    "cardText": "Our team typically responds within 1 business day.",
-    "cardButtonLabel": "Request Lighting Plan",
+    "cardText": "Call +1 (310) 738-9334 or email sean@innovogrow.com for the fastest response.",
+    "cardButtonLabel": "Open Contact Page",
     "cardButtonHref": "contact.html"
   }
 }

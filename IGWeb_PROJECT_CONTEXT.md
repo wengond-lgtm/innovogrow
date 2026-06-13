@@ -111,7 +111,8 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 ## 当前已知问题
 
 - 当前没有自动化测试套件。
-- 表单没有真实提交逻辑。
+- 首页和 Contact 页表单目前使用 `formsubmit.co` 免费邮件转发方案。
+- FormSubmit 第一次启用目标邮箱时，需要在收件箱中完成一次激活确认。
 - Contact 页面地图/位置区块当前是有源码和数据但隐藏状态。
 - `dist/` 为构建产物且被忽略，源码变更后需运行 `npm.cmd run build` 验证构建。
 
@@ -120,6 +121,8 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 - 2026-06-13：删除 About 页面 Leadership Team 人物区块，并同步移除 `content/about.json` 的 `team` 数据和 `subpage.js` 的 about team 渲染逻辑。
 - 2026-06-13：隐藏 Contact 页面 “We're Located in the Heart of U.S. Ag Innovation” 地图/位置区块，保留 `content/contact.json` 的 `map` 数据。
 - 2026-06-13：新增本项目上下文文档 `IGWeb_PROJECT_CONTEXT.md`，作为后续协作入口。
+- 2026-06-13：首页和 Contact 页表单已简化为联系方式收集，仅保留姓名、公司、邮箱、电话和留言。
+- 2026-06-13：表单提交接入 `formsubmit.co`，当前目标邮箱为 `sean@innovogrow.com`，用于免费邮件转发，不再收集附件。
 
 ## 开发注意事项
 
@@ -132,6 +135,8 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 - 代码修改后至少运行 `npm.cmd run build`。
 - 涉及前端视觉或交互的修改，应使用本地预览验证页面显示。
 - 工作区可能存在用户或 CloudCannon 产生的改动；修改前先看 `git status --short --branch`，不要回滚未确认的他人改动。
+- 当前免费表单方案依赖 `formsubmit.co`，如果更换收件邮箱，需要同步更新首页和 Contact 页表单 `action`。
+- 当前全站官方联系收口统一为：`sean@innovogrow.com` 和 `+1 (310) 738-9334`。
 
 ## 后续修改约定
 
@@ -143,3 +148,7 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 4. 运行必要验证，例如 `npm.cmd run build` 和浏览器预览。
 5. 如本次修改影响页面、组件、流程、数据结构、依赖、配置、运行方式或后续开发判断，同步更新 `IGWeb_PROJECT_CONTEXT.md`。
 
+## Additional Notes
+
+- 2026-06-13: The Contact page upload area uses a custom English file picker UI instead of the browser-native file input label, so locale-specific Chinese text does not appear in the website UI.
+- Visible website UI text should remain English-only. Avoid relying on browser-native localized controls when they can surface non-English labels to visitors.

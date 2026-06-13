@@ -343,20 +343,21 @@ function renderHomeContactForm(content) {
     const classAttr = field.className ? ` class="${field.className}"` : "";
     const noteMarkup = field.note ? `<small ${textAttrs("note", "text")}>${field.note}</small>` : "";
     let controlMarkup = "";
+    const requiredAttr = field.required ? " required" : "";
 
     if (field.type === "select") {
       const options = Array.isArray(field.options) ? field.options : [];
       controlMarkup = `
-        <select name="${field.name}" ${arrayAttrs("options")}>
+        <select name="${field.name}"${requiredAttr} ${arrayAttrs("options")}>
           ${options.map((option) => `<option ${arrayItemAttrs()}>${option}</option>`).join("")}
         </select>
       `;
     } else if (field.type === "textarea") {
-      controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"></textarea>`;
+      controlMarkup = `<textarea name="${field.name}" placeholder="${field.placeholder || ""}"${requiredAttr}></textarea>`;
     } else if (field.type === "file") {
-      controlMarkup = `<input type="file" name="${field.name}">`;
+      controlMarkup = `<input type="file" name="${field.name}"${requiredAttr}>`;
     } else {
-      controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}">`;
+      controlMarkup = `<input type="${field.type || "text"}" name="${field.name}" placeholder="${field.placeholder || ""}"${requiredAttr}>`;
     }
 
     return `
@@ -406,13 +407,9 @@ function setupMenu() {
 
 function setupForm() {
   const form = document.querySelector(".contact-form");
-  if (!form) {
-    return;
+  if (form) {
+    form.setAttribute("accept-charset", "UTF-8");
   }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
 }
 
 async function loadHomeContent() {

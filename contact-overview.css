@@ -180,6 +180,18 @@
   resize: vertical;
 }
 
+.visually-hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .contact-form-grid small {
   color: #9fa8a1;
   font-size: 7px;
@@ -206,6 +218,58 @@
   font-size: 9px;
 }
 
+.upload-control {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.upload-control__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.upload-control__button,
+.upload-control__filename {
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+  font-size: 8px;
+}
+
+.upload-control__button {
+  min-width: 92px;
+  padding: 0 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.upload-control__button:hover,
+.upload-control__button:focus-visible {
+  border-color: rgba(123, 225, 46, 0.68);
+  background: rgba(123, 225, 46, 0.12);
+  color: var(--green);
+}
+
+.upload-control__filename {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  color: #d4dad5;
+}
+
 .upload-drop {
   display: grid;
   place-items: center;
@@ -220,6 +284,22 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(123, 225, 46, 0.08), transparent 32%),
     rgba(255, 255, 255, 0.01);
+}
+
+.upload-drop[role="button"] {
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.upload-drop[role="button"]:hover,
+.upload-drop[role="button"]:focus-visible,
+.upload-drop.is-dragover {
+  border-color: rgba(123, 225, 46, 0.68);
+  background:
+    radial-gradient(circle at 50% 34%, rgba(123, 225, 46, 0.14), transparent 34%),
+    rgba(123, 225, 46, 0.05);
+  color: #eef3ef;
+  outline: none;
 }
 
 .upload-notes {
@@ -615,6 +695,10 @@
     grid-template-columns: 1fr;
   }
 
+  .upload-control {
+    grid-template-columns: 1fr;
+  }
+
   .process-strip-action {
     justify-items: start;
     text-align: left;
@@ -694,6 +778,11 @@
 
   .upload-row {
     gap: 14px;
+  }
+
+  .upload-control__button,
+  .upload-control__filename {
+    width: 100%;
   }
 
   .form-cta-row .btn {

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_图层_2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 580.7 140.8">
+<svg id="_Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 580.7 140.8">
   <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
   <defs>
     <style>
       .st0 {
-        fill: url(#_未命名的渐变1);
+        fill: url(#_UnnamedGradient1);
       }
 
       .st1 {
-        fill: url(#_未命名的渐变);
+        fill: url(#_UnnamedGradient);
       }
 
       .st2 {
         fill: #21311f;
       }
     </style>
-    <linearGradient id="_未命名的渐变" data-name="未命名的渐变" x1="273.8" y1="-809.3" x2="314.2" y2="-809.3" gradientTransform="translate(0 -796) scale(1 -1)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_UnnamedGradient" data-name="UnnamedGradient" x1="273.8" y1="-809.3" x2="314.2" y2="-809.3" gradientTransform="translate(0 -796) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#30c043"/>
       <stop offset=".7" stop-color="#38db4c"/>
       <stop offset="1" stop-color="#3deb52"/>
     </linearGradient>
-    <linearGradient id="_未命名的渐变1" data-name="未命名的渐变" x1="341.6" y1="-853" x2="355.7" y2="-853" xlink:href="#_未命名的渐变"/>
+    <linearGradient id="_UnnamedGradient1" data-name="UnnamedGradient" x1="341.6" y1="-853" x2="355.7" y2="-853" xlink:href="#_UnnamedGradient"/>
   </defs>
-  <g id="_图层_1-2">
+  <g id="_Layer_1-2">
     <g>
       <path class="st2" d="M384.1,64.8h-13.6s-.5-.4-.5-.5v-6.6h21.3l.5.5v17.3c0,1.6-8.9,7.2-10.7,7.9-21.3,9.1-44.8-7.7-38.9-31.2,5.5-21.6,35.2-26.9,48.2-9.5l-5.9,4.7c-9.9-12.2-30.8-8.9-34.4,7.1-4.6,20.7,19.3,31,33.8,18.1v-7.8s.2,0,.2,0Z"/>
       <g>

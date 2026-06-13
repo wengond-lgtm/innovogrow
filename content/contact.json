@@ -22,17 +22,18 @@
     ]
   },
   "form": {
-    "title": "Let's Build Your Lighting Advantage",
-    "description": "Share a few details about your operation and our team will create a customized lighting plan for you.",
+    "title": "Share Your Contact Details",
+    "description": "The fastest way to reach us is by phone or email. If you prefer, leave your contact details below and our team will follow up.",
     "fields": [
       {
         "label": "Full Name *",
         "type": "text",
         "name": "full_name",
-        "placeholder": "Your name"
+        "placeholder": "Your name",
+        "required": true
       },
       {
-        "label": "Company *",
+        "label": "Company",
         "type": "text",
         "name": "company",
         "placeholder": "Company name"
@@ -41,91 +42,36 @@
         "label": "Email *",
         "type": "email",
         "name": "email",
-        "placeholder": "you@company.com"
+        "placeholder": "you@company.com",
+        "required": true
       },
       {
         "label": "Phone / WhatsApp *",
         "type": "text",
         "name": "phone",
-        "placeholder": "e.g. (555) 123-4567"
+        "placeholder": "e.g. (555) 123-4567",
+        "required": true
       },
       {
-        "label": "Country / State *",
-        "type": "select",
-        "name": "country",
-        "options": [
-          "Select country / state"
-        ]
-      },
-      {
-        "label": "Crop Type *",
-        "type": "select",
-        "name": "crop",
-        "options": [
-          "Select crop type"
-        ]
-      },
-      {
-        "label": "Grow Area Size *",
-        "type": "text",
-        "name": "area",
-        "placeholder": "e.g. 10,000 sq ft",
-        "note": "Total canopy area (sq ft / m&sup2;)"
-      },
-      {
-        "label": "Current Lighting System",
-        "type": "select",
-        "name": "system",
-        "note": "Your existing lighting (if any)",
-        "options": [
-          "Select current system"
-        ]
-      },
-      {
-        "label": "Interested Products *",
-        "type": "select",
-        "name": "products",
-        "fullWidth": true,
-        "note": "Select all that apply",
-        "options": [
-          "Select products",
-          "IG 300-D1",
-          "IG 800",
-          "IG 330",
-          "IG 150"
-        ]
-      },
-      {
-        "label": "Message / Additional Information",
+        "label": "Message",
         "type": "textarea",
         "name": "message",
         "fullWidth": true,
-        "placeholder": "Tell us more about your grow, goals, challenges, or timeline..."
+        "placeholder": "Tell us the best way and time to reach you."
       }
     ],
-    "upload": {
-      "title": "Upload Layout / Drawing (Optional)",
-      "dropText": "Drag &amp; drop your file here or click to browse",
-      "fileNote": "PDF, PNG, JPG up to 10MB",
-      "helpfulTitle": "Helpful files include:",
-      "helpfulFiles": [
-        "Facility layout or floor plan",
-        "Lighting plan (if available)",
-        "Photos of your grow space"
-      ]
-    },
     "agreementLabel": "I agree to the Terms of Use and Privacy Policy.",
-    "submitLabel": "Request Lighting Plan",
+    "submitLabel": "Send Contact Details",
     "secureNote": "Your information is secure and will never be shared."
   },
   "sideCards": [
     {
-      "title": "Talk to Our Management",
+      "title": "Email or Call Us Directly",
       "strong": "+1 (310) 738-9334",
       "text": "Mon-Sat 6AM-6PM (PST)",
       "link": {
         "label": "sean@innovogrow.com",
-        "href": "mailto:grow@innovogrow.com"
+        "href": "mailto:sean@innovogrow.com"
       }
     },
     {
@@ -147,42 +93,42 @@
       "title": "Distributor &amp; Partnership Inquiries",
       "text": "Looking to become a distributor or partner? Let's grow together.",
       "link": {
-        "label": "partners@innovogrow.com",
-        "href": "mailto:partners@innovogrow.com"
+        "label": "sean@innovogrow.com",
+        "href": "mailto:sean@innovogrow.com"
       }
     },
     {
       "title": "Technical Support",
       "text": "For product support, installation guidance, or troubleshooting.",
       "link": {
-        "label": "support@innovogrow.com",
-        "href": "mailto:support@innovogrow.com"
+        "label": "sean@innovogrow.com",
+        "href": "mailto:sean@innovogrow.com"
       }
     }
   ],
   "process": {
-    "title": "Request a Custom Lighting Plan",
-    "description": "Our team will analyze your facility and crops to design a lighting solution that maximizes yield and efficiency.",
+    "title": "Choose the Easiest Way to Reach Us",
+    "description": "Call, email, or leave your contact details. We'll respond quickly and help you get to the right person.",
     "steps": [
       {
         "number": "1",
-        "title": "Share Your Details",
-        "text": "Tell us about your facility and goals."
+        "title": "Call or Email",
+        "text": "Reach our team directly for the fastest response."
       },
       {
         "number": "2",
-        "title": "We Design Your Plan",
-        "text": "Our experts create a tailored lighting layout."
+        "title": "Leave Your Contact Details",
+        "text": "Use the short form if you'd rather have us contact you."
       },
       {
         "number": "3",
-        "title": "Grow with Confidence",
-        "text": "Get higher yields, lower costs, and proven results."
+        "title": "We Follow Up",
+        "text": "Our team will reach out within one business day."
       }
     ],
-    "buttonLabel": "Get My Lighting Plan",
-    "buttonHref": "#top",
-    "note": "No obligation. 100% free."
+    "buttonLabel": "Email Our Team",
+    "buttonHref": "mailto:sean@innovogrow.com",
+    "note": "Simple contact request. No attachments required."
   },
   "faq": {
     "eyebrow": "FAQ",
