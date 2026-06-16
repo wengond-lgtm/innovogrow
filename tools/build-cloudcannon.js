@@ -4,11 +4,25 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const output = path.join(root, "dist");
 
-const ignored = new Set([
-  ".git",
-  ".cloudcannon",
-  "dist",
-  "or"
+const publicDirectories = new Set([
+  "assets",
+  "content",
+  "SVG"
+]);
+
+const publicRootExtensions = new Set([
+  ".html",
+  ".css",
+  ".js",
+  ".ico",
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".svg",
+  ".webp",
+  ".txt",
+  ".xml",
+  ".webmanifest"
 ]);
 
 function removeDir(target) {
@@ -17,16 +31,23 @@ function removeDir(target) {
   }
 }
 
+function shouldCopyRootEntry(entry) {
+  const source = path.join(root, entry);
+  const stats = fs.statSync(source);
+
+  if (stats.isDirectory()) {
+    return publicDirectories.has(entry);
+  }
+
+  return publicRootExtensions.has(path.extname(entry).toLowerCase());
+}
+
 function copyRecursive(source, destination) {
   const stats = fs.statSync(source);
 
   if (stats.isDirectory()) {
     fs.mkdirSync(destination, { recursive: true });
     for (const entry of fs.readdirSync(source)) {
-      if (ignored.has(entry)) {
-        continue;
-      }
-
       copyRecursive(
         path.join(source, entry),
         path.join(destination, entry)
@@ -43,7 +64,7 @@ removeDir(output);
 fs.mkdirSync(output, { recursive: true });
 
 for (const entry of fs.readdirSync(root)) {
-  if (ignored.has(entry)) {
+  if (!shouldCopyRootEntry(entry)) {
     continue;
   }
 
