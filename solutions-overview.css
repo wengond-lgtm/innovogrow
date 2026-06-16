@@ -90,12 +90,16 @@
   line-height: 1.58;
 }
 
+.solutions-hero .hero-actions {
+  margin-top: 6px;
+}
+
 .solutions-hero-features {
   position: static;
   width: 530px;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-bottom: 18px;
+  margin-top: 18px;
 }
 
 .solutions-hero-features .hero-feature {
