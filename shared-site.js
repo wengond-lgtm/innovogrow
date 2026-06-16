@@ -134,7 +134,7 @@ function renderSiteFooter(content) {
   if (footerInner && content.footer) {
     footerInner.innerHTML = `
       <div class="footer-brand">
-        <img src="assets/site-images/brand-innovogrow-logo.svg" alt="InnovoGrow" loading="lazy" decoding="async">
+        <img src="assets/site-images/brand-innovogrow-new-logo.svg" alt="InnovoGrow" loading="lazy" decoding="async">
         <p ${siteTextAttrs("footer.brandDescription", "text")}>${content.footer.brandDescription}</p>
       </div>
       <div ${siteArrayAttrs("footer.columns")} style="display: contents;">

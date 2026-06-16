@@ -183,7 +183,8 @@ strong {
 
 .logo img {
   width: 142px;
-  height: 32px;
+  height: auto;
+  max-height: 32px;
   object-fit: contain;
 }
 

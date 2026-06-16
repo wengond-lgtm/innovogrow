@@ -8,14 +8,14 @@ Home
 - home-icon-ppfd-layout-recommendation.svg
 - home-icon-product-roi-guidance.svg
 - home-icon-team.svg
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 Products
 - shared-grow-scene.png
 - products-fixture-uc-series.png
 - products-fixture-tl-300-d1.png
 - products-fixture-gen-iv.png
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 Solutions
 - solutions-hero-background.jpg
@@ -28,7 +28,7 @@ Solutions
 - products-fixture-uc-series.png
 - products-fixture-tl-300-d1.png
 - products-fixture-gen-iv.png
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 Resources
 - resources-hero-background.jpg
@@ -41,7 +41,7 @@ Resources
 - resources-case-cannabis-cultivation.png
 - resources-case-indoor-grow-rooms.png
 - shared-grow-scene.png
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 About
 - about-hero-background.jpg
@@ -71,12 +71,12 @@ About
 - about-craft-qa.jpg
 - about-world-map.jpg
 - shared-grow-scene.png
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 Contact
 - contact-hero-background.jpg
 - contact-map-background.jpg
-- brand-innovogrow-logo.svg
+- brand-innovogrow-new-logo.svg
 
 solutions-package-ig-150.png -> Solutions page package card (Under-Canopy Upgrade) -> sourced from 2x/IG 150.png
 solutions-package-ig-300-d1.png -> Solutions page package card (Top-Light Simplification) -> sourced from 2x/IG 300-D1.png
