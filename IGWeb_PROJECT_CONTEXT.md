@@ -156,5 +156,9 @@ CloudCannon 通过 HTML 中的 `data-editable`、`data-prop` 和 JS 生成的编
 
 - 2026-06-13: The Contact page upload area uses a custom English file picker UI instead of the browser-native file input label, so locale-specific Chinese text does not appear in the website UI.
 - Visible website UI text should remain English-only. Avoid relying on browser-native localized controls when they can surface non-English labels to visitors.
+- Current sitewide slogan / title-line copy should use `Enlightened By Design` where the previous `Smarter Light. Better Growth`-style wording appeared.
+- Contact page side-card fallback copy in `contact.html` should stay aligned with `content/contact.json`, especially for office addresses, hours, and other business contact details.
+- 2026-06-30: About and Solutions page slogan-related fallback copy and JSON content were aligned to `Enlightened By Design` so static fallback text matches the current branded wording.
+- 2026-06-30: Contact page process CTA fallback copy in `contact.html` was aligned with `content/contact.json`, and the headquarters fallback address now matches the Sacramento office details.
 - 2026-06-13: Homepage fallback copy in `index.html` and `script.js` should stay aligned with `content/home.json`. If local preview fails to load JSON, the site falls back to those defaults, so stale fallback text can make local and GitHub versions look inconsistent.
 - 2026-06-13: Homepage text rendering in `script.js` now decodes HTML entities and strips simple wrapper tags from JSON-fed copy before assigning `textContent`, which helps CloudCannon-edited content display cleanly if block tags or entities are stored in `content/home.json`.
